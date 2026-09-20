@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Client Login | Nexora</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="portal-body">
+
+    <div class="portal-glow portal-glow-one"></div>
+    <div class="portal-glow portal-glow-two"></div>
+
+    <main class="login-page">
+
+        <a href="index.html" class="login-logo">
+            <span class="logo-icon">N</span>
+            <span>NEXORA</span>
+        </a>
+
+        <div class="login-card">
+
+            <div class="login-heading">
+
+                <span class="section-label">
+                    CLIENT PORTAL
+                </span>
+
+                <h1>Welcome back.</h1>
+
+                <p>
+                    Sign in to manage your website,
+                    analytics, billing and support.
+                </p>
+
+            </div>
+
+
+            <form id="loginForm">
+
+                <div class="form-group">
+
+                    <label for="loginEmail">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="loginEmail"
+                        placeholder="you@company.com"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <div class="password-label">
+
+                        <label for="loginPassword">
+                            Password
+                        </label>
+
+                        <a href="#" class="forgot-password">
+                            Forgot password?
+                        </a>
+
+                    </div>
+
+
+                    <div class="password-wrapper">
+
+                        <input
+                            type="password"
+                            id="loginPassword"
+                            placeholder="Enter your password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            id="showPassword"
+                            class="show-password"
+                        >
+                            Show
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="button primary-button login-button"
+                >
+                    Sign In →
+                </button>
+
+            </form>
+
+
+            <div class="login-security">
+                <span>◈</span>
+
+                <p>
+                    Secure Nexora Client Portal
+                </p>
+            </div>
+
+        </div>
+
+
+        <a href="index.html" class="back-home">
+            ← Back to Nexora
+        </a>
+
+    </main>
+
+
+    <script>
+
+        const form =
+            document.getElementById("loginForm");
+
+        const password =
+            document.getElementById("loginPassword");
+
+        const showPassword =
+            document.getElementById("showPassword");
+
+
+        showPassword.addEventListener(
+            "click",
+            () => {
+
+                if (password.type === "password") {
+
+                    password.type = "text";
+                    showPassword.textContent = "Hide";
+
+                } else {
+
+                    password.type = "password";
+                    showPassword.textContent = "Show";
+
+                }
+
+            }
+        );
+
+
+        form.addEventListener(
+            "submit",
+            (event) => {
+
+                event.preventDefault();
+
+                /*
+                DEMO ONLY.
+
+                Later this will be replaced with
+                real authentication.
+                */
+
+                window.location.href =
+                    "dashboard.html";
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>
