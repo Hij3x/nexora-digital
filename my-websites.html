@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Websites | Nexora</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dashboard-body">
+
+<div class="dashboard-layout">
+
+    <!-- ==========================================
+         SIDEBAR
+    =========================================== -->
+
+    <aside class="sidebar">
+
+        <a href="index.html" class="dashboard-logo">
+            <span class="logo-icon">N</span>
+            <span>NEXORA</span>
+        </a>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="my-websites.html" class="active">
+                <span>◎</span>
+                My Websites
+            </a>
+
+            <a href="#" id="billingNav">
+                <span>▣</span>
+                Billing
+            </a>
+
+            <a href="#" id="supportNav">
+                <span>◯</span>
+                Support
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <a href="#">
+                ⚙ Settings
+            </a>
+
+            <a href="login.html">
+                ↪ Sign Out
+            </a>
+
+            <div class="support-mini">
+
+                <div class="support-icon">
+                    ◉
+                </div>
+
+                <div class="support-mini-text">
+                    <strong>Need Help?</strong>
+                    <p>We're here when you need us.</p>
+                </div>
+
+                <button id="sidebarChat">
+                    Contact Support →
+                </button>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ==========================================
+         MAIN
+    =========================================== -->
+
+    <main class="dashboard-main">
+
+
+        <!-- TOP BAR -->
+
+        <header class="dashboard-topbar">
+
+            <div class="dashboard-search">
+
+                <span>⌕</span>
+
+                <input
+                    type="text"
+                    id="websiteSearch"
+                    placeholder="Search your websites..."
+                >
+
+            </div>
+
+
+            <div class="dashboard-account">
+
+                <button class="notification-button">
+                    ♢
+                    <span></span>
+                </button>
+
+                <div class="avatar">
+                    JD
+                </div>
+
+                <div class="account-name">
+                    <strong>John Doe</strong>
+                    <span>Client</span>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ==========================================
+             PAGE CONTENT
+        =========================================== -->
+
+        <div class="dashboard-content">
+
+
+            <!-- PAGE HEADER -->
+
+            <section class="websites-page-header">
+
+                <div>
+
+                    <span class="dashboard-eyebrow">
+                        CLIENT PORTAL
+                    </span>
+
+                    <h1>
+                        My Websites
+                    </h1>
+
+                    <p>
+                        Manage your websites, hosting,
+                        payments and support.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- ======================================
+                 WEBSITE GRID
+            ======================================= -->
+
+            <section
+                class="websites-grid"
+                id="websitesGrid"
+            >
+
+
+                <!-- ==================================
+                     WEBSITE CARD
+                =================================== -->
+
+                <article
+                    class="client-website-card"
+                    data-name="John's Landscaping"
+                >
+
+                    <div class="website-card-top">
+
+                        <div class="website-card-icon">
+                            JL
+                        </div>
+
+                        <span class="website-live">
+
+                            <i></i>
+
+                            LIVE
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="website-card-info">
+
+                        <h2>
+                            John's Landscaping
+                        </h2>
+
+                        <a
+                            href="#"
+                            class="website-card-domain"
+                        >
+                            johnslandscaping.ca ↗
+                        </a>
+
+                    </div>
+
+
+                    <div class="website-card-plan">
+
+                        <div>
+
+                            <small>
+                                HOSTING PLAN
+                            </small>
+
+                            <strong>
+                                $14.99
+                                <span>/ month</span>
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="website-next-payment">
+
+                        <span>
+                            Next Payment
+                        </span>
+
+                        <strong>
+                            Oct. 31
+                        </strong>
+
+                    </div>
+
+
+                    <div class="website-card-footer">
+
+                        <a
+                            href="dashboard.html"
+                            class="view-dashboard-button"
+                        >
+                            View Dashboard
+                            <span>→</span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- ==================================
+                     CREATE NEW WEBSITE
+                =================================== -->
+
+                <button
+                    class="create-website-card"
+                    id="createWebsite"
+                >
+
+                    <div class="create-plus">
+                        +
+                    </div>
+
+                    <h2>
+                        Create New Website
+                    </h2>
+
+                    <p>
+                        Start a new project with Nexora.
+                    </p>
+
+                    <span class="create-link">
+                        Get Started →
+                    </span>
+
+                </button>
+
+
+            </section>
+
+
+
+            <!-- ======================================
+                 EMPTY SEARCH MESSAGE
+            ======================================= -->
+
+            <div
+                class="no-websites-found"
+                id="noWebsitesFound"
+            >
+
+                No websites found.
+
+            </div>
+
+
+
+            <!-- ======================================
+                 FOOTER
+            ======================================= -->
+
+            <footer class="dashboard-footer">
+
+                <span>
+                    © 2026 Nexora
+                </span>
+
+                <span class="system-operational">
+
+                    <i></i>
+
+                    All systems operational
+
+                </span>
+
+                <span>
+                    Websites built around your goals.
+                </span>
+
+            </footer>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+
+<!-- ==============================================
+     LIVE CHAT
+=============================================== -->
+
+<button
+    class="chat-launcher"
+    id="chatLauncher"
+    aria-label="Open support chat"
+>
+    <span>💬</span>
+
+    <i class="chat-notification">
+        1
+    </i>
+</button>
+
+
+
+<section
+    class="chat-window"
+    id="chatWindow"
+>
+
+    <header class="chat-header">
+
+        <div class="chat-agent">
+
+            <div class="chat-agent-logo">
+                N
+            </div>
+
+            <div>
+
+                <strong>
+                    Nexora Support
+                </strong>
+
+                <span>
+                    <i></i>
+                    Online
+                </span>
+
+            </div>
+
+        </div>
+
+        <button
+            id="closeChat"
+            aria-label="Close chat"
+        >
+            ×
+        </button>
+
+    </header>
+
+
+    <div
+        class="chat-messages"
+        id="chatMessages"
+    >
+
+        <div class="chat-day">
+            Today
+        </div>
+
+
+        <div class="message support-message">
+
+            <div class="message-avatar">
+                N
+            </div>
+
+            <div>
+
+                <div class="message-bubble">
+                    Hey John! 👋 How can we help you today?
+                </div>
+
+                <small>
+                    Nexora Support
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="chat-input-area">
+
+        <button
+            class="attachment-button"
+            id="attachmentButton"
+        >
+            +
+        </button>
+
+        <textarea
+            id="chatInput"
+            placeholder="Type a message..."
+            rows="1"
+        ></textarea>
+
+        <button
+            id="sendMessage"
+            class="send-message"
+        >
+            ➤
+        </button>
+
+    </div>
+
+</section>
+
+
+<script src="my-websites.js"></script>
+
+</body>
+
+</html>
