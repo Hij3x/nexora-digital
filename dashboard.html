@@ -124,33 +124,117 @@
         <div class="dashboard-content">
 
 
-            <!-- WELCOME -->
-            <section class="welcome-row">
+<section class="welcome-row">
 
-                <div>
-                    <span class="dashboard-eyebrow">
-                        CLIENT DASHBOARD
-                    </span>
+    <div>
+        <span class="dashboard-eyebrow">
+            CLIENT DASHBOARD
+        </span>
 
-                    <h1>
-                        Good afternoon,
-                        <span>John.</span>
-                    </h1>
+        <h1>
+            Good afternoon,
+            <span>John.</span>
+        </h1>
 
-                    <p>
-                        Here's an overview of your website
-                        and account.
-                    </p>
-                </div>
-
-                <div class="welcome-date">
-                    <span>September 20, 2026</span>
-                    <small>Keep building. 🚀</small>
-                </div>
-
-            </section>
+        <p>
+            Here's an overview of your websites
+            and account.
+        </p>
+    </div>
 
 
+    <!-- WEBSITE SELECTOR -->
+    <div class="website-selector">
+
+        <span class="selector-label">
+            VIEWING WEBSITE
+        </span>
+
+        <button
+            class="website-selector-button"
+            id="websiteSelector"
+        >
+            <div class="selector-site-icon">
+                N
+            </div>
+
+            <div class="selector-site-info">
+                <strong id="selectedWebsiteName">
+                    John's Landscaping
+                </strong>
+
+                <small id="selectedWebsiteDomain">
+                    johnslandscaping.ca
+                </small>
+            </div>
+
+            <span class="selector-arrow">
+                ▾
+            </span>
+        </button>
+
+
+        <div
+            class="website-dropdown"
+            id="websiteDropdown"
+        >
+
+            <button
+                class="website-option active"
+                data-site="landscaping"
+            >
+                <span class="website-option-icon">
+                    JL
+                </span>
+
+                <span>
+                    <strong>
+                        John's Landscaping
+                    </strong>
+
+                    <small>
+                        johnslandscaping.ca
+                    </small>
+                </span>
+
+                <i>✓</i>
+            </button>
+
+
+            <button
+                class="website-option"
+                data-site="construction"
+            >
+                <span class="website-option-icon">
+                    JC
+                </span>
+
+                <span>
+                    <strong>
+                        John's Construction
+                    </strong>
+
+                    <small>
+                        johnsconstruction.ca
+                    </small>
+                </span>
+
+                <i></i>
+            </button>
+
+
+            <div class="website-dropdown-divider"></div>
+
+
+            <button class="add-website">
+                ＋ Add Another Website
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
             <!-- WEBSITE -->
             <section class="main-website-card">
 
