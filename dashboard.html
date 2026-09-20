@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nexora | Client Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dashboard-body">
+
+<div class="dashboard-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <a href="index.html" class="dashboard-logo">
+            <span class="logo-icon">N</span>
+            <span>NEXORA</span>
+        </a>
+
+        <nav class="sidebar-nav">
+
+            <a href="#" class="active">
+                <span>⌂</span>
+                Overview
+            </a>
+
+            <a href="#">
+                <span>◎</span>
+                My Website
+            </a>
+
+            <a href="#">
+                <span>▥</span>
+                Analytics
+            </a>
+
+            <a href="#">
+                <span>▣</span>
+                Billing
+            </a>
+
+            <a href="#" id="supportNav">
+                <span>◯</span>
+                Support
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <a href="#">
+                ⚙ Settings
+            </a>
+
+            <a href="login.html">
+                ↪ Sign Out
+            </a>
+
+
+            <div class="support-mini">
+
+                <div class="support-icon">
+                    ◉
+                </div>
+
+                <div>
+                    <strong>Need Help?</strong>
+                    <p>Our team is here to help.</p>
+                </div>
+
+                <button id="sidebarChat">
+                    Contact Support →
+                </button>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="dashboard-main">
+
+        <!-- TOPBAR -->
+        <header class="dashboard-topbar">
+
+            <div class="dashboard-search">
+                <span>⌕</span>
+
+                <input
+                    type="text"
+                    placeholder="Search..."
+                >
+            </div>
+
+
+            <div class="dashboard-account">
+
+                <button class="notification-button">
+                    ♢
+                    <span></span>
+                </button>
+
+                <div class="avatar">
+                    JD
+                </div>
+
+                <div class="account-name">
+                    <strong>John Doe</strong>
+                    <span>Client</span>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- CONTENT -->
+        <div class="dashboard-content">
+
+
+            <!-- WELCOME -->
+            <section class="welcome-row">
+
+                <div>
+                    <span class="dashboard-eyebrow">
+                        CLIENT DASHBOARD
+                    </span>
+
+                    <h1>
+                        Good afternoon,
+                        <span>John.</span>
+                    </h1>
+
+                    <p>
+                        Here's an overview of your website
+                        and account.
+                    </p>
+                </div>
+
+                <div class="welcome-date">
+                    <span>September 20, 2026</span>
+                    <small>Keep building. 🚀</small>
+                </div>
+
+            </section>
+
+
+            <!-- WEBSITE -->
+            <section class="main-website-card">
+
+                <div class="website-preview">
+
+                    <div class="preview-browser">
+
+                        <div class="preview-nav">
+                            John's Landscaping
+                        </div>
+
+                        <div class="preview-content">
+
+                            <small>
+                                PROFESSIONAL LANDSCAPING
+                            </small>
+
+                            <h3>
+                                Beautiful Lawns.<br>
+                                Stronger Communities.
+                            </h3>
+
+                            <button>
+                                Get a Quote
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="website-information">
+
+                    <div class="website-info-top">
+
+                        <div>
+
+                            <span class="dashboard-eyebrow">
+                                YOUR WEBSITE
+                            </span>
+
+                            <h2>
+                                johnslandscaping.ca ↗
+                            </h2>
+
+                        </div>
+
+
+                        <span class="status-online">
+                            <i></i>
+                            ONLINE
+                        </span>
+
+
+                        <button class="visit-site">
+                            Visit Website ↗
+                        </button>
+
+                    </div>
+
+
+                    <div class="website-metrics">
+
+                        <div>
+                            <span class="metric-icon">⌁</span>
+
+                            <section>
+                                <strong>99.99%</strong>
+                                <small>Uptime</small>
+                            </section>
+                        </div>
+
+
+                        <div>
+                            <span class="metric-icon">ϟ</span>
+
+                            <section>
+                                <strong>124ms</strong>
+                                <small>Response Time</small>
+                            </section>
+                        </div>
+
+
+                        <div>
+                            <span class="metric-icon">▥</span>
+
+                            <section>
+                                <strong>8,421</strong>
+                                <small>Page Views</small>
+                            </section>
+                        </div>
+
+
+                        <div>
+                            <span class="metric-icon">♟</span>
+
+                            <section>
+                                <strong>2,104</strong>
+                                <small>Unique Visitors</small>
+                            </section>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- GRID -->
+            <section class="dashboard-cards">
+
+
+                <!-- ANALYTICS -->
+                <article class="dash-card analytics-panel">
+
+                    <div class="dash-card-title">
+
+                        <div>
+                            <span class="card-icon">▥</span>
+                            <strong>Analytics</strong>
+                        </div>
+
+                        <select>
+                            <option>Last 7 Days</option>
+                            <option>Last 30 Days</option>
+                        </select>
+
+                    </div>
+
+
+                    <p class="analytics-label">
+                        Website Traffic
+                    </p>
+
+
+                    <div class="analytics-total">
+                        1,284
+                        <span>↑ 12%</span>
+                    </div>
+
+                    <small>Total Visitors</small>
+
+
+                    <div class="analytics-chart">
+
+                        <div>
+                            <i style="height: 28%"></i>
+                            <span>Mon</span>
+                        </div>
+
+                        <div>
+                            <i style="height: 50%"></i>
+                            <span>Tue</span>
+                        </div>
+
+                        <div>
+                            <i style="height: 38%"></i>
+                            <span>Wed</span>
+                        </div>
+
+                        <div>
+                            <i style="height: 70%"></i>
+                            <span>Thu</span>
+                        </div>
+
+                        <div>
+                            <i style="height: 60%"></i>
+                            <span>Fri</span>
+                        </div>
+
+                        <div>
+                            <i style="height: 92%"></i>
+                            <span>Sat</span>
+                        </div>
+
+                        <div>
+                            <i style="height: 73%"></i>
+                            <span>Sun</span>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- BILLING -->
+                <article class="dash-card">
+
+                    <div class="dash-card-title">
+
+                        <div>
+                            <span class="card-icon">▣</span>
+                            <strong>Billing</strong>
+                        </div>
+
+                    </div>
+
+
+                    <p class="plan-title">
+                        Nexora Business Plan
+                    </p>
+
+                    <div class="plan-price">
+                        $29.99
+                        <span>/ month</span>
+                    </div>
+
+
+                    <div class="payment-date">
+                        <small>Next payment</small>
+
+                        <strong>
+                            October 20, 2026
+                        </strong>
+                    </div>
+
+
+                    <button class="dashboard-button">
+                        Manage Billing
+                    </button>
+
+                </article>
+
+
+                <!-- WEBSITE HEALTH -->
+                <article class="dash-card">
+
+                    <div class="dash-card-title">
+
+                        <div>
+                            <span class="card-icon">◇</span>
+                            <strong>Website Health</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="health-row">
+                        <span>Domain</span>
+                        <strong class="healthy">
+                            ● Connected
+                        </strong>
+                    </div>
+
+                    <div class="health-row">
+                        <span>SSL Certificate</span>
+                        <strong class="healthy">
+                            ● Active
+                        </strong>
+                    </div>
+
+                    <div class="health-row">
+                        <span>Deployment</span>
+                        <strong class="healthy">
+                            ● Healthy
+                        </strong>
+                    </div>
+
+                    <div class="health-row">
+                        <span>Last Updated</span>
+                        <strong>
+                            2 hours ago
+                        </strong>
+                    </div>
+
+                </article>
+
+            </section>
+
+
+            <!-- BOTTOM -->
+            <section class="dashboard-bottom-grid">
+
+
+                <!-- QUICK ACTIONS -->
+                <article class="dash-card">
+
+                    <div class="dash-card-title">
+                        <div>
+                            <span class="card-icon">ϟ</span>
+                            <strong>Quick Actions</strong>
+                        </div>
+                    </div>
+
+                    <h3>Need Something?</h3>
+
+
+                    <div class="quick-action-grid">
+
+                        <button>
+                            ✎
+                            <span>
+                                Request<br>
+                                Website Change
+                            </span>
+                        </button>
+
+                        <button id="quickChat">
+                            ◯
+                            <span>
+                                Contact<br>
+                                Support
+                            </span>
+                        </button>
+
+                        <button>
+                            ▥
+                            <span>
+                                View Full<br>
+                                Analytics
+                            </span>
+                        </button>
+
+                        <button>
+                            ▣
+                            <span>
+                                Manage<br>
+                                Billing
+                            </span>
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ACTIVITY -->
+                <article class="dash-card">
+
+                    <div class="dash-card-title">
+
+                        <div>
+                            <span class="card-icon">☷</span>
+                            <strong>Recent Activity</strong>
+                        </div>
+
+                        <a href="#">
+                            View All →
+                        </a>
+
+                    </div>
+
+
+                    <div class="activity-row">
+                        <span class="activity-green"></span>
+                        <p>Website deployed successfully</p>
+                        <small>2 hours ago</small>
+                    </div>
+
+                    <div class="activity-row">
+                        <span></span>
+                        <p>SSL certificate renewed</p>
+                        <small>1 day ago</small>
+                    </div>
+
+                    <div class="activity-row">
+                        <span></span>
+                        <p>Plan renewed</p>
+                        <small>Sep 20, 2026</small>
+                    </div>
+
+                    <div class="activity-row">
+                        <span></span>
+                        <p>Analytics report generated</p>
+                        <small>Sep 13, 2026</small>
+                    </div>
+
+                </article>
+
+            </section>
+
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- =====================================
+     LIVE CHAT
+===================================== -->
+
+<button
+    class="chat-launcher"
+    id="chatLauncher"
+    aria-label="Open support chat"
+>
+    💬
+
+    <span class="chat-notification">
+        1
+    </span>
+</button>
+
+
+<section
+    class="chat-window"
+    id="chatWindow"
+>
+
+    <!-- CHAT HEADER -->
+    <header class="chat-header">
+
+        <div class="chat-agent">
+
+            <div class="chat-agent-logo">
+                N
+            </div>
+
+            <div>
+                <strong>Nexora Support</strong>
+
+                <span>
+                    <i></i>
+                    Online
+                </span>
+            </div>
+
+        </div>
+
+
+        <button id="closeChat">
+            ×
+        </button>
+
+    </header>
+
+
+    <!-- CHAT MESSAGES -->
+    <div
+        class="chat-messages"
+        id="chatMessages"
+    >
+
+        <div class="chat-day">
+            Today
+        </div>
+
+
+        <div class="message support-message">
+
+            <div class="message-avatar">
+                N
+            </div>
+
+            <div>
+
+                <div class="message-bubble">
+                    Hey John! 👋
+                    Welcome to Nexora Support.
+                    How can we help you today?
+                </div>
+
+                <small>3:42 PM</small>
+
+            </div>
+
+        </div>
+
+
+        <div class="message client-message">
+
+            <div>
+
+                <div class="message-bubble">
+                    Hi! I need to change the
+                    logo on my website.
+                </div>
+
+                <small>3:43 PM ✓✓</small>
+
+            </div>
+
+        </div>
+
+
+        <div class="message support-message">
+
+            <div class="message-avatar">
+                N
+            </div>
+
+            <div>
+
+                <div class="message-bubble">
+                    Absolutely! Send us the new
+                    logo and we'll take a look.
+                </div>
+
+                <small>3:43 PM</small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- CHAT INPUT -->
+    <div class="chat-input-area">
+
+        <button
+            class="attachment-button"
+            title="Attach file"
+        >
+            ＋
+        </button>
+
+
+        <textarea
+            id="chatInput"
+            placeholder="Type a message..."
+            rows="1"
+        ></textarea>
+
+
+        <button
+            id="sendMessage"
+            class="send-message"
+        >
+            ➤
+        </button>
+
+    </div>
+
+</section>
+
+
+<script src="dashboard.js"></script>
+
+</body>
+</html>
