@@ -4398,3 +4398,95 @@ img {
     }
 
 }
+/* ==========================================
+   CREATE WEBSITE - VALIDATION & SUCCESS
+========================================== */
+
+.builder-input-error {
+    border-color: #ff5b6e !important;
+    box-shadow: 0 0 0 3px rgba(255, 91, 110, 0.08);
+}
+
+.builder-message {
+    position: fixed;
+    top: 25px;
+    left: 50%;
+    z-index: 9999;
+
+    transform: translate(-50%, -20px);
+
+    padding: 13px 18px;
+
+    border: 1px solid rgba(255, 91, 110, 0.25);
+    border-radius: 12px;
+
+    background: rgba(30, 8, 15, 0.96);
+    color: #ff8d9a;
+
+    font-size: 13px;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: 0.25s;
+}
+
+.builder-message.show {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+.builder-success {
+    max-width: 650px;
+    margin: 100px auto;
+    padding: 55px 35px;
+
+    text-align: center;
+
+    border: 1px solid rgba(72, 161, 255, 0.15);
+    border-radius: 22px;
+
+    background: rgba(8, 19, 36, 0.75);
+}
+
+.success-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 70px;
+    height: 70px;
+
+    margin: 0 auto 25px;
+
+    border-radius: 50%;
+
+    background: rgba(67, 229, 165, 0.1);
+    color: #43e5a5;
+
+    font-size: 30px;
+
+    box-shadow:
+        0 0 30px rgba(67, 229, 165, 0.12);
+}
+
+.builder-success h1 {
+    margin: 10px 0 12px;
+
+    font-size: 34px;
+}
+
+.builder-success p {
+    max-width: 500px;
+    margin: 0 auto;
+
+    color: #91a3b8;
+    line-height: 1.7;
+}
+
+.success-actions {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 30px;
+}
