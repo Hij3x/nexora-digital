@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Website | Nexora</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dashboard-body">
+
+<div class="create-project-page">
+
+    <!-- TOP BAR -->
+
+    <header class="create-project-header">
+
+        <a href="my-websites.html" class="dashboard-logo">
+            <span class="logo-icon">N</span>
+            <span>NEXORA</span>
+        </a>
+
+        <a href="my-websites.html" class="exit-builder">
+            Save & Exit
+        </a>
+
+    </header>
+
+
+    <!-- MAIN -->
+
+    <main class="create-project-main">
+
+        <!-- PROGRESS -->
+
+        <section class="builder-progress">
+
+            <div class="progress-info">
+                <span id="stepText">Step 1 of 5</span>
+                <strong id="stepTitle">Website Type</strong>
+            </div>
+
+            <div class="progress-track">
+                <div
+                    class="progress-fill"
+                    id="progressFill"
+                ></div>
+            </div>
+
+        </section>
+
+
+        <!-- FORM -->
+
+        <form id="websiteBuilderForm">
+
+            <!-- =====================================
+                 STEP 1
+            ====================================== -->
+
+            <section
+                class="builder-step active"
+                data-step="1"
+            >
+
+                <div class="builder-heading">
+
+                    <span class="dashboard-eyebrow">
+                        LET'S GET STARTED
+                    </span>
+
+                    <h1>
+                        What are you creating?
+                    </h1>
+
+                    <p>
+                        Choose the option that best
+                        describes your website.
+                    </p>
+
+                </div>
+
+
+                <div class="website-type-grid">
+
+                    <label class="website-type-option">
+
+                        <input
+                            type="radio"
+                            name="websiteType"
+                            value="Business Website"
+                        >
+
+                        <span class="type-icon">▣</span>
+
+                        <strong>
+                            Business Website
+                        </strong>
+
+                        <small>
+                            Services, company information,
+                            leads and contact.
+                        </small>
+
+                    </label>
+
+
+                    <label class="website-type-option">
+
+                        <input
+                            type="radio"
+                            name="websiteType"
+                            value="Personal Website"
+                        >
+
+                        <span class="type-icon">◎</span>
+
+                        <strong>
+                            Personal Website
+                        </strong>
+
+                        <small>
+                            Your own personal space
+                            on the web.
+                        </small>
+
+                    </label>
+
+
+                    <label class="website-type-option">
+
+                        <input
+                            type="radio"
+                            name="websiteType"
+                            value="Portfolio"
+                        >
+
+                        <span class="type-icon">◇</span>
+
+                        <strong>
+                            Portfolio
+                        </strong>
+
+                        <small>
+                            Showcase your work,
+                            projects or experience.
+                        </small>
+
+                    </label>
+
+
+                    <label class="website-type-option">
+
+                        <input
+                            type="radio"
+                            name="websiteType"
+                            value="E-Commerce"
+                        >
+
+                        <span class="type-icon">▤</span>
+
+                        <strong>
+                            Online Store
+                        </strong>
+
+                        <small>
+                            Sell products or services
+                            online.
+                        </small>
+
+                    </label>
+
+
+                    <label class="website-type-option">
+
+                        <input
+                            type="radio"
+                            name="websiteType"
+                            value="Blog"
+                        >
+
+                        <span class="type-icon">✎</span>
+
+                        <strong>
+                            Blog
+                        </strong>
+
+                        <small>
+                            Publish articles,
+                            updates or stories.
+                        </small>
+
+                    </label>
+
+
+                    <label class="website-type-option">
+
+                        <input
+                            type="radio"
+                            name="websiteType"
+                            value="Organization"
+                        >
+
+                        <span class="type-icon">◉</span>
+
+                        <strong>
+                            Organization
+                        </strong>
+
+                        <small>
+                            Community, nonprofit,
+                            club or group.
+                        </small>
+
+                    </label>
+
+
+                    <label class="website-type-option">
+
+                        <input
+                            type="radio"
+                            name="websiteType"
+                            value="Event"
+                        >
+
+                        <span class="type-icon">☆</span>
+
+                        <strong>
+                            Event Website
+                        </strong>
+
+                        <small>
+                            Promote an event and
+                            share important details.
+                        </small>
+
+                    </label>
+
+
+                    <label class="website-type-option">
+
+                        <input
+                            type="radio"
+                            name="websiteType"
+                            value="Other"
+                        >
+
+                        <span class="type-icon">＋</span>
+
+                        <strong>
+                            Something Else
+                        </strong>
+
+                        <small>
+                            Tell Nexora what you
+                            have in mind.
+                        </small>
+
+                    </label>
+
+                </div>
+
+            </section>
+
+
+            <!-- =====================================
+                 STEP 2
+            ====================================== -->
+
+            <section
+                class="builder-step"
+                data-step="2"
+            >
+
+                <div class="builder-heading">
+
+                    <span class="dashboard-eyebrow">
+                        YOUR PROJECT
+                    </span>
+
+                    <h1>
+                        Tell us about your website.
+                    </h1>
+
+                    <p>
+                        Give us the basics. You can
+                        always provide more details later.
+                    </p>
+
+                </div>
+
+
+                <div class="builder-form-card">
+
+                    <div class="builder-field">
+
+                        <label>
+                            Website / Project Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="projectName"
+                            placeholder="Example: John's Landscaping"
+                        >
+
+                    </div>
+
+
+                    <div class="builder-field">
+
+                        <label>
+                            Do you already have a domain?
+                        </label>
+
+                        <div class="builder-choice-row">
+
+                            <label class="small-choice">
+
+                                <input
+                                    type="radio"
+                                    name="hasDomain"
+                                    value="Yes"
+                                >
+
+                                <span>
+                                    Yes
+                                </span>
+
+                            </label>
+
+
+                            <label class="small-choice">
+
+                                <input
+                                    type="radio"
+                                    name="hasDomain"
+                                    value="No"
+                                >
+
+                                <span>
+                                    No
+                                </span>
+
+                            </label>
+
+
+                            <label class="small-choice">
+
+                                <input
+                                    type="radio"
+                                    name="hasDomain"
+                                    value="Not Sure"
+                                >
+
+                                <span>
+                                    Not Sure
+                                </span>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="builder-field"
+                        id="domainField"
+                    >
+
+                        <label>
+                            Domain
+                        </label>
+
+                        <input
+                            type="text"
+                            id="domainName"
+                            placeholder="example.com"
+                        >
+
+                    </div>
+
+
+                    <div class="builder-field">
+
+                        <label>
+                            Tell us about the website
+                        </label>
+
+                        <textarea
+                            id="projectDescription"
+                            rows="5"
+                            placeholder="What is the website for? What would you like visitors to be able to do?"
+                        ></textarea>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =====================================
+                 STEP 3
+            ====================================== -->
+
+            <section
+                class="builder-step"
+                data-step="3"
+            >
+
+                <div class="builder-heading">
+
+                    <span class="dashboard-eyebrow">
+                        DESIGN
+                    </span>
+
+                    <h1>
+                        What style do you like?
+                    </h1>
+
+                    <p>
+                        Choose as many as you want.
+                    </p>
+
+                </div>
+
+
+                <div class="style-options">
+
+                    <label class="style-option">
+                        <input type="checkbox" value="Modern">
+                        <span>Modern</span>
+                    </label>
+
+                    <label class="style-option">
+                        <input type="checkbox" value="Minimal">
+                        <span>Minimal</span>
+                    </label>
+
+                    <label class="style-option">
+                        <input type="checkbox" value="Professional">
+                        <span>Professional</span>
+                    </label>
+
+                    <label class="style-option">
+                        <input type="checkbox" value="Luxury">
+                        <span>Luxury</span>
+                    </label>
+
+                    <label class="style-option">
+                        <input type="checkbox" value="Bold">
+                        <span>Bold</span>
+                    </label>
+
+                    <label class="style-option">
+                        <input type="checkbox" value="Creative">
+                        <span>Creative</span>
+                    </label>
+
+                    <label class="style-option">
+                        <input type="checkbox" value="Dark">
+                        <span>Dark</span>
+                    </label>
+
+                    <label class="style-option">
+                        <input type="checkbox" value="Colorful">
+                        <span>Colorful</span>
+                    </label>
+
+                </div>
+
+
+                <div class="builder-form-card builder-extra">
+
+                    <div class="builder-field">
+
+                        <label>
+                            Websites you like
+                            <small>(optional)</small>
+                        </label>
+
+                        <textarea
+                            id="inspiration"
+                            rows="4"
+                            placeholder="Paste links or tell us which websites inspire you."
+                        ></textarea>
+
+                    </div>
+
+
+                    <div class="builder-field">
+
+                        <label>
+                            Preferred colours
+                            <small>(optional)</small>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="preferredColors"
+                            placeholder="Example: Black, blue and white"
+                        >
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =====================================
+                 STEP 4
+            ====================================== -->
+
+            <section
+                class="builder-step"
+                data-step="4"
+            >
+
+                <div class="builder-heading">
+
+                    <span class="dashboard-eyebrow">
+                        FEATURES
+                    </span>
+
+                    <h1>
+                        What does your website need?
+                    </h1>
+
+                    <p>
+                        Select the features you're
+                        interested in.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-selection-grid">
+
+                    <label class="feature-option">
+                        <input type="checkbox" value="Contact Form">
+                        <span>✓</span>
+                        Contact Form
+                    </label>
+
+                    <label class="feature-option">
+                        <input type="checkbox" value="Photo Gallery">
+                        <span>✓</span>
+                        Photo Gallery
+                    </label>
+
+                    <label class="feature-option">
+                        <input type="checkbox" value="Online Store">
+                        <span>✓</span>
+                        Online Store
+                    </label>
+
+                    <label class="feature-option">
+                        <input type="checkbox" value="Bookings">
+                        <span>✓</span>
+                        Booking System
+                    </label>
+
+                    <label class="feature-option">
+                        <input type="checkbox" value="Blog">
+                        <span>✓</span>
+                        Blog
+                    </label>
+
+                    <label class="feature-option">
+                        <input type="checkbox" value="Payments">
+                        <span>✓</span>
+                        Online Payments
+                    </label>
+
+                    <label class="feature-option">
+                        <input type="checkbox" value="Members">
+                        <span>✓</span>
+                        Member Accounts
+                    </label>
+
+                    <label class="feature-option">
+                        <input type="checkbox" value="Live Chat">
+                        <span>✓</span>
+                        Live Chat
+                    </label>
+
+                    <label class="feature-option">
+                        <input type="checkbox" value="Newsletter">
+                        <span>✓</span>
+                        Newsletter
+                    </label>
+
+                    <label class="feature-option">
+                        <input type="checkbox" value="Social Media">
+                        <span>✓</span>
+                        Social Media
+                    </label>
+
+                </div>
+
+
+                <div class="builder-form-card builder-extra">
+
+                    <div class="builder-field">
+
+                        <label>
+                            Anything else?
+                        </label>
+
+                        <textarea
+                            id="additionalFeatures"
+                            rows="4"
+                            placeholder="Tell us about any special features or ideas."
+                        ></textarea>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =====================================
+                 STEP 5
+            ====================================== -->
+
+            <section
+                class="builder-step"
+                data-step="5"
+            >
+
+                <div class="builder-heading">
+
+                    <span class="dashboard-eyebrow">
+                        REVIEW
+                    </span>
+
+                    <h1>
+                        Ready to send your request?
+                    </h1>
+
+                    <p>
+                        Review your project before
+                        sending it to Nexora.
+                    </p>
+
+                </div>
+
+
+                <div class="project-review-card">
+
+                    <div class="review-row">
+                        <span>Website Type</span>
+                        <strong id="reviewType">—</strong>
+                    </div>
+
+                    <div class="review-row">
+                        <span>Project Name</span>
+                        <strong id="reviewName">—</strong>
+                    </div>
+
+                    <div class="review-row">
+                        <span>Domain</span>
+                        <strong id="reviewDomain">—</strong>
+                    </div>
+
+                    <div class="review-row">
+                        <span>Design Style</span>
+                        <strong id="reviewStyle">—</strong>
+                    </div>
+
+                    <div class="review-row">
+                        <span>Features</span>
+                        <strong id="reviewFeatures">—</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="review-notice">
+
+                    <span>◎</span>
+
+                    <div>
+                        <strong>
+                            No payment yet.
+                        </strong>
+
+                        <p>
+                            Sending this form creates a
+                            website request. Nexora can
+                            review the project before
+                            pricing and payment.
+                        </p>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =====================================
+                 BUTTONS
+            ====================================== -->
+
+            <div class="builder-navigation">
+
+                <button
+                    type="button"
+                    class="builder-back"
+                    id="backButton"
+                >
+                    ← Back
+                </button>
+
+                <button
+                    type="button"
+                    class="builder-next"
+                    id="nextButton"
+                >
+                    Continue →
+                </button>
+
+                <button
+                    type="submit"
+                    class="builder-submit"
+                    id="submitButton"
+                >
+                    Send Website Request →
+                </button>
+
+            </div>
+
+        </form>
+
+    </main>
+
+</div>
+
+
+<script src="create-website.js"></script>
+
+</body>
+</html>
