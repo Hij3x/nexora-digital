@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clients | Nexora Admin</title>
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="portal-page admin-page">
+
+<div class="portal-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="portal-sidebar">
+
+        <a href="../index.html" class="portal-logo">
+            <img src="../images/nexora-logo.png" alt="Nexora">
+        </a>
+
+        <div class="sidebar-label">ADMIN</div>
+
+        <nav class="portal-nav">
+
+            <a href="dashboard.html">
+                <span>⌂</span>
+                Overview
+            </a>
+
+            <a href="clients.html" class="active">
+                <span>♙</span>
+                Clients
+            </a>
+
+            <a href="projects.html">
+                <span>◇</span>
+                Website Requests
+                <small>3</small>
+            </a>
+
+            <a href="payments.html">
+                <span>$</span>
+                Payments
+            </a>
+
+            <a href="support.html">
+                <span>◌</span>
+                Support
+                <small>2</small>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <a href="#">
+                <span>⚙</span>
+                Settings
+            </a>
+
+            <a href="../login.html">
+                <span>↪</span>
+                Sign Out
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="portal-main">
+
+        <!-- TOPBAR -->
+        <header class="portal-topbar">
+
+            <div class="admin-search-wrap">
+                <span>⌕</span>
+
+                <input
+                    type="search"
+                    id="clientSearch"
+                    placeholder="Search clients..."
+                >
+            </div>
+
+            <div class="portal-top-actions">
+
+                <button class="notification-button" id="clientNotifications">
+                    ♢
+                    <i></i>
+                </button>
+
+                <div class="admin-avatar">
+                    NX
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <div class="portal-content admin-clients-content">
+
+            <!-- HEADER -->
+            <section class="admin-clients-hero">
+
+                <div>
+                    <span class="admin-eyebrow">
+                        NEXORA ADMIN
+                    </span>
+
+                    <h1>Clients</h1>
+
+                    <p>
+                        Manage Nexora clients, websites,
+                        plans and account information.
+                    </p>
+                </div>
+
+                <button
+                    class="admin-primary-button"
+                    id="addClientButton"
+                >
+                    <span>＋</span>
+                    Add Client
+                </button>
+
+            </section>
+
+
+            <!-- STATS -->
+            <section class="client-stat-grid">
+
+                <article>
+                    <span>Total Clients</span>
+                    <strong id="totalClients">12</strong>
+                    <small>All client accounts</small>
+                </article>
+
+                <article>
+                    <span>Active</span>
+                    <strong id="activeClients">10</strong>
+                    <small>Currently active</small>
+                </article>
+
+                <article>
+                    <span>Websites</span>
+                    <strong id="totalWebsites">16</strong>
+                    <small>Managed websites</small>
+                </article>
+
+                <article>
+                    <span>Monthly Revenue</span>
+                    <strong>$239.84</strong>
+                    <small>Demo recurring revenue</small>
+                </article>
+
+            </section>
+
+
+            <!-- CLIENT TABLE -->
+            <section class="admin-panel clients-panel">
+
+                <div class="admin-panel-header">
+
+                    <div>
+                        <span class="admin-panel-kicker">
+                            CLIENT DIRECTORY
+                        </span>
+
+                        <h2>All Clients</h2>
+                    </div>
+
+                    <div class="client-table-tools">
+
+                        <select id="clientStatusFilter">
+                            <option value="all">
+                                All Clients
+                            </option>
+
+                            <option value="active">
+                                Active
+                            </option>
+
+                            <option value="pending">
+                                Pending
+                            </option>
+
+                            <option value="inactive">
+                                Inactive
+                            </option>
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="client-table-wrapper">
+
+                    <table class="client-table">
+
+                        <thead>
+                            <tr>
+                                <th>Client</th>
+                                <th>Websites</th>
+                                <th>Plan</th>
+                                <th>Status</th>
+                                <th>Joined</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="clientTableBody">
+
+                            <tr
+                                class="client-row"
+                                data-status="active"
+                                data-client="John Doe"
+                                data-email="john@example.com"
+                                data-phone="+1 416 555 0198"
+                                data-websites="1"
+                                data-plan="$14.99 Hosting"
+                                data-joined="Aug 12, 2026"
+                            >
+
+                                <td>
+                                    <div class="client-identity">
+                                        <div class="client-avatar">
+                                            JD
+                                        </div>
+
+                                        <div>
+                                            <strong>
+                                                John Doe
+                                            </strong>
+
+                                            <span>
+                                                john@example.com
+                                            </span>
+                                        </div>
+                                    </div>
+                                </td>
+
+                                <td>1</td>
+
+                                <td>
+                                    $14.99 Hosting
+                                </td>
+
+                                <td>
+                                    <span class="client-status active">
+                                        Active
+                                    </span>
+                                </td>
+
+                                <td>
+                                    Aug 12, 2026
+                                </td>
+
+                                <td>
+                                    <button class="client-view-button">
+                                        View →
+                                    </button>
+                                </td>
+
+                            </tr>
+
+
+                            <tr
+                                class="client-row"
+                                data-status="pending"
+                                data-client="Sarah Smith"
+                                data-email="sarah@example.com"
+                                data-phone="+1 647 555 0114"
+                                data-websites="1"
+                                data-plan="Project Quote"
+                                data-joined="Sep 14, 2026"
+                            >
+
+                                <td>
+                                    <div class="client-identity">
+
+                                        <div class="client-avatar">
+                                            SS
+                                        </div>
+
+                                        <div>
+                                            <strong>
+                                                Sarah Smith
+                                            </strong>
+
+                                            <span>
+                                                sarah@example.com
+                                            </span>
+                                        </div>
+
+                                    </div>
+                                </td>
+
+                                <td>1</td>
+
+                                <td>
+                                    Project Quote
+                                </td>
+
+                                <td>
+                                    <span class="client-status pending">
+                                        Pending
+                                    </span>
+                                </td>
+
+                                <td>
+                                    Sep 14, 2026
+                                </td>
+
+                                <td>
+                                    <button class="client-view-button">
+                                        View →
+                                    </button>
+                                </td>
+
+                            </tr>
+
+
+                            <tr
+                                class="client-row"
+                                data-status="active"
+                                data-client="Alex Carter"
+                                data-email="alex@example.com"
+                                data-phone="+1 905 555 0171"
+                                data-websites="2"
+                                data-plan="$29.99 Managed"
+                                data-joined="Jul 28, 2026"
+                            >
+
+                                <td>
+                                    <div class="client-identity">
+
+                                        <div class="client-avatar">
+                                            AC
+                                        </div>
+
+                                        <div>
+                                            <strong>
+                                                Alex Carter
+                                            </strong>
+
+                                            <span>
+                                                alex@example.com
+                                            </span>
+                                        </div>
+
+                                    </div>
+                                </td>
+
+                                <td>2</td>
+
+                                <td>
+                                    $29.99 Managed
+                                </td>
+
+                                <td>
+                                    <span class="client-status active">
+                                        Active
+                                    </span>
+                                </td>
+
+                                <td>
+                                    Jul 28, 2026
+                                </td>
+
+                                <td>
+                                    <button class="client-view-button">
+                                        View →
+                                    </button>
+                                </td>
+
+                            </tr>
+
+
+                            <tr
+                                class="client-row"
+                                data-status="active"
+                                data-client="Emma Wilson"
+                                data-email="emma@example.com"
+                                data-phone="+1 289 555 0144"
+                                data-websites="1"
+                                data-plan="$14.99 Hosting"
+                                data-joined="Jun 09, 2026"
+                            >
+
+                                <td>
+                                    <div class="client-identity">
+
+                                        <div class="client-avatar">
+                                            EW
+                                        </div>
+
+                                        <div>
+                                            <strong>
+                                                Emma Wilson
+                                            </strong>
+
+                                            <span>
+                                                emma@example.com
+                                            </span>
+                                        </div>
+
+                                    </div>
+                                </td>
+
+                                <td>1</td>
+
+                                <td>
+                                    $14.99 Hosting
+                                </td>
+
+                                <td>
+                                    <span class="client-status active">
+                                        Active
+                                    </span>
+                                </td>
+
+                                <td>
+                                    Jun 09, 2026
+                                </td>
+
+                                <td>
+                                    <button class="client-view-button">
+                                        View →
+                                    </button>
+                                </td>
+
+                            </tr>
+
+
+                            <tr
+                                class="client-row"
+                                data-status="inactive"
+                                data-client="Michael Brown"
+                                data-email="michael@example.com"
+                                data-phone="+1 416 555 0136"
+                                data-websites="1"
+                                data-plan="No Active Plan"
+                                data-joined="May 21, 2026"
+                            >
+
+                                <td>
+                                    <div class="client-identity">
+
+                                        <div class="client-avatar">
+                                            MB
+                                        </div>
+
+                                        <div>
+                                            <strong>
+                                                Michael Brown
+                                            </strong>
+
+                                            <span>
+                                                michael@example.com
+                                            </span>
+                                        </div>
+
+                                    </div>
+                                </td>
+
+                                <td>1</td>
+
+                                <td>
+                                    No Active Plan
+                                </td>
+
+                                <td>
+                                    <span class="client-status inactive">
+                                        Inactive
+                                    </span>
+                                </td>
+
+                                <td>
+                                    May 21, 2026
+                                </td>
+
+                                <td>
+                                    <button class="client-view-button">
+                                        View →
+                                    </button>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <div
+                    class="clients-empty"
+                    id="clientsEmpty"
+                    hidden
+                >
+                    <span>⌕</span>
+
+                    <h3>No clients found</h3>
+
+                    <p>
+                        Try changing your search or filter.
+                    </p>
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+
+<!-- =====================================================
+     CLIENT DETAILS PANEL
+===================================================== -->
+
+<div
+    class="client-panel-overlay"
+    id="clientPanelOverlay"
+></div>
+
+
+<aside
+    class="client-details-panel"
+    id="clientDetailsPanel"
+>
+
+    <div class="client-panel-header">
+
+        <div>
+            <span>CLIENT PROFILE</span>
+            <h2 id="panelClientName">John Doe</h2>
+        </div>
+
+        <button id="closeClientPanel">
+            ×
+        </button>
+
+    </div>
+
+
+    <div class="client-profile-summary">
+
+        <div
+            class="client-profile-avatar"
+            id="panelClientAvatar"
+        >
+            JD
+        </div>
+
+        <div>
+            <strong id="panelClientNameSmall">
+                John Doe
+            </strong>
+
+            <span id="panelClientStatus">
+                Active Client
+            </span>
+        </div>
+
+    </div>
+
+
+    <div class="client-detail-section">
+
+        <span class="client-detail-title">
+            CONTACT
+        </span>
+
+        <div class="client-detail-item">
+            <small>Email</small>
+
+            <a
+                href="mailto:john@example.com"
+                id="panelClientEmail"
+            >
+                john@example.com
+            </a>
+        </div>
+
+        <div class="client-detail-item">
+            <small>Phone</small>
+
+            <span id="panelClientPhone">
+                +1 416 555 0198
+            </span>
+        </div>
+
+    </div>
+
+
+    <div class="client-detail-section">
+
+        <span class="client-detail-title">
+            ACCOUNT
+        </span>
+
+        <div class="client-detail-grid">
+
+            <div>
+                <small>Websites</small>
+                <strong id="panelClientWebsites">
+                    1
+                </strong>
+            </div>
+
+            <div>
+                <small>Joined</small>
+                <strong id="panelClientJoined">
+                    Aug 12, 2026
+                </strong>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="client-detail-section">
+
+        <span class="client-detail-title">
+            PLAN
+        </span>
+
+        <div class="client-plan-card">
+
+            <div>
+                <small>Current Plan</small>
+
+                <strong id="panelClientPlan">
+                    $14.99 Hosting
+                </strong>
+            </div>
+
+            <span>ACTIVE</span>
+
+        </div>
+
+    </div>
+
+
+    <div class="client-detail-section">
+
+        <span class="client-detail-title">
+            WEBSITES
+        </span>
+
+        <div class="client-mini-website">
+
+            <div class="mini-website-icon">
+                ◇
+            </div>
+
+            <div>
+                <strong>
+                    John's Landscaping
+                </strong>
+
+                <span>
+                    johnslandscaping.ca
+                </span>
+            </div>
+
+            <button>
+                →
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="client-panel-actions">
+
+        <button id="messageClientButton">
+            Message Client
+        </button>
+
+        <button id="editClientButton">
+            Edit Client
+        </button>
+
+    </div>
+
+</aside>
+
+
+
+<!-- =====================================================
+     ADD CLIENT MODAL
+===================================================== -->
+
+<div
+    class="admin-modal-overlay"
+    id="addClientModal"
+>
+
+    <div class="admin-modal">
+
+        <div class="admin-modal-header">
+
+            <div>
+                <span>NEW CLIENT</span>
+                <h2>Add Client</h2>
+            </div>
+
+            <button id="closeAddClientModal">
+                ×
+            </button>
+
+        </div>
+
+
+        <form id="addClientForm">
+
+            <div class="admin-form-row">
+
+                <div class="admin-form-field">
+
+                    <label for="newFirstName">
+                        First Name
+                    </label>
+
+                    <input
+                        id="newFirstName"
+                        type="text"
+                        placeholder="John"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="admin-form-field">
+
+                    <label for="newLastName">
+                        Last Name
+                    </label>
+
+                    <input
+                        id="newLastName"
+                        type="text"
+                        placeholder="Doe"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="admin-form-field">
+
+                <label for="newClientEmail">
+                    Email Address
+                </label>
+
+                <input
+                    id="newClientEmail"
+                    type="email"
+                    placeholder="client@example.com"
+                    required
+                >
+
+            </div>
+
+
+            <div class="admin-form-field">
+
+                <label for="newClientPhone">
+                    Phone Number
+                </label>
+
+                <input
+                    id="newClientPhone"
+                    type="tel"
+                    placeholder="+1 000 000 0000"
+                >
+
+            </div>
+
+
+            <div class="admin-form-row">
+
+                <div class="admin-form-field">
+
+                    <label for="newClientPlan">
+                        Plan
+                    </label>
+
+                    <select id="newClientPlan">
+
+                        <option value="No Active Plan">
+                            No Active Plan
+                        </option>
+
+                        <option value="$14.99 Hosting">
+                            $14.99 Hosting
+                        </option>
+
+                        <option value="$29.99 Managed">
+                            $29.99 Managed
+                        </option>
+
+                        <option value="Project Quote">
+                            Project Quote
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="admin-form-field">
+
+                    <label for="newClientStatus">
+                        Status
+                    </label>
+
+                    <select id="newClientStatus">
+
+                        <option value="active">
+                            Active
+                        </option>
+
+                        <option value="pending">
+                            Pending
+                        </option>
+
+                        <option value="inactive">
+                            Inactive
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <div class="admin-form-actions">
+
+                <button
+                    type="button"
+                    id="cancelAddClient"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="admin-primary-button"
+                >
+                    Add Client
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script src="../js/admin.js"></script>
+<script src="../js/clients.js"></script>
+
+</body>
+</html>

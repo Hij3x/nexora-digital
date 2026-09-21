@@ -1,352 +1,433 @@
-/* =========================================
-   NEXORA - MAIN JAVASCRIPT
-========================================= */
+/* =========================================================
+   NEXORA — MAIN WEBSITE
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    /* =====================================================
+       ELEMENTS
+    ====================================================== */
+
+    const header = document.querySelector(".main-header");
+    const menuButton = document.getElementById("mobileMenuButton");
+    const navLinks = document.getElementById("navLinks");
+    const navItems = document.querySelectorAll(".nav-links a");
+
+    const contactForm = document.getElementById("contactForm");
+    const currentYear = document.getElementById("currentYear");
 
 
-/* =========================================
-   MOBILE MENU
-========================================= */
+    /* =====================================================
+       CURRENT YEAR
+    ====================================================== */
 
-const menuButton = document.getElementById("menuButton");
-const navLinks = document.getElementById("navLinks");
+    if (currentYear) {
+        currentYear.textContent = new Date().getFullYear();
+    }
 
-if (menuButton && navLinks) {
 
-    menuButton.addEventListener("click", () => {
+    /* =====================================================
+       NAVBAR SCROLL EFFECT
+    ====================================================== */
 
-        navLinks.classList.toggle("active");
+    function updateNavbar() {
 
-        if (navLinks.classList.contains("active")) {
-            menuButton.textContent = "✕";
+        if (!header) return;
+
+        if (window.scrollY > 20) {
+            header.classList.add("scrolled");
         } else {
-            menuButton.textContent = "☰";
+            header.classList.remove("scrolled");
         }
-
-    });
-
-}
-
-
-/* =========================================
-   CLOSE MOBILE MENU AFTER CLICK
-========================================= */
-
-const navItems = document.querySelectorAll(".nav-links a");
-
-navItems.forEach((item) => {
-
-    item.addEventListener("click", () => {
-
-        navLinks.classList.remove("active");
-
-        if (menuButton) {
-            menuButton.textContent = "☰";
-        }
-
-    });
-
-});
-
-
-/* =========================================
-   NAVBAR BACKGROUND ON SCROLL
-========================================= */
-
-const navbar = document.querySelector(".navbar");
-
-function updateNavbar() {
-
-    if (window.scrollY > 30) {
-
-        navbar.classList.add("scrolled");
-
-    } else {
-
-        navbar.classList.remove("scrolled");
 
     }
 
-}
+    updateNavbar();
 
-window.addEventListener("scroll", updateNavbar);
-
-updateNavbar();
+    window.addEventListener("scroll", updateNavbar);
 
 
-/* =========================================
-   SCROLL REVEAL ANIMATIONS
-========================================= */
+    /* =====================================================
+       MOBILE MENU
+    ====================================================== */
 
-const revealElements = document.querySelectorAll(
-    ".service-card, " +
-    ".benefit, " +
-    ".portfolio-card, " +
-    ".price-card, " +
-    ".section-heading, " +
-    ".contact-form"
-);
+    if (menuButton && navLinks) {
 
-revealElements.forEach((element) => {
+        menuButton.addEventListener("click", () => {
 
-    element.classList.add("reveal");
+            navLinks.classList.toggle("open");
 
-});
+            const open =
+                navLinks.classList.contains("open");
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                open ? "true" : "false"
+            );
+
+        });
+
+    }
 
 
-const revealObserver = new IntersectionObserver(
+    /* =====================================================
+       CLOSE MOBILE MENU AFTER CLICK
+    ====================================================== */
 
-    (entries) => {
+    navItems.forEach(link => {
 
-        entries.forEach((entry) => {
+        link.addEventListener("click", () => {
 
-            if (entry.isIntersecting) {
+            if (navLinks) {
+                navLinks.classList.remove("open");
+            }
 
-                entry.target.classList.add("active");
-
-                revealObserver.unobserve(entry.target);
-
+            if (menuButton) {
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
             }
 
         });
 
-    },
+    });
 
-    {
-        threshold: 0.12
+
+    /* =====================================================
+       SMOOTH SCROLL
+    ====================================================== */
+
+    document
+        .querySelectorAll('a[href^="#"]')
+        .forEach(link => {
+
+            link.addEventListener("click", event => {
+
+                const href =
+                    link.getAttribute("href");
+
+                /*
+                   Ignore empty # links such as
+                   WhatsApp until a real link is added.
+                */
+
+                if (!href || href === "#") {
+                    return;
+                }
+
+                const target =
+                    document.querySelector(href);
+
+                if (!target) {
+                    return;
+                }
+
+                event.preventDefault();
+
+                const headerHeight =
+                    header?.offsetHeight || 70;
+
+                const position =
+                    target.getBoundingClientRect().top +
+                    window.scrollY -
+                    headerHeight;
+
+                window.scrollTo({
+                    top: position,
+                    behavior: "smooth"
+                });
+
+            });
+
+        });
+
+
+    /* =====================================================
+       ACTIVE NAVIGATION SECTION
+    ====================================================== */
+
+    const sections =
+        document.querySelectorAll(
+            "main section[id]"
+        );
+
+
+    function updateActiveNavigation() {
+
+        let currentSection = "home";
+
+        sections.forEach(section => {
+
+            const sectionTop =
+                section.offsetTop - 160;
+
+            if (window.scrollY >= sectionTop) {
+                currentSection = section.id;
+            }
+
+        });
+
+
+        navItems.forEach(link => {
+
+            const href =
+                link.getAttribute("href");
+
+            link.classList.remove("active");
+
+            if (href === `#${currentSection}`) {
+                link.classList.add("active");
+            }
+
+        });
+
     }
 
-);
 
+    updateActiveNavigation();
 
-revealElements.forEach((element) => {
-
-    revealObserver.observe(element);
-
-});
-
-
-/* =========================================
-   HERO WEBSITE MOUSE EFFECT
-========================================= */
-
-const browserWindow =
-    document.querySelector(".browser-window");
-
-const heroPreview =
-    document.querySelector(".hero-preview");
-
-
-if (browserWindow && heroPreview) {
-
-    heroPreview.addEventListener(
-        "mousemove",
-        (event) => {
-
-            /*
-            Disable the effect on smaller screens.
-            */
-
-            if (window.innerWidth <= 1000) {
-                return;
-            }
-
-            const rect =
-                heroPreview.getBoundingClientRect();
-
-            const mouseX =
-                event.clientX - rect.left;
-
-            const mouseY =
-                event.clientY - rect.top;
-
-            const centerX =
-                rect.width / 2;
-
-            const centerY =
-                rect.height / 2;
-
-            const rotateY =
-                ((mouseX - centerX) / centerX) * 4;
-
-            const rotateX =
-                ((centerY - mouseY) / centerY) * 4;
-
-
-            browserWindow.style.transform =
-                `
-                rotateY(${rotateY}deg)
-                rotateX(${rotateX}deg)
-                translateY(-5px)
-                `;
-
-        }
+    window.addEventListener(
+        "scroll",
+        updateActiveNavigation
     );
 
 
-    heroPreview.addEventListener(
-        "mouseleave",
-        () => {
+    /* =====================================================
+       SUBTLE REVEAL ANIMATIONS
+    ====================================================== */
 
-            if (window.innerWidth <= 1000) {
-
-                browserWindow.style.transform =
-                    "none";
-
-            } else {
-
-                browserWindow.style.transform =
-                    "rotateY(-5deg) rotateX(2deg)";
-
-            }
-
-        }
-    );
-
-}
+    const revealElements =
+        document.querySelectorAll(
+            `
+            .benefit-grid article,
+            .premium-service-card,
+            .work-project,
+            .modern-price-card,
+            .about-visual,
+            .about-content
+            `
+        );
 
 
-/* =========================================
-   CONTACT FORM
-========================================= */
+    if ("IntersectionObserver" in window) {
 
-const contactForm =
-    document.getElementById("contactForm");
+        const observer =
+            new IntersectionObserver(
+                entries => {
 
+                    entries.forEach(entry => {
 
-if (contactForm) {
+                        if (entry.isIntersecting) {
 
-    contactForm.addEventListener(
-        "submit",
-        (event) => {
+                            entry.target.classList.add(
+                                "nexora-visible"
+                            );
 
-            /*
-            Prevent the browser from refreshing.
+                            observer.unobserve(
+                                entry.target
+                            );
 
-            Later we'll replace this with the
-            REAL Nexora email/backend system.
-            */
+                        }
 
-            event.preventDefault();
+                    });
 
-
-            const submitButton =
-                contactForm.querySelector(
-                    ".submit-button"
-                );
-
-
-            const originalText =
-                submitButton.textContent;
+                },
+                {
+                    threshold: 0.12
+                }
+            );
 
 
-            submitButton.textContent =
-                "Sending...";
+        revealElements.forEach(element => {
+
+            element.classList.add(
+                "nexora-reveal"
+            );
+
+            observer.observe(element);
+
+        });
+
+    }
 
 
-            submitButton.disabled = true;
+    /* =====================================================
+       CONTACT FORM
+       FRONT-END DEMO FOR NOW
+    ====================================================== */
 
+    if (contactForm) {
 
-            /*
-            Fake delay for now.
-            */
-
-            setTimeout(() => {
-
-                submitButton.textContent =
-                    "✓ Request Sent";
-
-
-                submitButton.style.background =
-                    "linear-gradient(135deg, #00a8ff, #006eff)";
-
-
-                contactForm.reset();
-
-
-                setTimeout(() => {
-
-                    submitButton.textContent =
-                        originalText;
-
-                    submitButton.disabled =
-                        false;
-
-                }, 2500);
-
-
-            }, 800);
-
-        }
-    );
-
-}
-
-
-/* =========================================
-   SMOOTH SCROLL
-========================================= */
-
-document.querySelectorAll(
-    'a[href^="#"]'
-).forEach((link) => {
-
-    link.addEventListener(
-        "click",
-        function (event) {
-
-            const targetID =
-                this.getAttribute("href");
-
-
-            if (targetID === "#") {
-                return;
-            }
-
-
-            const target =
-                document.querySelector(
-                    targetID
-                );
-
-
-            if (target) {
+        contactForm.addEventListener(
+            "submit",
+            event => {
 
                 event.preventDefault();
 
 
-                target.scrollIntoView({
+                const submitButton =
+                    contactForm.querySelector(
+                        ".contact-submit"
+                    );
 
-                    behavior: "smooth",
 
-                    block: "start"
+                if (!submitButton) return;
 
-                });
+
+                const originalContent =
+                    submitButton.innerHTML;
+
+
+                submitButton.disabled = true;
+
+                submitButton.innerHTML =
+                    "Sending Request...";
+
+
+                /*
+                   TEMPORARY DEMO.
+
+                   Later this will:
+                   1. Save inquiry to Supabase
+                   2. Notify Nexora admin
+                   3. Send confirmation to customer
+                */
+
+                setTimeout(() => {
+
+                    submitButton.innerHTML =
+                        "✓ Request Received";
+
+
+                    showSiteToast(
+                        "Thanks! Your project request has been received."
+                    );
+
+
+                    contactForm.reset();
+
+
+                    setTimeout(() => {
+
+                        submitButton.disabled = false;
+
+                        submitButton.innerHTML =
+                            originalContent;
+
+                    }, 2200);
+
+                }, 700);
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       WHATSAPP
+    ====================================================== */
+
+    /*
+       Put your WhatsApp number below later.
+
+       IMPORTANT:
+       Country code + number only.
+       No + symbol, spaces, brackets or dashes.
+
+       Example:
+       const whatsappNumber = "14165551234";
+    */
+
+    const whatsappNumber = "";
+
+
+    const whatsappLinks = [
+        document.getElementById("whatsappContact"),
+        document.getElementById("footerWhatsapp")
+    ];
+
+
+    whatsappLinks.forEach(link => {
+
+        if (!link) return;
+
+
+        link.addEventListener("click", event => {
+
+            if (!whatsappNumber) {
+
+                event.preventDefault();
+
+                showSiteToast(
+                    "Nexora WhatsApp is coming soon."
+                );
+
+                return;
 
             }
 
+
+            const message =
+                encodeURIComponent(
+                    "Hi Nexora! I'm interested in creating a website."
+                );
+
+
+            link.href =
+                `https://wa.me/${whatsappNumber}?text=${message}`;
+
+        });
+
+    });
+
+
+    /* =====================================================
+       SITE TOAST
+    ====================================================== */
+
+    function showSiteToast(message) {
+
+        let toast =
+            document.getElementById(
+                "siteToast"
+            );
+
+
+        if (!toast) {
+
+            toast =
+                document.createElement("div");
+
+            toast.id =
+                "siteToast";
+
+            toast.className =
+                "site-toast";
+
+            document.body.appendChild(toast);
+
         }
-    );
+
+
+        toast.textContent = message;
+
+        toast.classList.add("show");
+
+
+        clearTimeout(
+            toast.hideTimer
+        );
+
+
+        toast.hideTimer =
+            setTimeout(() => {
+
+                toast.classList.remove("show");
+
+            }, 3500);
+
+    }
 
 });
-
-
-/* =========================================
-   COPYRIGHT YEAR
-========================================= */
-
-const footerCopyright =
-    document.querySelector(
-        ".footer-bottom p"
-    );
-
-
-if (footerCopyright) {
-
-    const year =
-        new Date().getFullYear();
-
-
-    footerCopyright.textContent =
-        `© ${year} Nexora. All rights reserved.`;
-
-}
