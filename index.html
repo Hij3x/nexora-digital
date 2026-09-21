@@ -1,113 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Nexora | Websites Built to Grow Your Business</title>
-
     <meta
         name="description"
-        content="Nexora builds modern, fast and professional websites for businesses."
+        content="Nexora creates modern, fast and professional websites for businesses, creators, organizations and individuals."
     >
+
+    <title>Nexora | Modern Web Design</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="home-page">
 
-    <!-- =========================
+    <!-- =====================================================
          NAVIGATION
-    ========================== -->
-    <header class="navbar">
-        <div class="container nav-container">
+    ====================================================== -->
 
-            <a href="#home" class="logo">
-                <span class="logo-icon">N</span>
-                <span>NEXORA</span>
+    <header class="main-header">
+
+        <nav class="navbar home-container">
+
+            <!-- YOUR ACTUAL LOGO -->
+            <a href="index.html" class="nav-logo">
+                <img
+                    src="images/nexora-logo.png"
+                    alt="Nexora"
+                >
             </a>
 
-            <nav class="nav-links" id="navLinks">
-                <a href="#home">Home</a>
-                <a href="#services">Services</a>
-                <a href="#work">Our Work</a>
-                <a href="#pricing">Pricing</a>
-                <a href="#contact">Contact</a>
-            </nav>
 
-            <a href="#contact" class="nav-button">
-                Get Your Website
-            </a>
+            <div class="nav-links" id="navLinks">
+
+                <a href="#home" class="active">
+                    Home
+                </a>
+
+                <a href="#services">
+                    Services
+                </a>
+
+                <a href="#work">
+                    Our Work
+                </a>
+
+                <a href="#pricing">
+                    Pricing
+                </a>
+
+                <a href="#about">
+                    About Us
+                </a>
+
+                <a href="#contact">
+                    Contact
+                </a>
+
+            </div>
+
+
+            <div class="nav-actions">
+
+                <a
+                    href="login.html"
+                    class="nav-login"
+                >
+                    Client Login
+                </a>
+
+                <a
+                    href="#contact"
+                    class="nav-cta"
+                >
+                    Get Your Website
+                    <span>→</span>
+                </a>
+
+            </div>
+
 
             <button
-                class="menu-button"
-                id="menuButton"
-                aria-label="Open navigation menu"
+                type="button"
+                class="mobile-menu-button"
+                id="mobileMenuButton"
+                aria-label="Open menu"
             >
-                ☰
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
 
-        </div>
+        </nav>
+
     </header>
 
 
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
     <main>
 
-        <!-- =========================
-             HERO
-        ========================== -->
-        <section class="hero" id="home">
+        <section class="new-hero" id="home">
 
-            <div class="hero-glow glow-one"></div>
-            <div class="hero-glow glow-two"></div>
+            <div class="hero-glow hero-glow-one"></div>
+            <div class="hero-glow hero-glow-two"></div>
 
-            <div class="container hero-container">
+            <div class="home-container new-hero-grid">
 
-                <div class="hero-content">
+
+                <!-- LEFT -->
+
+                <div class="new-hero-content">
 
                     <div class="hero-badge">
-                        ✦ MODERN WEB DESIGN
+                        <span></span>
+                        MODERN WEBSITES. REAL RESULTS.
                     </div>
 
+
                     <h1>
-                        Websites Built to
-                        <span>Grow Your Business.</span>
+                        Your idea deserves
+                        <span>a better website.</span>
                     </h1>
 
-                    <p>
-                        Nexora creates modern, fast and professional websites
-                        designed to help businesses stand out and turn visitors
-                        into customers.
+
+                    <p class="hero-description">
+                        Nexora creates modern, fast and professional
+                        websites built around your goals — whether
+                        you're launching a business, portfolio,
+                        online store, organization or something
+                        completely new.
                     </p>
 
-                    <div class="hero-buttons">
 
-                        <a href="#contact" class="button primary-button">
-                            Get Your Website
+                    <div class="hero-actions">
+
+                        <a
+                            href="#contact"
+                            class="hero-primary"
+                        >
+                            Start Your Website
                             <span>→</span>
                         </a>
 
-                        <a href="#work" class="button secondary-button">
-                            View Our Work
+                        <a
+                            href="#work"
+                            class="hero-secondary"
+                        >
+                            Explore Our Work
                         </a>
 
                     </div>
 
-                    <div class="hero-features">
-                        <span>✓ Mobile Friendly</span>
-                        <span>✓ Fast Loading</span>
-                        <span>✓ Modern Design</span>
+
+                    <div class="hero-benefits">
+
+                        <span>
+                            <i>✓</i>
+                            Mobile Friendly
+                        </span>
+
+                        <span>
+                            <i>✓</i>
+                            Fast Loading
+                        </span>
+
+                        <span>
+                            <i>✓</i>
+                            Modern Design
+                        </span>
+
+                        <span>
+                            <i>✓</i>
+                            Personal Support
+                        </span>
+
                     </div>
 
                 </div>
 
 
-                <!-- WEBSITE PREVIEW -->
-                <div class="hero-preview">
 
-                    <div class="browser-window">
+                <!-- RIGHT / WEBSITE SHOWCASE -->
 
-                        <div class="browser-top">
+                <div class="hero-showcase">
+
+                    <div class="showcase-orbit orbit-one"></div>
+                    <div class="showcase-orbit orbit-two"></div>
+
+
+                    <!-- MAIN BROWSER -->
+
+                    <div class="showcase-browser">
+
+                        <div class="showcase-browser-top">
+
                             <div class="browser-dots">
                                 <span></span>
                                 <span></span>
@@ -115,39 +208,115 @@
                             </div>
 
                             <div class="browser-address">
-                                yourbusiness.com
+                                <span>⌕</span>
+                                yourwebsite.com
                             </div>
+
                         </div>
 
-                        <div class="browser-content">
 
-                            <div class="demo-nav">
-                                <div class="demo-logo"></div>
+                        <div class="showcase-website">
 
-                                <div class="demo-links">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                </div>
-                            </div>
+                            <div class="showcase-mini-nav">
 
-                            <div class="demo-hero">
-
-                                <div class="demo-text">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
+                                <div class="showcase-mini-brand">
+                                    NEXORA
                                 </div>
 
-                                <div class="demo-image"></div>
+                                <div>
+                                    <span>Home</span>
+                                    <span>About</span>
+                                    <span>Services</span>
+                                    <span>Contact</span>
+                                </div>
 
                             </div>
 
-                            <div class="demo-cards">
-                                <div></div>
-                                <div></div>
-                                <div></div>
+
+                            <div class="showcase-site-content">
+
+                                <span class="showcase-label">
+                                    YOUR WEBSITE
+                                </span>
+
+                                <h2>
+                                    Built to make
+                                    an impression.
+                                </h2>
+
+                                <p>
+                                    Modern design.
+                                    Clear messaging.
+                                    Better experiences.
+                                </p>
+
+                                <div class="showcase-button">
+                                    Get Started
+                                </div>
+
                             </div>
+
+
+                            <div class="showcase-site-cards">
+
+                                <div></div>
+                                <div></div>
+                                <div></div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- PHONE -->
+
+                    <div class="showcase-phone">
+
+                        <div class="phone-speaker"></div>
+
+                        <div class="phone-content">
+
+                            <span>
+                                NEXORA
+                            </span>
+
+                            <div class="phone-line"></div>
+
+                            <strong>
+                                Beautiful on
+                                every screen.
+                            </strong>
+
+                            <div class="phone-button">
+                                Explore
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- FLOATING CARD -->
+
+                    <div class="showcase-floating-card">
+
+                        <div class="floating-icon">
+                            ⚡
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Built for speed
+                            </strong>
+
+                            <span>
+                                Fast. Responsive. Modern.
+                            </span>
 
                         </div>
 
@@ -160,66 +329,188 @@
         </section>
 
 
-        <!-- =========================
+
+        <!-- =====================================================
+             BENEFITS STRIP
+        ====================================================== -->
+
+        <section class="benefit-strip">
+
+            <div class="home-container benefit-grid">
+
+                <article>
+
+                    <div class="benefit-icon">
+                        ✦
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Modern Design
+                        </h3>
+
+                        <p>
+                            Clean, professional and made
+                            to stand out.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article>
+
+                    <div class="benefit-icon">
+                        ◇
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Mobile Optimized
+                        </h3>
+
+                        <p>
+                            Designed to look great on
+                            every device.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article>
+
+                    <div class="benefit-icon">
+                        ◎
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Built Around You
+                        </h3>
+
+                        <p>
+                            Every website starts with
+                            your goals.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article>
+
+                    <div class="benefit-icon">
+                        ↗
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Ready to Grow
+                        </h3>
+
+                        <p>
+                            Built with your next step
+                            in mind.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
              SERVICES
-        ========================== -->
-        <section class="section services" id="services">
+        ====================================================== -->
 
-            <div class="container">
+        <section class="home-section" id="services">
 
-                <div class="section-heading">
+            <div class="home-container">
 
-                    <span class="section-label">
-                        OUR SERVICES
+                <div class="section-heading centered">
+
+                    <span class="section-kicker">
+                        WHAT WE DO
                     </span>
 
                     <h2>
-                        Everything Your Business
-                        <span>Needs Online.</span>
+                        Everything you need to
+                        <span>stand out online.</span>
                     </h2>
 
                     <p>
-                        From your first website to a complete redesign,
-                        Nexora helps businesses build a professional
-                        online presence.
+                        From your first idea to launch and ongoing
+                        support, Nexora makes building your online
+                        presence simple.
                     </p>
 
                 </div>
 
 
-                <div class="services-grid">
+                <div class="services-premium-grid">
 
-                    <article class="service-card">
+                    <article class="premium-service-card featured-service">
 
-                        <div class="service-icon">
+                        <div class="service-number">
+                            01
+                        </div>
+
+                        <div class="service-large-icon">
                             ◇
                         </div>
 
-                        <h3>Website Design</h3>
+                        <h3>
+                            Website Design
+                        </h3>
 
                         <p>
-                            Modern, responsive websites designed around
-                            your business and your customers.
+                            Custom websites designed around your
+                            identity, audience and goals.
                         </p>
 
+                        <ul>
+                            <li>Custom responsive design</li>
+                            <li>Mobile optimization</li>
+                            <li>Contact forms</li>
+                            <li>Modern user experience</li>
+                        </ul>
+
                         <a href="#contact">
-                            Learn More →
+                            Start a Project →
                         </a>
 
                     </article>
 
 
-                    <article class="service-card">
+                    <article class="premium-service-card">
 
-                        <div class="service-icon">
-                            🛒
+                        <div class="service-number">
+                            02
                         </div>
 
-                        <h3>E-Commerce</h3>
+                        <div class="service-large-icon">
+                            ▣
+                        </div>
+
+                        <h3>
+                            Online Stores
+                        </h3>
 
                         <p>
-                            Professional online stores that make it easy
-                            for customers to browse and buy.
+                            Sell products and services through a
+                            professional online storefront.
                         </p>
 
                         <a href="#contact">
@@ -229,17 +520,23 @@
                     </article>
 
 
-                    <article class="service-card">
+                    <article class="premium-service-card">
 
-                        <div class="service-icon">
+                        <div class="service-number">
+                            03
+                        </div>
+
+                        <div class="service-large-icon">
                             ↻
                         </div>
 
-                        <h3>Website Redesign</h3>
+                        <h3>
+                            Website Redesign
+                        </h3>
 
                         <p>
-                            Turn an outdated website into a clean,
-                            modern and professional experience.
+                            Give an outdated website a cleaner,
+                            faster and more modern experience.
                         </p>
 
                         <a href="#contact">
@@ -249,17 +546,23 @@
                     </article>
 
 
-                    <article class="service-card">
+                    <article class="premium-service-card">
 
-                        <div class="service-icon">
+                        <div class="service-number">
+                            04
+                        </div>
+
+                        <div class="service-large-icon">
                             ⚙
                         </div>
 
-                        <h3>Website Maintenance</h3>
+                        <h3>
+                            Hosting & Support
+                        </h3>
 
                         <p>
-                            Keep your website updated, secure and
-                            running smoothly after launch.
+                            Keep your website online, secure and
+                            supported after launch.
                         </p>
 
                         <a href="#contact">
@@ -275,139 +578,187 @@
         </section>
 
 
-        <!-- =========================
-             WHY NEXORA
-        ========================== -->
-        <section class="section why-section">
 
-            <div class="container">
+        <!-- =====================================================
+             WORK
+        ====================================================== -->
 
-                <div class="section-heading">
+        <section
+            class="home-section darker-section"
+            id="work"
+        >
 
-                    <span class="section-label">
-                        WHY NEXORA
-                    </span>
-
-                    <h2>
-                        More Than Just a
-                        <span>Good-Looking Website.</span>
-                    </h2>
-
-                </div>
-
-
-                <div class="benefits-grid">
-
-                    <div class="benefit">
-                        <strong>01</strong>
-                        <h3>Built for Mobile</h3>
-                        <p>
-                            Your website will look great on phones,
-                            tablets and desktops.
-                        </p>
-                    </div>
-
-                    <div class="benefit">
-                        <strong>02</strong>
-                        <h3>Fast Performance</h3>
-                        <p>
-                            Clean development helps your website load
-                            quickly and smoothly.
-                        </p>
-                    </div>
-
-                    <div class="benefit">
-                        <strong>03</strong>
-                        <h3>Made for Your Brand</h3>
-                        <p>
-                            Every website is designed around the
-                            business instead of looking generic.
-                        </p>
-                    </div>
-
-                    <div class="benefit">
-                        <strong>04</strong>
-                        <h3>Ongoing Support</h3>
-                        <p>
-                            Need changes after launch? Nexora can help
-                            keep your site updated.
-                        </p>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             OUR WORK
-        ========================== -->
-        <section class="section work-section" id="work">
-
-            <div class="container">
+            <div class="home-container">
 
                 <div class="section-heading">
 
-                    <span class="section-label">
-                        OUR WORK
+                    <span class="section-kicker">
+                        SELECTED WORK
                     </span>
 
                     <h2>
-                        Websites That
-                        <span>Stand Out.</span>
+                        Designed to feel
+                        <span>different.</span>
                     </h2>
 
                     <p>
-                        A selection of Nexora website projects.
+                        A look at the type of digital experiences
+                        Nexora can create.
                     </p>
 
                 </div>
 
 
-                <div class="portfolio-grid">
+                <div class="work-showcase-grid">
 
-                    <div class="portfolio-card">
+                    <article class="work-project large-project">
 
-                        <div class="portfolio-placeholder">
-                            <span>PROJECT 01</span>
+                        <div class="work-preview landscaping-preview">
+
+                            <div class="work-browser">
+
+                                <span></span>
+                                <span></span>
+                                <span></span>
+
+                            </div>
+
+                            <div class="work-preview-content">
+
+                                <small>
+                                    LANDSCAPING
+                                </small>
+
+                                <strong>
+                                    Outdoor spaces,
+                                    reimagined.
+                                </strong>
+
+                            </div>
+
                         </div>
 
-                        <div class="portfolio-info">
-                            <h3>Business Website</h3>
-                            <p>Web Design • Development</p>
+                        <div class="work-project-info">
+
+                            <div>
+
+                                <h3>
+                                    John's Landscaping
+                                </h3>
+
+                                <p>
+                                    Service Website
+                                </p>
+
+                            </div>
+
+                            <span>
+                                ↗
+                            </span>
+
                         </div>
 
-                    </div>
+                    </article>
 
 
-                    <div class="portfolio-card">
+                    <article class="work-project">
 
-                        <div class="portfolio-placeholder">
-                            <span>PROJECT 02</span>
+                        <div class="work-preview portfolio-preview">
+
+                            <div class="work-browser">
+
+                                <span></span>
+                                <span></span>
+                                <span></span>
+
+                            </div>
+
+                            <div class="work-preview-content">
+
+                                <small>
+                                    PORTFOLIO
+                                </small>
+
+                                <strong>
+                                    Work worth
+                                    remembering.
+                                </strong>
+
+                            </div>
+
                         </div>
 
-                        <div class="portfolio-info">
-                            <h3>Local Business</h3>
-                            <p>Web Design • Branding</p>
+                        <div class="work-project-info">
+
+                            <div>
+
+                                <h3>
+                                    Creative Portfolio
+                                </h3>
+
+                                <p>
+                                    Personal Website
+                                </p>
+
+                            </div>
+
+                            <span>
+                                ↗
+                            </span>
+
                         </div>
 
-                    </div>
+                    </article>
 
 
-                    <div class="portfolio-card">
+                    <article class="work-project">
 
-                        <div class="portfolio-placeholder">
-                            <span>PROJECT 03</span>
+                        <div class="work-preview commerce-preview">
+
+                            <div class="work-browser">
+
+                                <span></span>
+                                <span></span>
+                                <span></span>
+
+                            </div>
+
+                            <div class="work-preview-content">
+
+                                <small>
+                                    E-COMMERCE
+                                </small>
+
+                                <strong>
+                                    Products with
+                                    personality.
+                                </strong>
+
+                            </div>
+
                         </div>
 
-                        <div class="portfolio-info">
-                            <h3>E-Commerce Store</h3>
-                            <p>E-Commerce • Development</p>
+                        <div class="work-project-info">
+
+                            <div>
+
+                                <h3>
+                                    Modern Store
+                                </h3>
+
+                                <p>
+                                    E-Commerce
+                                </p>
+
+                            </div>
+
+                            <span>
+                                ↗
+                            </span>
+
                         </div>
 
-                    </div>
+                    </article>
 
                 </div>
 
@@ -416,105 +767,205 @@
         </section>
 
 
-        <!-- =========================
+
+        <!-- =====================================================
+             ABOUT
+        ====================================================== -->
+
+        <section class="home-section" id="about">
+
+            <div class="home-container about-premium">
+
+                <div class="about-visual">
+
+                    <div class="about-grid-effect"></div>
+
+                    <div class="about-logo-card">
+
+                        <img
+                            src="images/nexora-logo.png"
+                            alt="Nexora"
+                        >
+
+                    </div>
+
+                    <div class="about-floating-stat stat-one">
+
+                        <strong>
+                            Modern
+                        </strong>
+
+                        <span>
+                            by design
+                        </span>
+
+                    </div>
+
+
+                    <div class="about-floating-stat stat-two">
+
+                        <strong>
+                            Built
+                        </strong>
+
+                        <span>
+                            around you
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="about-content">
+
+                    <span class="section-kicker">
+                        ABOUT NEXORA
+                    </span>
+
+                    <h2>
+                        Your website should feel
+                        <span>like yours.</span>
+                    </h2>
+
+                    <p>
+                        Nexora is a digital web design service
+                        focused on creating modern, functional
+                        websites without unnecessary complexity.
+                    </p>
+
+                    <p>
+                        Whether you're building something for a
+                        business, a personal brand, an organization,
+                        an event or a new idea, we work around what
+                        you actually need.
+                    </p>
+
+                    <a
+                        href="#contact"
+                        class="text-link"
+                    >
+                        Tell us about your idea →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
              PRICING
-        ========================== -->
-        <section class="section pricing-section" id="pricing">
+        ====================================================== -->
 
-            <div class="container">
+        <section
+            class="home-section darker-section"
+            id="pricing"
+        >
 
-                <div class="section-heading">
+            <div class="home-container">
 
-                    <span class="section-label">
+                <div class="section-heading centered">
+
+                    <span class="section-kicker">
                         PRICING
                     </span>
 
                     <h2>
-                        Simple Website
-                        <span>Packages.</span>
+                        A website built for
+                        <span>your project.</span>
                     </h2>
 
                     <p>
-                        Choose a starting point. Final pricing depends
-                        on your project's requirements.
+                        Every project is different. Tell us what
+                        you need and we'll provide a clear quote
+                        before work begins.
                     </p>
 
                 </div>
 
 
-                <div class="pricing-grid">
+                <div class="pricing-modern-grid">
 
-                    <article class="price-card">
+                    <article class="modern-price-card">
 
-                        <h3>Starter</h3>
+                        <span class="price-type">
+                            STARTER
+                        </span>
 
-                        <p class="price-description">
-                            Great for individuals and small businesses
-                            getting online.
+                        <h3>
+                            Simple Website
+                        </h3>
+
+                        <p>
+                            Great for smaller projects and
+                            straightforward online presence.
                         </p>
 
-                        <ul>
-                            <li>✓ Professional website</li>
-                            <li>✓ Mobile responsive</li>
-                            <li>✓ Contact form</li>
-                            <li>✓ Basic SEO setup</li>
-                        </ul>
-
-                        <a href="#contact" class="button secondary-button">
-                            Get Started
-                        </a>
-
-                    </article>
-
-
-                    <article class="price-card featured">
-
-                        <div class="popular">
-                            MOST POPULAR
+                        <div class="price-custom">
+                            Custom Quote
                         </div>
 
-                        <h3>Business</h3>
-
-                        <p class="price-description">
-                            A complete professional website for a
-                            growing business.
-                        </p>
-
-                        <ul>
-                            <li>✓ Custom website design</li>
-                            <li>✓ Multiple pages</li>
-                            <li>✓ Mobile responsive</li>
-                            <li>✓ Contact & lead forms</li>
-                            <li>✓ SEO setup</li>
-                            <li>✓ Launch support</li>
-                        </ul>
-
-                        <a href="#contact" class="button primary-button">
-                            Get Started
+                        <a href="#contact">
+                            Request Pricing →
                         </a>
 
                     </article>
 
 
-                    <article class="price-card">
+                    <article class="modern-price-card recommended-price">
 
-                        <h3>E-Commerce</h3>
+                        <div class="recommended-label">
+                            MOST FLEXIBLE
+                        </div>
 
-                        <p class="price-description">
-                            For businesses ready to sell products
-                            online.
+                        <span class="price-type">
+                            CUSTOM
+                        </span>
+
+                        <h3>
+                            Professional Website
+                        </h3>
+
+                        <p>
+                            Built around your goals with more
+                            pages, features and customization.
                         </p>
 
-                        <ul>
-                            <li>✓ Online storefront</li>
-                            <li>✓ Product pages</li>
-                            <li>✓ Shopping cart</li>
-                            <li>✓ Payment integration</li>
-                            <li>✓ Mobile responsive</li>
-                        </ul>
+                        <div class="price-custom">
+                            Custom Quote
+                        </div>
 
-                        <a href="#contact" class="button secondary-button">
-                            Get Started
+                        <a href="#contact">
+                            Start Your Project →
+                        </a>
+
+                    </article>
+
+
+                    <article class="modern-price-card">
+
+                        <span class="price-type">
+                            E-COMMERCE
+                        </span>
+
+                        <h3>
+                            Online Store
+                        </h3>
+
+                        <p>
+                            For projects that need products,
+                            payments and online selling.
+                        </p>
+
+                        <div class="price-custom">
+                            Custom Quote
+                        </div>
+
+                        <a href="#contact">
+                            Request Pricing →
                         </a>
 
                     </article>
@@ -526,137 +977,174 @@
         </section>
 
 
-        <!-- =========================
-             CONTACT
-        ========================== -->
-        <section class="section contact-section" id="contact">
 
-            <div class="container contact-container">
+        <!-- =====================================================
+             CONTACT CTA
+        ====================================================== -->
 
-                <div class="contact-content">
+        <section
+            class="home-section contact-section"
+            id="contact"
+        >
 
-                    <span class="section-label">
-                        START YOUR PROJECT
-                    </span>
+            <div class="home-container">
 
-                    <h2>
-                        Ready to Build Your
-                        <span>Website?</span>
-                    </h2>
+                <div class="contact-premium">
 
-                    <p>
-                        Tell us about your business and what you're
-                        looking for. We'll get back to you about your
-                        project.
-                    </p>
+                    <div class="contact-glow"></div>
+
+
+                    <div class="contact-copy">
+
+                        <span class="section-kicker">
+                            LET'S BUILD SOMETHING
+                        </span>
+
+                        <h2>
+                            Have an idea?
+                            <span>Let's bring it online.</span>
+                        </h2>
+
+                        <p>
+                            Tell us a little about what you're
+                            looking for. We'll review your request
+                            and get back to you.
+                        </p>
+
+
+                        <div class="contact-methods">
+
+                            <a
+                                href="mailto:hello@nexora.ca"
+                            >
+                                <span>✉</span>
+
+                                <div>
+                                    <small>EMAIL</small>
+                                    hello@nexora.ca
+                                </div>
+                            </a>
+
+
+                            <!-- ADD YOUR REAL WHATSAPP NUMBER LATER -->
+                            <a
+                                href="#"
+                                id="whatsappContact"
+                            >
+                                <span>◉</span>
+
+                                <div>
+                                    <small>WHATSAPP</small>
+                                    Chat with Nexora
+                                </div>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <form
+                        class="premium-contact-form"
+                        id="contactForm"
+                    >
+
+                        <div class="contact-field-row">
+
+                            <div class="contact-field">
+
+                                <label for="contactName">
+                                    Your Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="contactName"
+                                    required
+                                    placeholder="John Smith"
+                                >
+
+                            </div>
+
+
+                            <div class="contact-field">
+
+                                <label for="contactEmail">
+                                    Email
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="contactEmail"
+                                    required
+                                    placeholder="john@email.com"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="contact-field">
+
+                            <label for="contactType">
+                                What do you need?
+                            </label>
+
+                            <select id="contactType">
+
+                                <option>
+                                    New Website
+                                </option>
+
+                                <option>
+                                    Online Store
+                                </option>
+
+                                <option>
+                                    Website Redesign
+                                </option>
+
+                                <option>
+                                    Website Support
+                                </option>
+
+                                <option>
+                                    Something Else
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="contact-field">
+
+                            <label for="contactMessage">
+                                Tell us about your project
+                            </label>
+
+                            <textarea
+                                id="contactMessage"
+                                rows="5"
+                                required
+                                placeholder="What are you looking to build?"
+                            ></textarea>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="contact-submit"
+                        >
+                            Send Project Request
+                            <span>→</span>
+                        </button>
+
+                    </form>
 
                 </div>
-
-
-                <form class="contact-form" id="contactForm">
-
-                    <div class="form-row">
-
-                        <div class="form-group">
-                            <label for="name">Name</label>
-
-                            <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                placeholder="Your name"
-                                required
-                            >
-                        </div>
-
-
-                        <div class="form-group">
-                            <label for="email">Email</label>
-
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                placeholder="you@business.com"
-                                required
-                            >
-                        </div>
-
-                    </div>
-
-
-                    <div class="form-group">
-                        <label for="business">
-                            Business Name
-                        </label>
-
-                        <input
-                            type="text"
-                            id="business"
-                            name="business"
-                            placeholder="Your business"
-                        >
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="service">
-                            What do you need?
-                        </label>
-
-                        <select id="service" name="service">
-
-                            <option value="">
-                                Select a service
-                            </option>
-
-                            <option value="website">
-                                New Website
-                            </option>
-
-                            <option value="redesign">
-                                Website Redesign
-                            </option>
-
-                            <option value="ecommerce">
-                                E-Commerce Website
-                            </option>
-
-                            <option value="maintenance">
-                                Website Maintenance
-                            </option>
-
-                        </select>
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="message">
-                            Tell us about your project
-                        </label>
-
-                        <textarea
-                            id="message"
-                            name="message"
-                            rows="6"
-                            placeholder="Tell us a little about your business and the website you need..."
-                            required
-                        ></textarea>
-
-                    </div>
-
-
-                    <button
-                        type="submit"
-                        class="button primary-button submit-button"
-                    >
-                        Send Project Request →
-                    </button>
-
-                </form>
 
             </div>
 
@@ -665,51 +1153,221 @@
     </main>
 
 
-    <!-- =========================
-         FOOTER
-    ========================== -->
-    <footer class="footer">
 
-        <div class="container footer-container">
+    <!-- =====================================================
+         PREMIUM FOOTER
+    ====================================================== -->
+
+    <footer class="premium-footer">
+
+        <div class="footer-top-line"></div>
+
+
+        <div class="home-container footer-main">
+
+
+            <!-- BRAND -->
 
             <div class="footer-brand">
 
-                <a href="#home" class="logo">
-                    <span class="logo-icon">N</span>
-                    <span>NEXORA</span>
+                <a href="#home">
+
+                    <img
+                        src="images/nexora-logo.png"
+                        alt="Nexora"
+                    >
+
                 </a>
 
                 <p>
-                    Modern websites built for modern businesses.
+                    Modern websites built around
+                    your goals.
                 </p>
+
+                <a
+                    href="#contact"
+                    class="footer-project-link"
+                >
+                    Start a Project →
+                </a>
 
             </div>
 
 
-            <div class="footer-links">
 
-                <a href="#services">Services</a>
-                <a href="#work">Our Work</a>
-                <a href="#pricing">Pricing</a>
-                <a href="#contact">Contact</a>
+            <!-- QUICK LINKS -->
+
+            <div class="footer-column">
+
+                <h3>
+                    Explore
+                </h3>
+
+                <a href="#home">
+                    Home
+                </a>
+
+                <a href="#services">
+                    Services
+                </a>
+
+                <a href="#work">
+                    Our Work
+                </a>
+
+                <a href="#pricing">
+                    Pricing
+                </a>
+
+                <a href="#about">
+                    About Us
+                </a>
+
+                <a href="#contact">
+                    Contact
+                </a>
+
+            </div>
+
+
+
+            <!-- CLIENT -->
+
+            <div class="footer-column">
+
+                <h3>
+                    Clients
+                </h3>
+
+                <a href="login.html">
+                    Client Login
+                </a>
+
+                <a href="login.html">
+                    My Websites
+                </a>
+
+                <a href="#contact">
+                    Support
+                </a>
+
+                <a href="#contact">
+                    Start New Project
+                </a>
+
+            </div>
+
+
+
+            <!-- LEGAL -->
+
+            <div class="footer-column">
+
+                <h3>
+                    Legal
+                </h3>
+
+                <a href="privacy.html">
+                    Privacy Policy
+                </a>
+
+                <a href="terms.html">
+                    Terms & Conditions
+                </a>
+
+                <a href="cookies.html">
+                    Cookie Policy
+                </a>
+
+                <a href="report-abuse.html">
+                    Report Abuse
+                </a>
+
+            </div>
+
+
+
+            <!-- CONTACT -->
+
+            <div class="footer-column footer-contact">
+
+                <h3>
+                    Get in Touch
+                </h3>
+
+                <a href="mailto:hello@nexora.ca">
+                    <span>✉</span>
+                    hello@nexora.ca
+                </a>
+
+                <!--
+                    IMPORTANT:
+                    Replace # with your WhatsApp link
+                    when you give me the number.
+                -->
+                <a
+                    href="#"
+                    id="footerWhatsapp"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <span>◉</span>
+                    Chat on WhatsApp
+                </a>
+
+                <p>
+                    Ontario, Canada
+                </p>
 
             </div>
 
         </div>
 
 
-        <div class="container footer-bottom">
+
+        <!-- BOTTOM -->
+
+        <div class="home-container footer-bottom">
 
             <p>
-                © 2026 Nexora. All rights reserved.
+                © <span id="currentYear">2026</span>
+                Nexora. All rights reserved.
             </p>
+
+
+            <div class="footer-bottom-links">
+
+                <a href="privacy.html">
+                    Privacy
+                </a>
+
+                <span>•</span>
+
+                <a href="terms.html">
+                    Terms
+                </a>
+
+                <span>•</span>
+
+                <a href="cookies.html">
+                    Cookies
+                </a>
+
+                <span>•</span>
+
+                <a href="report-abuse.html">
+                    Report Abuse
+                </a>
+
+            </div>
 
         </div>
 
     </footer>
 
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 
 </body>
+
 </html>

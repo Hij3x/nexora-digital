@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Website Requests | Nexora</title>
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="dashboard-body admin-body">
+
+<div class="dashboard-layout">
+
+    <!-- ==================================================
+         SIDEBAR
+    =================================================== -->
+
+    <aside class="sidebar admin-sidebar">
+
+        <a href="../index.html" class="dashboard-logo">
+            <img
+                src="../images/nexora-logo.png"
+                alt="Nexora"
+                class="dashboard-logo-image"
+            >
+        </a>
+
+        <div class="admin-label">
+            ADMIN PORTAL
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html">
+                <span>⌂</span>
+                Overview
+            </a>
+
+            <a href="clients.html">
+                <span>◎</span>
+                Clients
+            </a>
+
+            <a href="projects.html" class="active">
+                <span>▣</span>
+                Website Requests
+
+                <small class="admin-nav-count">
+                    3
+                </small>
+            </a>
+
+            <a href="payments.html">
+                <span>◇</span>
+                Payments
+            </a>
+
+            <a href="support.html">
+                <span>◯</span>
+                Support
+
+                <small class="admin-nav-count">
+                    2
+                </small>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <a href="#">
+                ⚙ Settings
+            </a>
+
+            <a href="../login.html">
+                ↪ Sign Out
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ==================================================
+         MAIN
+    =================================================== -->
+
+    <main class="dashboard-main">
+
+        <!-- TOPBAR -->
+
+        <header class="dashboard-topbar">
+
+            <div class="dashboard-search">
+
+                <span>⌕</span>
+
+                <input
+                    type="text"
+                    id="projectSearch"
+                    placeholder="Search requests..."
+                >
+
+            </div>
+
+            <div class="dashboard-account">
+
+                <button
+                    type="button"
+                    class="notification-button"
+                    id="adminNotifications"
+                >
+                    ♢
+                    <span></span>
+                </button>
+
+                <div class="avatar">
+                    NX
+                </div>
+
+                <div class="account-name">
+
+                    <strong>
+                        Nexora Admin
+                    </strong>
+
+                    <span>
+                        Administrator
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ==================================================
+             CONTENT
+        =================================================== -->
+
+        <div class="dashboard-content">
+
+            <!-- PAGE HEADER -->
+
+            <section class="projects-hero">
+
+                <div>
+
+                    <span class="dashboard-eyebrow">
+                        PROJECT MANAGEMENT
+                    </span>
+
+                    <h1>
+                        Website Requests
+                    </h1>
+
+                    <p>
+                        Review new requests, prepare quotes and
+                        manage projects from request to launch.
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="admin-primary-button"
+                    id="createProjectButton"
+                >
+                    + Create Project
+                </button>
+
+            </section>
+
+
+            <!-- ==================================================
+                 MINI STATS
+            =================================================== -->
+
+            <section class="project-stat-grid">
+
+                <article class="project-stat-card">
+
+                    <div class="project-stat-icon new">
+                        ✦
+                    </div>
+
+                    <div>
+
+                        <span>
+                            NEW REQUESTS
+                        </span>
+
+                        <strong>
+                            3
+                        </strong>
+
+                    </div>
+
+                </article>
+
+
+                <article class="project-stat-card">
+
+                    <div class="project-stat-icon quote">
+                        $
+                    </div>
+
+                    <div>
+
+                        <span>
+                            QUOTES SENT
+                        </span>
+
+                        <strong>
+                            2
+                        </strong>
+
+                    </div>
+
+                </article>
+
+
+                <article class="project-stat-card">
+
+                    <div class="project-stat-icon build">
+                        ◇
+                    </div>
+
+                    <div>
+
+                        <span>
+                            IN DEVELOPMENT
+                        </span>
+
+                        <strong>
+                            4
+                        </strong>
+
+                    </div>
+
+                </article>
+
+
+                <article class="project-stat-card">
+
+                    <div class="project-stat-icon live">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <span>
+                            LIVE
+                        </span>
+
+                        <strong>
+                            16
+                        </strong>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+            <!-- ==================================================
+                 FILTER BAR
+            =================================================== -->
+
+            <section class="project-toolbar">
+
+                <div class="project-tabs">
+
+                    <button
+                        type="button"
+                        class="project-tab active"
+                        data-filter="all"
+                    >
+                        All
+                    </button>
+
+                    <button
+                        type="button"
+                        class="project-tab"
+                        data-filter="new"
+                    >
+                        New
+                    </button>
+
+                    <button
+                        type="button"
+                        class="project-tab"
+                        data-filter="quote"
+                    >
+                        Quote Sent
+                    </button>
+
+                    <button
+                        type="button"
+                        class="project-tab"
+                        data-filter="development"
+                    >
+                        Development
+                    </button>
+
+                    <button
+                        type="button"
+                        class="project-tab"
+                        data-filter="review"
+                    >
+                        Review
+                    </button>
+
+                    <button
+                        type="button"
+                        class="project-tab"
+                        data-filter="live"
+                    >
+                        Live
+                    </button>
+
+                </div>
+
+
+                <select id="projectSort">
+
+                    <option value="newest">
+                        Newest First
+                    </option>
+
+                    <option value="oldest">
+                        Oldest First
+                    </option>
+
+                    <option value="name">
+                        Project Name
+                    </option>
+
+                </select>
+
+            </section>
+
+
+            <!-- ==================================================
+                 PROJECTS
+            =================================================== -->
+
+            <section
+                class="premium-project-list"
+                id="projectList"
+            >
+
+                <!-- ==========================================
+                     SARAH
+                =========================================== -->
+
+                <article
+                    class="premium-project-card"
+                    data-status="new"
+                    data-name="Sarah's Portfolio"
+                    data-client="Sarah Smith"
+                >
+
+                    <div class="project-card-accent"></div>
+
+                    <div class="premium-project-main">
+
+                        <div class="premium-project-icon">
+                            SP
+                        </div>
+
+                        <div class="premium-project-details">
+
+                            <div class="premium-project-title">
+
+                                <div>
+
+                                    <h2>
+                                        Sarah's Portfolio
+                                    </h2>
+
+                                    <p>
+                                        Sarah Smith
+                                    </p>
+
+                                </div>
+
+                                <span class="project-status status-new">
+                                    ● New Request
+                                </span>
+
+                            </div>
+
+
+                            <div class="project-meta">
+
+                                <div>
+                                    <span>TYPE</span>
+                                    <strong>Portfolio</strong>
+                                </div>
+
+                                <div>
+                                    <span>DOMAIN</span>
+                                    <strong>Not purchased</strong>
+                                </div>
+
+                                <div>
+                                    <span>STYLE</span>
+                                    <strong>Modern, Minimal</strong>
+                                </div>
+
+                                <div>
+                                    <span>SUBMITTED</span>
+                                    <strong>Today</strong>
+                                </div>
+
+                            </div>
+
+
+                            <div class="project-feature-tags">
+
+                                <span>Photo Gallery</span>
+                                <span>Contact Form</span>
+                                <span>Social Media</span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="premium-project-actions">
+
+                        <button
+                            type="button"
+                            class="project-secondary-action message-client"
+                        >
+                            Message
+                        </button>
+
+                        <button
+                            type="button"
+                            class="project-primary-action review-project"
+                        >
+                            Review Request →
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ==========================================
+                     TORONTO EVENTS
+                =========================================== -->
+
+                <article
+                    class="premium-project-card"
+                    data-status="new"
+                    data-name="Toronto Events"
+                    data-client="Alex Carter"
+                >
+
+                    <div class="project-card-accent"></div>
+
+                    <div class="premium-project-main">
+
+                        <div class="premium-project-icon">
+                            TE
+                        </div>
+
+                        <div class="premium-project-details">
+
+                            <div class="premium-project-title">
+
+                                <div>
+
+                                    <h2>
+                                        Toronto Events
+                                    </h2>
+
+                                    <p>
+                                        Alex Carter
+                                    </p>
+
+                                </div>
+
+                                <span class="project-status status-new">
+                                    ● New Request
+                                </span>
+
+                            </div>
+
+
+                            <div class="project-meta">
+
+                                <div>
+                                    <span>TYPE</span>
+                                    <strong>Event Website</strong>
+                                </div>
+
+                                <div>
+                                    <span>DOMAIN</span>
+                                    <strong>Needs domain</strong>
+                                </div>
+
+                                <div>
+                                    <span>STYLE</span>
+                                    <strong>Bold, Creative</strong>
+                                </div>
+
+                                <div>
+                                    <span>SUBMITTED</span>
+                                    <strong>Yesterday</strong>
+                                </div>
+
+                            </div>
+
+
+                            <div class="project-feature-tags">
+
+                                <span>Booking</span>
+                                <span>Online Payments</span>
+                                <span>Newsletter</span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="premium-project-actions">
+
+                        <button
+                            type="button"
+                            class="project-secondary-action message-client"
+                        >
+                            Message
+                        </button>
+
+                        <button
+                            type="button"
+                            class="project-primary-action review-project"
+                        >
+                            Review Request →
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ==========================================
+                     NORTHLINE
+                =========================================== -->
+
+                <article
+                    class="premium-project-card"
+                    data-status="new"
+                    data-name="Northline Studio"
+                    data-client="Emma Wilson"
+                >
+
+                    <div class="project-card-accent"></div>
+
+                    <div class="premium-project-main">
+
+                        <div class="premium-project-icon">
+                            NS
+                        </div>
+
+                        <div class="premium-project-details">
+
+                            <div class="premium-project-title">
+
+                                <div>
+
+                                    <h2>
+                                        Northline Studio
+                                    </h2>
+
+                                    <p>
+                                        Emma Wilson
+                                    </p>
+
+                                </div>
+
+                                <span class="project-status status-new">
+                                    ● New Request
+                                </span>
+
+                            </div>
+
+
+                            <div class="project-meta">
+
+                                <div>
+                                    <span>TYPE</span>
+                                    <strong>Business Website</strong>
+                                </div>
+
+                                <div>
+                                    <span>DOMAIN</span>
+                                    <strong>northlinestudio.ca</strong>
+                                </div>
+
+                                <div>
+                                    <span>STYLE</span>
+                                    <strong>Luxury, Dark</strong>
+                                </div>
+
+                                <div>
+                                    <span>SUBMITTED</span>
+                                    <strong>Sep. 19</strong>
+                                </div>
+
+                            </div>
+
+
+                            <div class="project-feature-tags">
+
+                                <span>Contact Form</span>
+                                <span>Gallery</span>
+                                <span>Testimonials</span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="premium-project-actions">
+
+                        <button
+                            type="button"
+                            class="project-secondary-action message-client"
+                        >
+                            Message
+                        </button>
+
+                        <button
+                            type="button"
+                            class="project-primary-action review-project"
+                        >
+                            Review Request →
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ==========================================
+                     QUOTE SENT EXAMPLE
+                =========================================== -->
+
+                <article
+                    class="premium-project-card"
+                    data-status="quote"
+                    data-name="Apex Fitness"
+                    data-client="Daniel Brooks"
+                >
+
+                    <div class="project-card-accent"></div>
+
+                    <div class="premium-project-main">
+
+                        <div class="premium-project-icon">
+                            AF
+                        </div>
+
+                        <div class="premium-project-details">
+
+                            <div class="premium-project-title">
+
+                                <div>
+
+                                    <h2>
+                                        Apex Fitness
+                                    </h2>
+
+                                    <p>
+                                        Daniel Brooks
+                                    </p>
+
+                                </div>
+
+                                <span class="project-status status-quote">
+                                    ● Quote Sent
+                                </span>
+
+                            </div>
+
+
+                            <div class="project-meta">
+
+                                <div>
+                                    <span>TYPE</span>
+                                    <strong>Business Website</strong>
+                                </div>
+
+                                <div>
+                                    <span>QUOTE</span>
+                                    <strong>$850.00</strong>
+                                </div>
+
+                                <div>
+                                    <span>STYLE</span>
+                                    <strong>Bold, Dark</strong>
+                                </div>
+
+                                <div>
+                                    <span>UPDATED</span>
+                                    <strong>Sep. 18</strong>
+                                </div>
+
+                            </div>
+
+
+                            <div class="project-feature-tags">
+
+                                <span>Booking</span>
+                                <span>Contact Form</span>
+                                <span>Gallery</span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="premium-project-actions">
+
+                        <button
+                            type="button"
+                            class="project-secondary-action message-client"
+                        >
+                            Message
+                        </button>
+
+                        <button
+                            type="button"
+                            class="project-primary-action review-project"
+                        >
+                            Open Project →
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ==========================================
+                     DEVELOPMENT EXAMPLE
+                =========================================== -->
+
+                <article
+                    class="premium-project-card"
+                    data-status="development"
+                    data-name="Oak & Stone"
+                    data-client="Michael Lee"
+                >
+
+                    <div class="project-card-accent"></div>
+
+                    <div class="premium-project-main">
+
+                        <div class="premium-project-icon">
+                            OS
+                        </div>
+
+                        <div class="premium-project-details">
+
+                            <div class="premium-project-title">
+
+                                <div>
+
+                                    <h2>
+                                        Oak & Stone
+                                    </h2>
+
+                                    <p>
+                                        Michael Lee
+                                    </p>
+
+                                </div>
+
+                                <span class="project-status status-development">
+                                    ● In Development
+                                </span>
+
+                            </div>
+
+
+                            <div class="project-meta">
+
+                                <div>
+                                    <span>TYPE</span>
+                                    <strong>Online Store</strong>
+                                </div>
+
+                                <div>
+                                    <span>DOMAIN</span>
+                                    <strong>oakandstone.ca</strong>
+                                </div>
+
+                                <div>
+                                    <span>PROGRESS</span>
+                                    <strong>65%</strong>
+                                </div>
+
+                                <div>
+                                    <span>DUE</span>
+                                    <strong>Oct. 4</strong>
+                                </div>
+
+                            </div>
+
+
+                            <div class="project-progress">
+
+                                <div>
+                                    <span style="width:65%"></span>
+                                </div>
+
+                                <small>
+                                    Development 65%
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="premium-project-actions">
+
+                        <button
+                            type="button"
+                            class="project-secondary-action message-client"
+                        >
+                            Message
+                        </button>
+
+                        <button
+                            type="button"
+                            class="project-primary-action review-project"
+                        >
+                            Manage Project →
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+            <!-- NO RESULTS -->
+
+            <div
+                class="projects-empty"
+                id="projectsEmpty"
+            >
+                <div>⌕</div>
+
+                <h3>
+                    No projects found
+                </h3>
+
+                <p>
+                    Try changing your search or filter.
+                </p>
+            </div>
+
+
+            <!-- FOOTER -->
+
+            <footer class="dashboard-footer">
+
+                <span>
+                    © 2026 Nexora
+                </span>
+
+                <span class="system-operational">
+                    <i></i>
+                    Admin system operational
+                </span>
+
+                <span>
+                    Project Management
+                </span>
+
+            </footer>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- ==================================================
+     PROJECT DETAILS PANEL
+=================================================== -->
+
+<div
+    class="project-panel-overlay"
+    id="projectPanelOverlay"
+></div>
+
+
+<aside
+    class="project-detail-panel"
+    id="projectDetailPanel"
+>
+
+    <div class="project-panel-header">
+
+        <div>
+
+            <span class="dashboard-eyebrow">
+                WEBSITE REQUEST
+            </span>
+
+            <h2 id="panelProjectName">
+                Sarah's Portfolio
+            </h2>
+
+            <p id="panelClientName">
+                Sarah Smith
+            </p>
+
+        </div>
+
+        <button
+            type="button"
+            id="closeProjectPanel"
+            class="close-project-panel"
+        >
+            ×
+        </button>
+
+    </div>
+
+
+    <div class="project-panel-content">
+
+        <div class="panel-status-row">
+
+            <span>
+                STATUS
+            </span>
+
+            <strong class="project-status status-new">
+                ● New Request
+            </strong>
+
+        </div>
+
+
+        <section class="panel-section">
+
+            <span class="dashboard-eyebrow">
+                PROJECT DETAILS
+            </span>
+
+            <div class="panel-detail-grid">
+
+                <div>
+                    <span>Website Type</span>
+                    <strong id="panelType">
+                        Portfolio
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Domain</span>
+                    <strong id="panelDomain">
+                        Not purchased
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Design Style</span>
+                    <strong id="panelStyle">
+                        Modern, Minimal
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Submitted</span>
+                    <strong>
+                        Today
+                    </strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="panel-section">
+
+            <span class="dashboard-eyebrow">
+                CLIENT NOTES
+            </span>
+
+            <div class="panel-client-note">
+
+                I want a clean portfolio website to
+                showcase my design work, projects and
+                contact information.
+
+            </div>
+
+        </section>
+
+
+        <section class="panel-section">
+
+            <span class="dashboard-eyebrow">
+                REQUESTED FEATURES
+            </span>
+
+            <div class="project-feature-tags">
+                <span>Photo Gallery</span>
+                <span>Contact Form</span>
+                <span>Social Media</span>
+            </div>
+
+        </section>
+
+
+        <!-- QUOTE -->
+
+        <section class="panel-section">
+
+            <span class="dashboard-eyebrow">
+                CREATE QUOTE
+            </span>
+
+            <div class="quote-builder">
+
+                <div class="builder-field">
+
+                    <label for="quoteAmount">
+                        Project Price
+                    </label>
+
+                    <div class="quote-input">
+
+                        <span>$</span>
+
+                        <input
+                            type="number"
+                            id="quoteAmount"
+                            placeholder="0.00"
+                            min="0"
+                            step="0.01"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="builder-field">
+
+                    <label for="quoteNote">
+                        Quote Note
+                    </label>
+
+                    <textarea
+                        id="quoteNote"
+                        rows="4"
+                        placeholder="Optional message about the quote..."
+                    ></textarea>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- PANEL ACTIONS -->
+
+    <div class="project-panel-actions">
+
+        <button
+            type="button"
+            class="panel-message-button"
+            id="panelMessageClient"
+        >
+            Message Client
+        </button>
+
+        <button
+            type="button"
+            class="panel-quote-button"
+            id="sendQuoteButton"
+        >
+            Send Quote →
+        </button>
+
+    </div>
+
+</aside>
+
+
+<script src="../js/admin.js"></script>
+<script src="../js/projects.js"></script>
+
+</body>
+
+</html>
