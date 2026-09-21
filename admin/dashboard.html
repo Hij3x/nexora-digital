@@ -1,60 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Nexora Admin</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Admin Dashboard | Nexora</title>
+
+    <link rel="stylesheet" href="../style.css">
 </head>
 
-<body class="dashboard-body">
+<body class="dashboard-body admin-body">
 
-<div class="dashboard-layout admin-layout">
+<div class="dashboard-layout">
 
-    <!-- SIDEBAR -->
+    <!-- ==========================================
+         ADMIN SIDEBAR
+    =========================================== -->
+
     <aside class="sidebar admin-sidebar">
 
-        <a href="admin-dashboard.html" class="dashboard-logo">
-            <span class="logo-icon">N</span>
-            <span>NEXORA</span>
-            <small>ADMIN</small>
+        <a href="../index.html" class="dashboard-logo">
+            <img
+                src="../images/nexora-logo.png"
+                alt="Nexora"
+                class="dashboard-logo-image"
+            >
         </a>
+
+        <div class="admin-label">
+            ADMIN PORTAL
+        </div>
 
         <nav class="sidebar-nav">
 
-            <a href="#" class="active">
+            <a href="dashboard.html" class="active">
                 <span>⌂</span>
                 Overview
             </a>
 
-            <a href="#">
+            <a href="clients.html">
                 <span>◎</span>
                 Clients
             </a>
 
-            <a href="#">
-                <span>◇</span>
+            <a href="projects.html">
+                <span>▣</span>
                 Website Requests
 
-                <i class="admin-nav-count">3</i>
+                <small class="admin-nav-count">
+                    3
+                </small>
             </a>
 
-            <a href="#">
-                <span>▣</span>
-                Websites
-            </a>
-
-            <a href="#">
-                <span>$</span>
+            <a href="payments.html">
+                <span>◇</span>
                 Payments
             </a>
 
-            <a href="#">
+            <a href="support.html">
                 <span>◯</span>
                 Support
 
-                <i class="admin-nav-count">2</i>
+                <small class="admin-nav-count">
+                    2
+                </small>
             </a>
 
         </nav>
@@ -65,7 +75,7 @@
                 ⚙ Settings
             </a>
 
-            <a href="index.html">
+            <a href="../login.html">
                 ↪ Sign Out
             </a>
 
@@ -74,10 +84,14 @@
     </aside>
 
 
-    <!-- MAIN -->
+    <!-- ==========================================
+         MAIN
+    =========================================== -->
+
     <main class="dashboard-main">
 
         <!-- TOPBAR -->
+
         <header class="dashboard-topbar">
 
             <div class="dashboard-search">
@@ -86,14 +100,21 @@
 
                 <input
                     type="text"
-                    placeholder="Search clients, websites, projects..."
+                    id="adminSearch"
+                    placeholder="Search clients, projects..."
                 >
 
             </div>
 
+
             <div class="dashboard-account">
 
-                <button class="notification-button">
+                <button
+                    type="button"
+                    class="notification-button"
+                    id="adminNotifications"
+                    aria-label="Notifications"
+                >
                     ♢
                     <span></span>
                 </button>
@@ -103,8 +124,15 @@
                 </div>
 
                 <div class="account-name">
-                    <strong>Nexora Admin</strong>
-                    <span>Administrator</span>
+
+                    <strong>
+                        Nexora Admin
+                    </strong>
+
+                    <span>
+                        Administrator
+                    </span>
+
                 </div>
 
             </div>
@@ -112,45 +140,71 @@
         </header>
 
 
+        <!-- ======================================
+             CONTENT
+        ======================================= -->
+
         <div class="dashboard-content">
 
+
             <!-- WELCOME -->
+
             <section class="admin-welcome">
 
                 <div>
 
                     <span class="dashboard-eyebrow">
-                        ADMIN DASHBOARD
+                        NEXORA ADMIN
                     </span>
 
                     <h1>
-                        Welcome back 👋
+                        Welcome back.
                     </h1>
 
                     <p>
-                        Here's what's happening with Nexora.
+                        Manage clients, website requests,
+                        payments and support from one place.
                     </p>
 
                 </div>
 
-                <button class="admin-primary-button">
+                <button
+                    type="button"
+                    class="admin-primary-button"
+                    id="addClientButton"
+                >
                     + Add Client
                 </button>
 
             </section>
 
 
-            <!-- STATS -->
-            <section class="admin-stats">
+            <!-- ==================================
+                 STATS
+            =================================== -->
+
+            <section class="admin-stats-grid">
 
                 <article class="admin-stat-card">
 
-                    <span>CLIENTS</span>
+                    <div class="admin-stat-top">
 
-                    <strong>12</strong>
+                        <span>
+                            CLIENTS
+                        </span>
+
+                        <i>
+                            ◎
+                        </i>
+
+                    </div>
+
+                    <strong id="totalClients">
+                        12
+                    </strong>
 
                     <small>
-                        10 active
+                        Total clients
                     </small>
 
                 </article>
@@ -158,12 +212,49 @@
 
                 <article class="admin-stat-card">
 
-                    <span>LIVE WEBSITES</span>
+                    <div class="admin-stat-top">
 
-                    <strong>16</strong>
+                        <span>
+                            LIVE WEBSITES
+                        </span>
+
+                        <i>
+                            ◇
+                        </i>
+
+                    </div>
+
+                    <strong id="liveWebsites">
+                        16
+                    </strong>
+
+                    <small class="admin-positive">
+                        ● All operational
+                    </small>
+
+                </article>
+
+
+                <article class="admin-stat-card">
+
+                    <div class="admin-stat-top">
+
+                        <span>
+                            NEW REQUESTS
+                        </span>
+
+                        <i>
+                            ▣
+                        </i>
+
+                    </div>
+
+                    <strong id="newRequests">
+                        3
+                    </strong>
 
                     <small>
-                        All operational
+                        Waiting for review
                     </small>
 
                 </article>
@@ -171,22 +262,21 @@
 
                 <article class="admin-stat-card">
 
-                    <span>NEW REQUESTS</span>
+                    <div class="admin-stat-top">
 
-                    <strong>3</strong>
+                        <span>
+                            MONTHLY RECURRING
+                        </span>
 
-                    <small class="stat-blue">
-                        Needs review
-                    </small>
+                        <i>
+                            $
+                        </i>
 
-                </article>
+                    </div>
 
-
-                <article class="admin-stat-card">
-
-                    <span>MONTHLY RECURRING</span>
-
-                    <strong>$239.84</strong>
+                    <strong id="monthlyRevenue">
+                        $239.84
+                    </strong>
 
                     <small>
                         Hosting revenue
@@ -197,82 +287,102 @@
             </section>
 
 
-            <!-- REQUESTS -->
+            <!-- ==================================
+                 NEW WEBSITE REQUESTS
+            =================================== -->
+
             <section class="admin-section">
 
                 <div class="admin-section-header">
 
                     <div>
+
                         <span class="dashboard-eyebrow">
-                            INCOMING
+                            PROJECTS
                         </span>
 
                         <h2>
                             New Website Requests
                         </h2>
+
                     </div>
 
-                    <button class="admin-text-button">
+                    <a
+                        href="projects.html"
+                        class="admin-view-all"
+                    >
                         View All →
-                    </button>
+                    </a>
 
                 </div>
 
 
-                <div class="request-list">
+                <div class="admin-request-list">
+
 
                     <!-- REQUEST 1 -->
-                    <article class="request-card">
 
-                        <div class="request-icon">
-                            SP
-                        </div>
+                    <article
+                        class="admin-request-card"
+                        data-project="Sarah's Portfolio"
+                    >
 
                         <div class="request-main">
 
-                            <div class="request-title">
+                            <div class="request-icon">
+                                SP
+                            </div>
 
-                                <div>
+                            <div>
+
+                                <div class="request-title-row">
+
                                     <h3>
                                         Sarah's Portfolio
                                     </h3>
 
-                                    <p>
-                                        Sarah Smith
-                                    </p>
+                                    <span class="request-new">
+                                        NEW
+                                    </span>
+
                                 </div>
 
-                                <span class="request-status">
-                                    NEW
-                                </span>
+                                <p>
+                                    Sarah Smith
+                                </p>
+
+                                <div class="request-tags">
+
+                                    <span>
+                                        Portfolio
+                                    </span>
+
+                                    <span>
+                                        Modern
+                                    </span>
+
+                                    <span>
+                                        Gallery
+                                    </span>
+
+                                </div>
 
                             </div>
 
+                        </div>
 
-                            <div class="request-tags">
+                        <div class="request-side">
 
-                                <span>Portfolio</span>
-                                <span>Modern</span>
-                                <span>Minimal</span>
-                                <span>Gallery</span>
+                            <small>
+                                Today
+                            </small>
 
-                            </div>
-
-
-                            <div class="request-footer">
-
-                                <small>
-                                    Submitted 12 minutes ago
-                                </small>
-
-                                <button
-                                    class="review-request"
-                                    data-project="Sarah's Portfolio"
-                                >
-                                    Review Request →
-                                </button>
-
-                            </div>
+                            <button
+                                type="button"
+                                class="review-request-button"
+                            >
+                                Review Request →
+                            </button>
 
                         </div>
 
@@ -280,56 +390,68 @@
 
 
                     <!-- REQUEST 2 -->
-                    <article class="request-card">
 
-                        <div class="request-icon">
-                            TE
-                        </div>
+                    <article
+                        class="admin-request-card"
+                        data-project="Toronto Events"
+                    >
 
                         <div class="request-main">
 
-                            <div class="request-title">
+                            <div class="request-icon">
+                                TE
+                            </div>
 
-                                <div>
+                            <div>
+
+                                <div class="request-title-row">
+
                                     <h3>
                                         Toronto Events
                                     </h3>
 
-                                    <p>
-                                        Alex Carter
-                                    </p>
+                                    <span class="request-new">
+                                        NEW
+                                    </span>
+
                                 </div>
 
-                                <span class="request-status">
-                                    NEW
-                                </span>
+                                <p>
+                                    Alex Carter
+                                </p>
+
+                                <div class="request-tags">
+
+                                    <span>
+                                        Event Website
+                                    </span>
+
+                                    <span>
+                                        Bold
+                                    </span>
+
+                                    <span>
+                                        Booking
+                                    </span>
+
+                                </div>
 
                             </div>
 
+                        </div>
 
-                            <div class="request-tags">
+                        <div class="request-side">
 
-                                <span>Event</span>
-                                <span>Bold</span>
-                                <span>Bookings</span>
+                            <small>
+                                Yesterday
+                            </small>
 
-                            </div>
-
-
-                            <div class="request-footer">
-
-                                <small>
-                                    Submitted 1 hour ago
-                                </small>
-
-                                <button
-                                    class="review-request"
-                                    data-project="Toronto Events"
-                                >
-                                    Review Request →
-                                </button>
-
-                            </div>
+                            <button
+                                type="button"
+                                class="review-request-button"
+                            >
+                                Review Request →
+                            </button>
 
                         </div>
 
@@ -340,93 +462,115 @@
             </section>
 
 
-            <!-- LOWER GRID -->
+            <!-- ==================================
+                 LOWER GRID
+            =================================== -->
+
             <section class="admin-lower-grid">
 
 
-                <!-- CLIENTS -->
-                <article class="admin-panel">
+                <!-- RECENT CLIENTS -->
 
-                    <div class="admin-panel-header">
+                <article class="dashboard-card">
 
-                        <h2>
-                            Recent Clients
-                        </h2>
+                    <div class="dashboard-card-header">
 
-                        <button>
+                        <div>
+
+                            <span class="dashboard-eyebrow">
+                                CLIENTS
+                            </span>
+
+                            <h2>
+                                Recent Clients
+                            </h2>
+
+                        </div>
+
+                        <a
+                            href="clients.html"
+                            class="admin-view-all"
+                        >
                             View All →
-                        </button>
+                        </a>
 
                     </div>
 
 
                     <div class="admin-client-list">
 
-                        <div class="admin-client">
+
+                        <div class="admin-client-row">
 
                             <div class="admin-client-avatar">
                                 JD
                             </div>
 
-                            <div>
+                            <div class="admin-client-info">
+
                                 <strong>
                                     John Doe
                                 </strong>
 
                                 <span>
-                                    2 websites
+                                    John's Landscaping
                                 </span>
+
                             </div>
 
-                            <i class="active-client">
+                            <span class="admin-client-status">
                                 Active
-                            </i>
+                            </span>
 
                         </div>
 
 
-                        <div class="admin-client">
+                        <div class="admin-client-row">
 
                             <div class="admin-client-avatar">
                                 SS
                             </div>
 
-                            <div>
+                            <div class="admin-client-info">
+
                                 <strong>
                                     Sarah Smith
                                 </strong>
 
                                 <span>
-                                    Project pending
+                                    Portfolio Request
                                 </span>
+
                             </div>
 
-                            <i class="pending-client">
-                                Pending
-                            </i>
+                            <span class="admin-client-status pending">
+                                New
+                            </span>
 
                         </div>
 
 
-                        <div class="admin-client">
+                        <div class="admin-client-row">
 
                             <div class="admin-client-avatar">
                                 AC
                             </div>
 
-                            <div>
+                            <div class="admin-client-info">
+
                                 <strong>
                                     Alex Carter
                                 </strong>
 
                                 <span>
-                                    Project pending
+                                    Toronto Events
                                 </span>
+
                             </div>
 
-                            <i class="pending-client">
-                                Pending
-                            </i>
+                            <span class="admin-client-status pending">
+                                New
+                            </span>
 
                         </div>
 
@@ -435,34 +579,47 @@
                 </article>
 
 
-                <!-- PAYMENTS -->
-                <article class="admin-panel">
+                <!-- RECENT PAYMENTS -->
 
-                    <div class="admin-panel-header">
+                <article class="dashboard-card">
 
-                        <h2>
-                            Recent Payments
-                        </h2>
+                    <div class="dashboard-card-header">
 
-                        <button>
+                        <div>
+
+                            <span class="dashboard-eyebrow">
+                                BILLING
+                            </span>
+
+                            <h2>
+                                Recent Payments
+                            </h2>
+
+                        </div>
+
+                        <a
+                            href="payments.html"
+                            class="admin-view-all"
+                        >
                             View All →
-                        </button>
+                        </a>
 
                     </div>
 
 
                     <div class="admin-payment-list">
 
-                        <div class="admin-payment">
+
+                        <div class="admin-payment-row">
 
                             <div>
 
                                 <strong>
-                                    John's Landscaping
+                                    John Doe
                                 </strong>
 
                                 <span>
-                                    Monthly Hosting
+                                    Hosting
                                 </span>
 
                             </div>
@@ -473,7 +630,7 @@
                                     $14.99
                                 </strong>
 
-                                <span>
+                                <span class="payment-paid">
                                     Paid
                                 </span>
 
@@ -482,16 +639,16 @@
                         </div>
 
 
-                        <div class="admin-payment">
+                        <div class="admin-payment-row">
 
                             <div>
 
                                 <strong>
-                                    John's Construction
+                                    Emma Wilson
                                 </strong>
 
                                 <span>
-                                    Monthly Hosting
+                                    Hosting
                                 </span>
 
                             </div>
@@ -502,7 +659,36 @@
                                     $14.99
                                 </strong>
 
+                                <span class="payment-paid">
+                                    Paid
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="admin-payment-row">
+
+                            <div>
+
+                                <strong>
+                                    Michael Lee
+                                </strong>
+
                                 <span>
+                                    Hosting
+                                </span>
+
+                            </div>
+
+                            <div class="payment-right">
+
+                                <strong>
+                                    $14.99
+                                </strong>
+
+                                <span class="payment-paid">
                                     Paid
                                 </span>
 
@@ -517,7 +703,127 @@
             </section>
 
 
-            <!-- FOOTER -->
+            <!-- ==================================
+                 QUICK ACTIONS
+            =================================== -->
+
+            <section class="admin-section">
+
+                <div class="admin-section-header">
+
+                    <div>
+
+                        <span class="dashboard-eyebrow">
+                            MANAGEMENT
+                        </span>
+
+                        <h2>
+                            Quick Actions
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="admin-quick-grid">
+
+                    <a
+                        href="clients.html"
+                        class="admin-quick-card"
+                    >
+                        <span>
+                            ◎
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Manage Clients
+                            </strong>
+
+                            <small>
+                                View and manage client accounts.
+                            </small>
+
+                        </div>
+                    </a>
+
+
+                    <a
+                        href="projects.html"
+                        class="admin-quick-card"
+                    >
+                        <span>
+                            ▣
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Website Requests
+                            </strong>
+
+                            <small>
+                                Review new website projects.
+                            </small>
+
+                        </div>
+                    </a>
+
+
+                    <a
+                        href="payments.html"
+                        class="admin-quick-card"
+                    >
+                        <span>
+                            $
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Payments
+                            </strong>
+
+                            <small>
+                                Review billing and payments.
+                            </small>
+
+                        </div>
+                    </a>
+
+
+                    <a
+                        href="support.html"
+                        class="admin-quick-card"
+                    >
+                        <span>
+                            ◯
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Support
+                            </strong>
+
+                            <small>
+                                Respond to client messages.
+                            </small>
+
+                        </div>
+                    </a>
+
+                </div>
+
+            </section>
+
+
+            <!-- ==================================
+                 FOOTER
+            =================================== -->
+
             <footer class="dashboard-footer">
 
                 <span>
@@ -525,12 +831,15 @@
                 </span>
 
                 <span class="system-operational">
+
                     <i></i>
-                    All systems operational
+
+                    Admin system operational
+
                 </span>
 
                 <span>
-                    Admin Portal
+                    Nexora Admin Portal
                 </span>
 
             </footer>
@@ -542,7 +851,9 @@
 </div>
 
 
-<script src="admin.js"></script>
+<!-- CORRECT ADMIN JS PATH -->
+<script src="../js/admin.js"></script>
 
 </body>
+
 </html>

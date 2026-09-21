@@ -4490,3 +4490,49 @@ img {
 
     margin-top: 30px;
 }
+/* ==========================================
+   ADMIN TOAST
+========================================== */
+
+.admin-toast {
+    position: fixed;
+
+    top: 25px;
+    right: 25px;
+
+    z-index: 9999;
+
+    max-width: 360px;
+
+    padding: 14px 18px;
+
+    border: 1px solid rgba(0, 168, 255, 0.25);
+    border-radius: 12px;
+
+    background: rgba(5, 15, 29, 0.97);
+
+    color: #ffffff;
+
+    font-size: 12px;
+    line-height: 1.5;
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.35),
+        0 0 25px rgba(0, 168, 255, 0.08);
+
+    opacity: 0;
+
+    transform: translateY(-10px);
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+}
+
+.admin-toast.show {
+    opacity: 1;
+
+    transform: translateY(0);
+}
