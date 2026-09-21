@@ -10251,4 +10251,923 @@ body.panel-open {
     .client-details-panel {
         width: 100%;
     }
+}/* =========================================================
+   ADMIN — PAYMENTS
+========================================================= */
+
+.admin-payments-content {
+    max-width: 1400px;
+    margin: auto;
+}
+
+.payments-hero {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 28px;
+}
+
+.payments-hero h1 {
+    margin: 7px 0;
+    color: white;
+    font-size: 36px;
+    letter-spacing: -1.8px;
+}
+
+.payments-hero p {
+    margin: 0;
+    color: #6d8398;
+    font-size: 9px;
+}
+
+
+/* STATS */
+
+.payment-stat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.payment-stat-grid article {
+    padding: 19px;
+    border: 1px solid rgba(70, 161, 231, .09);
+    border-radius: 12px;
+    background: rgba(6, 17, 31, .72);
+}
+
+.payment-stat-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.payment-stat-top span {
+    color: #667d91;
+    font-size: 7px;
+}
+
+.payment-stat-top i {
+    width: 24px;
+    height: 24px;
+    display: grid;
+    place-items: center;
+    border-radius: 7px;
+    background: rgba(0, 168, 255, .06);
+    color: #29c4ff;
+    font-size: 8px;
+    font-style: normal;
+}
+
+.payment-stat-grid article > strong {
+    display: block;
+    margin: 9px 0 4px;
+    color: white;
+    font-size: 21px;
+}
+
+.payment-stat-grid article > small {
+    color: #425b70;
+    font-size: 6px;
+}
+
+
+/* OVERVIEW */
+
+.payment-overview-grid {
+    display: grid;
+    grid-template-columns: 1.5fr .75fr;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.payment-revenue-card,
+.upcoming-payments {
+    overflow: hidden;
+}
+
+.payment-revenue-card .admin-panel-header,
+.upcoming-payments .admin-panel-header,
+.payment-transactions .admin-panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 19px 21px;
+    border-bottom: 1px solid rgba(70, 158, 226, .07);
+}
+
+.payment-revenue-card .admin-panel-header h2,
+.upcoming-payments .admin-panel-header h2,
+.payment-transactions .admin-panel-header h2 {
+    margin: 5px 0 0;
+    color: white;
+    font-size: 14px;
+}
+
+.payment-revenue-card select,
+.payment-table-tools select {
+    padding: 8px 10px;
+    border: 1px solid rgba(70, 159, 226, .11);
+    border-radius: 7px;
+    outline: none;
+    background: #07111e;
+    color: #758b9f;
+    font-size: 7px;
+}
+
+
+/* CHART */
+
+.payment-chart {
+    padding: 21px;
+}
+
+.chart-value span,
+.chart-value strong {
+    display: block;
+}
+
+.chart-value span {
+    color: #526b80;
+    font-size: 7px;
+}
+
+.chart-value strong {
+    margin-top: 4px;
+    color: white;
+    font-size: 20px;
+}
+
+.chart-area {
+    height: 170px;
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    margin-top: 25px;
+    padding-top: 15px;
+    border-bottom: 1px solid rgba(71, 159, 226, .08);
+}
+
+.chart-bar {
+    position: relative;
+    flex: 1;
+    height: var(--height);
+    min-height: 10px;
+    border-radius: 5px 5px 0 0;
+    background: linear-gradient(
+        180deg,
+        rgba(27, 172, 255, .30),
+        rgba(0, 109, 255, .05)
+    );
+}
+
+.chart-bar.active {
+    background: linear-gradient(
+        180deg,
+        rgba(31, 190, 255, .9),
+        rgba(0, 104, 255, .22)
+    );
+    box-shadow: 0 0 25px rgba(0, 168, 255, .12);
+}
+
+.chart-bar span {
+    position: absolute;
+    left: 50%;
+    bottom: -19px;
+    transform: translateX(-50%);
+    color: #405a70;
+    font-size: 6px;
+}
+
+
+/* UPCOMING */
+
+.upcoming-payment-list {
+    padding: 8px 19px;
+}
+
+.upcoming-payment {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(70, 158, 226, .055);
+}
+
+.upcoming-payment:last-child {
+    border-bottom: 0;
+}
+
+.upcoming-avatar {
+    width: 31px;
+    height: 31px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(39, 190, 255, .12);
+    border-radius: 8px;
+    background: rgba(0, 168, 255, .05);
+    color: #29c4ff;
+    font-size: 6px;
+    font-weight: 800;
+}
+
+.upcoming-payment-info {
+    flex: 1;
+}
+
+.upcoming-payment-info strong,
+.upcoming-payment-info span {
+    display: block;
+}
+
+.upcoming-payment-info strong {
+    color: #cbd9e3;
+    font-size: 7px;
+}
+
+.upcoming-payment-info span {
+    margin-top: 3px;
+    color: #4c657a;
+    font-size: 6px;
+}
+
+.upcoming-payment > strong {
+    color: #dbe7ef;
+    font-size: 8px;
+}
+
+
+/* TRANSACTION TABLE */
+
+.payment-transactions {
+    overflow: hidden;
+}
+
+.payment-table-wrapper {
+    overflow-x: auto;
+}
+
+.payment-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.payment-table th {
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(69, 157, 225, .07);
+    color: #405a70;
+    text-align: left;
+    font-size: 6px;
+    font-weight: 800;
+    letter-spacing: .7px;
+    text-transform: uppercase;
+}
+
+.payment-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid rgba(69, 157, 225, .055);
+    color: #748a9d;
+    font-size: 7px;
+}
+
+.payment-row {
+    transition: .18s;
+}
+
+.payment-row:hover {
+    background: rgba(0, 168, 255, .025);
+}
+
+.transaction-id {
+    color: #7890a4;
+    font-size: 7px;
+}
+
+.payment-client {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.payment-client > div {
+    width: 28px;
+    height: 28px;
+    display: grid;
+    place-items: center;
+    border-radius: 7px;
+    background: rgba(0, 168, 255, .055);
+    color: #28c4ff;
+    font-size: 6px;
+    font-weight: 800;
+}
+
+.payment-client span {
+    color: #b3c2ce;
+}
+
+.payment-amount {
+    color: #dce8f0;
+    font-size: 8px;
+}
+
+.payment-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 8px;
+    border-radius: 20px;
+    font-size: 6px;
+    font-weight: 750;
+}
+
+.payment-status::before {
+    content: "";
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+}
+
+.payment-status.paid {
+    border: 1px solid rgba(55, 216, 160, .14);
+    background: rgba(38, 207, 149, .05);
+    color: #58d8a9;
+}
+
+.payment-status.paid::before {
+    background: #58d8a9;
+}
+
+.payment-status.pending {
+    border: 1px solid rgba(255, 186, 73, .14);
+    background: rgba(255, 178, 47, .05);
+    color: #eab86d;
+}
+
+.payment-status.pending::before {
+    background: #eab86d;
+}
+
+.payment-status.failed {
+    border: 1px solid rgba(255, 90, 100, .14);
+    background: rgba(255, 70, 84, .045);
+    color: #ec7881;
+}
+
+.payment-status.failed::before {
+    background: #ec7881;
+}
+
+.payment-view-button {
+    border: 0;
+    background: transparent;
+    color: #29c4ff;
+    font-size: 7px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.payments-empty {
+    padding: 55px 20px;
+    text-align: center;
+}
+
+.payments-empty > span {
+    color: #29c4ff;
+    font-size: 24px;
+}
+
+.payments-empty h3 {
+    margin: 10px 0 5px;
+    color: white;
+    font-size: 13px;
+}
+
+.payments-empty p {
+    margin: 0;
+    color: #526a80;
+    font-size: 7px;
+}
+
+
+/* PAYMENT PANEL */
+
+.payment-details-panel {
+    position: fixed;
+    z-index: 1600;
+    top: 0;
+    right: 0;
+    width: min(410px, 100%);
+    height: 100vh;
+    box-sizing: border-box;
+    overflow-y: auto;
+    padding: 27px;
+    border-left: 1px solid rgba(57, 175, 255, .13);
+    background: #050d18;
+    box-shadow: -30px 0 80px rgba(0, 0, 0, .35);
+    transform: translateX(105%);
+    transition: .3s ease;
+}
+
+.payment-details-panel.open {
+    transform: translateX(0);
+}
+
+.payment-panel-header {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(67, 156, 224, .08);
+}
+
+.payment-panel-header span,
+.payment-detail-title {
+    color: #496378;
+    font-size: 6px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+}
+
+.payment-panel-header h2 {
+    margin: 5px 0 0;
+    color: white;
+    font-size: 19px;
+}
+
+.payment-panel-header button {
+    width: 31px;
+    height: 31px;
+    border: 1px solid rgba(71, 160, 228, .1);
+    border-radius: 8px;
+    background: transparent;
+    color: #758ba0;
+    cursor: pointer;
+}
+
+.payment-panel-status {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 23px 0;
+}
+
+.payment-panel-status > strong {
+    color: white;
+    font-size: 23px;
+}
+
+.payment-detail-section {
+    padding: 21px 0;
+    border-top: 1px solid rgba(67, 156, 224, .07);
+}
+
+.payment-detail-client {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    margin-top: 13px;
+}
+
+.payment-detail-client > div {
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    border-radius: 9px;
+    background: rgba(0, 168, 255, .06);
+    color: #29c4ff;
+    font-size: 7px;
+    font-weight: 800;
+}
+
+.payment-detail-client strong,
+.payment-detail-client span {
+    display: block;
+}
+
+.payment-detail-client strong {
+    color: #d9e5ee;
+    font-size: 8px;
+}
+
+.payment-detail-client span {
+    margin-top: 3px;
+    color: #526b80;
+    font-size: 7px;
+}
+
+.payment-detail-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 10px 0;
+}
+
+.payment-detail-row span {
+    color: #526b80;
+    font-size: 7px;
+}
+
+.payment-detail-row strong {
+    color: #aabac7;
+    text-align: right;
+    font-size: 7px;
+}
+
+.payment-invoice-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 12px;
+    padding: 13px;
+    border: 1px solid rgba(60, 165, 237, .09);
+    border-radius: 9px;
+    background: rgba(255, 255, 255, .012);
+}
+
+.payment-invoice-card span,
+.payment-invoice-card strong {
+    display: block;
+}
+
+.payment-invoice-card span {
+    color: #4c657a;
+    font-size: 6px;
+}
+
+.payment-invoice-card strong {
+    margin-top: 3px;
+    color: #c5d3de;
+    font-size: 8px;
+}
+
+.payment-invoice-card button {
+    border: 0;
+    background: transparent;
+    color: #29c4ff;
+    font-size: 7px;
+    cursor: pointer;
+}
+
+.payment-panel-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 9px;
+    padding-top: 20px;
+}
+
+.payment-panel-actions button {
+    padding: 10px;
+    border: 1px solid rgba(61, 164, 236, .12);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, .02);
+    color: #8094a7;
+    font-size: 7px;
+    cursor: pointer;
+}
+
+.payment-panel-actions button:first-child {
+    border-color: rgba(39, 191, 255, .18);
+    background: rgba(0, 168, 255, .06);
+    color: #29c4ff;
+}
+
+
+/* INVOICE TEXTAREA */
+
+#invoiceNotes {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 11px 12px;
+    border: 1px solid rgba(71, 160, 228, .11);
+    border-radius: 8px;
+    outline: none;
+    resize: vertical;
+    background: rgba(0, 5, 11, .45);
+    color: white;
+    font: inherit;
+    font-size: 8px;
+}
+
+#invoiceNotes:focus {
+    border-color: rgba(39, 191, 255, .38);
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 950px) {
+    .payment-stat-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .payment-overview-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .payments-hero {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .payment-stat-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .payment-details-panel {
+        width: 100%;
+    }
+}
+/* =========================================================
+   NEXORA PUBLIC WEBSITE — SIZE / ALIGNMENT FIX
+   Keep this at the VERY BOTTOM of style.css
+========================================================= */
+
+/* Stop the website from looking tiny on large screens */
+.home-page {
+    font-size: 16px;
+}
+
+/* Main site width */
+.home-page .home-container {
+    width: min(92%, 1280px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.home-page .main-header {
+    width: 100%;
+}
+
+.home-page .navbar {
+    min-height: 82px;
+    padding: 0;
+}
+
+.home-page .nav-logo img {
+    width: 150px;
+    height: auto;
+    display: block;
+}
+
+.home-page .nav-links {
+    gap: 34px;
+}
+
+.home-page .nav-links a {
+    font-size: 14px;
+}
+
+.home-page .nav-actions {
+    gap: 18px;
+}
+
+.home-page .nav-login {
+    font-size: 14px;
+}
+
+.home-page .nav-cta {
+    min-height: 46px;
+    padding: 0 22px;
+    font-size: 13px;
+}
+
+
+/* =========================
+   CONTACT SECTION
+========================= */
+
+.home-page .contact-section {
+    padding: 90px 0;
+}
+
+/* Your screenshot looked too narrow / zoomed out */
+.home-page .contact-wrapper,
+.home-page .contact-container {
+    width: min(92%, 1180px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* If your contact section uses .contact-grid */
+.home-page .contact-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+/* Contact headline */
+.home-page .contact-content h2,
+.home-page .contact-info h2 {
+    font-size: clamp(48px, 5vw, 72px);
+    line-height: 0.98;
+    letter-spacing: -3px;
+}
+
+/* Contact paragraph */
+.home-page .contact-content p,
+.home-page .contact-info p {
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+/* Form should not look miniature */
+.home-page .contact-form {
+    padding: 34px;
+    border-radius: 20px;
+}
+
+.home-page .contact-form label {
+    font-size: 13px;
+}
+
+.home-page .contact-form input,
+.home-page .contact-form select,
+.home-page .contact-form textarea {
+    min-height: 52px;
+    padding: 14px 16px;
+    font-size: 14px;
+    border-radius: 10px;
+}
+
+.home-page .contact-form textarea {
+    min-height: 145px;
+}
+
+.home-page .contact-form button {
+    min-height: 52px;
+    font-size: 14px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.home-page .premium-footer {
+    width: 100%;
+    margin: 0;
+    padding: 70px 0 25px;
+}
+
+/* Fix footer content touching right edge */
+.home-page .footer-container,
+.home-page .footer-main,
+.home-page .footer-grid {
+    width: min(92%, 1180px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* If footer-grid is the actual grid */
+.home-page .footer-grid {
+    display: grid;
+    grid-template-columns: 1.6fr repeat(4, 1fr);
+    gap: 45px;
+    align-items: start;
+}
+
+/* Bigger readable footer */
+.home-page .premium-footer h3,
+.home-page .premium-footer h4 {
+    font-size: 14px;
+}
+
+.home-page .premium-footer a,
+.home-page .premium-footer p {
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.home-page .premium-footer img {
+    width: 150px;
+    height: auto;
+}
+
+/* Footer bottom */
+.home-page .footer-bottom {
+    width: min(92%, 1180px);
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 25px;
+}
+
+
+/* =========================
+   IMPORTANT GLOBAL FIX
+========================= */
+
+.home-page *,
+.home-page *::before,
+.home-page *::after {
+    box-sizing: border-box;
+}
+
+.home-page {
+    overflow-x: hidden;
+}
+
+.home-page img {
+    max-width: 100%;
+}
+
+
+/* =========================
+   LARGE MONITORS
+========================= */
+
+@media (min-width: 1500px) {
+
+    .home-page .home-container {
+        max-width: 1320px;
+    }
+
+    .home-page .contact-wrapper,
+    .home-page .contact-container,
+    .home-page .footer-container,
+    .home-page .footer-main,
+    .home-page .footer-grid,
+    .home-page .footer-bottom {
+        max-width: 1280px;
+    }
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 950px) {
+
+    .home-page .nav-links {
+        gap: 20px;
+    }
+
+    .home-page .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .home-page .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 35px;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .home-page .home-container {
+        width: min(90%, 600px);
+    }
+
+    .home-page .navbar {
+        min-height: 70px;
+    }
+
+    .home-page .nav-logo img {
+        width: 125px;
+    }
+
+    .home-page .contact-section {
+        padding: 65px 0;
+    }
+
+    .home-page .contact-wrapper,
+    .home-page .contact-container {
+        width: 90%;
+    }
+
+    .home-page .contact-content h2,
+    .home-page .contact-info h2 {
+        font-size: 44px;
+        letter-spacing: -2px;
+    }
+
+    .home-page .contact-form {
+        padding: 22px;
+    }
+
+    .home-page .footer-grid {
+        width: 90%;
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .home-page .footer-bottom {
+        width: 90%;
+    }
 }

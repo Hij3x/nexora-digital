@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Payments | Nexora Admin</title>
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="portal-page admin-page">
+
+<div class="portal-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="portal-sidebar">
+
+        <a href="../index.html" class="portal-logo">
+            <img src="../images/nexora-logo.png" alt="Nexora">
+        </a>
+
+        <div class="sidebar-label">
+            ADMIN
+        </div>
+
+        <nav class="portal-nav">
+
+            <a href="dashboard.html">
+                <span>⌂</span>
+                Overview
+            </a>
+
+            <a href="clients.html">
+                <span>♙</span>
+                Clients
+            </a>
+
+            <a href="projects.html">
+                <span>◇</span>
+                Website Requests
+                <small>3</small>
+            </a>
+
+            <a href="payments.html" class="active">
+                <span>$</span>
+                Payments
+            </a>
+
+            <a href="support.html">
+                <span>◌</span>
+                Support
+                <small>2</small>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <a href="#">
+                <span>⚙</span>
+                Settings
+            </a>
+
+            <a href="../login.html">
+                <span>↪</span>
+                Sign Out
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="portal-main">
+
+        <!-- TOP BAR -->
+        <header class="portal-topbar">
+
+            <div class="admin-search-wrap">
+
+                <span>⌕</span>
+
+                <input
+                    type="search"
+                    id="paymentSearch"
+                    placeholder="Search payments..."
+                >
+
+            </div>
+
+
+            <div class="portal-top-actions">
+
+                <button
+                    class="notification-button"
+                    id="paymentNotifications"
+                >
+                    ♢
+                    <i></i>
+                </button>
+
+                <div class="admin-avatar">
+                    NX
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- CONTENT -->
+        <div class="portal-content admin-payments-content">
+
+            <!-- HERO -->
+            <section class="payments-hero">
+
+                <div>
+
+                    <span class="admin-eyebrow">
+                        NEXORA BILLING
+                    </span>
+
+                    <h1>
+                        Payments
+                    </h1>
+
+                    <p>
+                        Track transactions, recurring plans,
+                        invoices and client payments.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="admin-primary-button"
+                    id="createInvoiceButton"
+                >
+                    <span>＋</span>
+                    Create Invoice
+                </button>
+
+            </section>
+
+
+
+            <!-- STATS -->
+            <section class="payment-stat-grid">
+
+                <article>
+
+                    <div class="payment-stat-top">
+
+                        <span>
+                            Monthly Revenue
+                        </span>
+
+                        <i>↗</i>
+
+                    </div>
+
+                    <strong>
+                        $239.84
+                    </strong>
+
+                    <small>
+                        Demo recurring revenue
+                    </small>
+
+                </article>
+
+
+                <article>
+
+                    <div class="payment-stat-top">
+
+                        <span>
+                            Collected
+                        </span>
+
+                        <i>✓</i>
+
+                    </div>
+
+                    <strong>
+                        $1,574.93
+                    </strong>
+
+                    <small>
+                        This month
+                    </small>
+
+                </article>
+
+
+                <article>
+
+                    <div class="payment-stat-top">
+
+                        <span>
+                            Pending
+                        </span>
+
+                        <i>◷</i>
+
+                    </div>
+
+                    <strong>
+                        $864.99
+                    </strong>
+
+                    <small>
+                        3 outstanding payments
+                    </small>
+
+                </article>
+
+
+                <article>
+
+                    <div class="payment-stat-top">
+
+                        <span>
+                            Active Plans
+                        </span>
+
+                        <i>◇</i>
+
+                    </div>
+
+                    <strong>
+                        16
+                    </strong>
+
+                    <small>
+                        Recurring subscriptions
+                    </small>
+
+                </article>
+
+            </section>
+
+
+
+            <!-- REVENUE / UPCOMING -->
+            <section class="payment-overview-grid">
+
+
+                <!-- REVENUE -->
+                <article class="admin-panel payment-revenue-card">
+
+                    <div class="admin-panel-header">
+
+                        <div>
+
+                            <span class="admin-panel-kicker">
+                                REVENUE
+                            </span>
+
+                            <h2>
+                                Monthly Overview
+                            </h2>
+
+                        </div>
+
+                        <select id="revenuePeriod">
+
+                            <option value="6">
+                                Last 6 Months
+                            </option>
+
+                            <option value="12">
+                                Last 12 Months
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="payment-chart">
+
+                        <div class="chart-value">
+                            <span>
+                                September
+                            </span>
+
+                            <strong>
+                                $1,574.93
+                            </strong>
+                        </div>
+
+
+                        <div class="chart-area">
+
+                            <div
+                                class="chart-bar"
+                                style="--height: 38%;"
+                            >
+                                <span>Apr</span>
+                            </div>
+
+                            <div
+                                class="chart-bar"
+                                style="--height: 52%;"
+                            >
+                                <span>May</span>
+                            </div>
+
+                            <div
+                                class="chart-bar"
+                                style="--height: 48%;"
+                            >
+                                <span>Jun</span>
+                            </div>
+
+                            <div
+                                class="chart-bar"
+                                style="--height: 68%;"
+                            >
+                                <span>Jul</span>
+                            </div>
+
+                            <div
+                                class="chart-bar"
+                                style="--height: 74%;"
+                            >
+                                <span>Aug</span>
+                            </div>
+
+                            <div
+                                class="chart-bar active"
+                                style="--height: 92%;"
+                            >
+                                <span>Sep</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- UPCOMING -->
+                <article class="admin-panel upcoming-payments">
+
+                    <div class="admin-panel-header">
+
+                        <div>
+
+                            <span class="admin-panel-kicker">
+                                UPCOMING
+                            </span>
+
+                            <h2>
+                                Next Payments
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="upcoming-payment-list">
+
+
+                        <div class="upcoming-payment">
+
+                            <div class="upcoming-avatar">
+                                JD
+                            </div>
+
+                            <div class="upcoming-payment-info">
+
+                                <strong>
+                                    John Doe
+                                </strong>
+
+                                <span>
+                                    Oct 31
+                                </span>
+
+                            </div>
+
+                            <strong>
+                                $14.99
+                            </strong>
+
+                        </div>
+
+
+                        <div class="upcoming-payment">
+
+                            <div class="upcoming-avatar">
+                                EW
+                            </div>
+
+                            <div class="upcoming-payment-info">
+
+                                <strong>
+                                    Emma Wilson
+                                </strong>
+
+                                <span>
+                                    Oct 31
+                                </span>
+
+                            </div>
+
+                            <strong>
+                                $14.99
+                            </strong>
+
+                        </div>
+
+
+                        <div class="upcoming-payment">
+
+                            <div class="upcoming-avatar">
+                                AC
+                            </div>
+
+                            <div class="upcoming-payment-info">
+
+                                <strong>
+                                    Alex Carter
+                                </strong>
+
+                                <span>
+                                    Nov 02
+                                </span>
+
+                            </div>
+
+                            <strong>
+                                $29.99
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+
+            <!-- TRANSACTIONS -->
+            <section class="admin-panel payment-transactions">
+
+                <div class="admin-panel-header">
+
+                    <div>
+
+                        <span class="admin-panel-kicker">
+                            TRANSACTIONS
+                        </span>
+
+                        <h2>
+                            Payment History
+                        </h2>
+
+                    </div>
+
+
+                    <div class="payment-table-tools">
+
+                        <select id="paymentStatusFilter">
+
+                            <option value="all">
+                                All Payments
+                            </option>
+
+                            <option value="paid">
+                                Paid
+                            </option>
+
+                            <option value="pending">
+                                Pending
+                            </option>
+
+                            <option value="failed">
+                                Failed
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="payment-table-wrapper">
+
+                    <table class="payment-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Transaction
+                                </th>
+
+                                <th>
+                                    Client
+                                </th>
+
+                                <th>
+                                    Description
+                                </th>
+
+                                <th>
+                                    Amount
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                                <th>
+                                    Date
+                                </th>
+
+                                <th></th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="paymentTableBody">
+
+
+                            <tr
+                                class="payment-row"
+                                data-status="paid"
+                                data-transaction="NXR-10041"
+                                data-client="John Doe"
+                                data-email="john@example.com"
+                                data-description="Website Hosting"
+                                data-amount="$14.99"
+                                data-date="Sep 18, 2026"
+                                data-method="Visa •••• 4242"
+                            >
+
+                                <td>
+                                    <strong class="transaction-id">
+                                        NXR-10041
+                                    </strong>
+                                </td>
+
+                                <td>
+
+                                    <div class="payment-client">
+
+                                        <div>
+                                            JD
+                                        </div>
+
+                                        <span>
+                                            John Doe
+                                        </span>
+
+                                    </div>
+
+                                </td>
+
+                                <td>
+                                    Website Hosting
+                                </td>
+
+                                <td>
+                                    <strong class="payment-amount">
+                                        $14.99
+                                    </strong>
+                                </td>
+
+                                <td>
+
+                                    <span class="payment-status paid">
+                                        Paid
+                                    </span>
+
+                                </td>
+
+                                <td>
+                                    Sep 18, 2026
+                                </td>
+
+                                <td>
+
+                                    <button class="payment-view-button">
+                                        View →
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+
+                            <tr
+                                class="payment-row"
+                                data-status="paid"
+                                data-transaction="NXR-10040"
+                                data-client="Emma Wilson"
+                                data-email="emma@example.com"
+                                data-description="Website Hosting"
+                                data-amount="$14.99"
+                                data-date="Sep 17, 2026"
+                                data-method="Mastercard •••• 8291"
+                            >
+
+                                <td>
+                                    <strong class="transaction-id">
+                                        NXR-10040
+                                    </strong>
+                                </td>
+
+                                <td>
+
+                                    <div class="payment-client">
+
+                                        <div>
+                                            EW
+                                        </div>
+
+                                        <span>
+                                            Emma Wilson
+                                        </span>
+
+                                    </div>
+
+                                </td>
+
+                                <td>
+                                    Website Hosting
+                                </td>
+
+                                <td>
+                                    <strong class="payment-amount">
+                                        $14.99
+                                    </strong>
+                                </td>
+
+                                <td>
+
+                                    <span class="payment-status paid">
+                                        Paid
+                                    </span>
+
+                                </td>
+
+                                <td>
+                                    Sep 17, 2026
+                                </td>
+
+                                <td>
+
+                                    <button class="payment-view-button">
+                                        View →
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+
+                            <tr
+                                class="payment-row"
+                                data-status="pending"
+                                data-transaction="NXR-10039"
+                                data-client="Sarah Smith"
+                                data-email="sarah@example.com"
+                                data-description="Portfolio Website"
+                                data-amount="$850.00"
+                                data-date="Sep 16, 2026"
+                                data-method="Invoice"
+                            >
+
+                                <td>
+                                    <strong class="transaction-id">
+                                        NXR-10039
+                                    </strong>
+                                </td>
+
+                                <td>
+
+                                    <div class="payment-client">
+
+                                        <div>
+                                            SS
+                                        </div>
+
+                                        <span>
+                                            Sarah Smith
+                                        </span>
+
+                                    </div>
+
+                                </td>
+
+                                <td>
+                                    Portfolio Website
+                                </td>
+
+                                <td>
+                                    <strong class="payment-amount">
+                                        $850.00
+                                    </strong>
+                                </td>
+
+                                <td>
+
+                                    <span class="payment-status pending">
+                                        Pending
+                                    </span>
+
+                                </td>
+
+                                <td>
+                                    Sep 16, 2026
+                                </td>
+
+                                <td>
+
+                                    <button class="payment-view-button">
+                                        View →
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+
+                            <tr
+                                class="payment-row"
+                                data-status="paid"
+                                data-transaction="NXR-10038"
+                                data-client="Alex Carter"
+                                data-email="alex@example.com"
+                                data-description="Managed Hosting"
+                                data-amount="$29.99"
+                                data-date="Sep 14, 2026"
+                                data-method="Visa •••• 1187"
+                            >
+
+                                <td>
+                                    <strong class="transaction-id">
+                                        NXR-10038
+                                    </strong>
+                                </td>
+
+                                <td>
+
+                                    <div class="payment-client">
+
+                                        <div>
+                                            AC
+                                        </div>
+
+                                        <span>
+                                            Alex Carter
+                                        </span>
+
+                                    </div>
+
+                                </td>
+
+                                <td>
+                                    Managed Hosting
+                                </td>
+
+                                <td>
+                                    <strong class="payment-amount">
+                                        $29.99
+                                    </strong>
+                                </td>
+
+                                <td>
+
+                                    <span class="payment-status paid">
+                                        Paid
+                                    </span>
+
+                                </td>
+
+                                <td>
+                                    Sep 14, 2026
+                                </td>
+
+                                <td>
+
+                                    <button class="payment-view-button">
+                                        View →
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+
+                            <tr
+                                class="payment-row"
+                                data-status="failed"
+                                data-transaction="NXR-10037"
+                                data-client="Michael Brown"
+                                data-email="michael@example.com"
+                                data-description="Website Hosting"
+                                data-amount="$14.99"
+                                data-date="Sep 11, 2026"
+                                data-method="Visa •••• 6501"
+                            >
+
+                                <td>
+                                    <strong class="transaction-id">
+                                        NXR-10037
+                                    </strong>
+                                </td>
+
+                                <td>
+
+                                    <div class="payment-client">
+
+                                        <div>
+                                            MB
+                                        </div>
+
+                                        <span>
+                                            Michael Brown
+                                        </span>
+
+                                    </div>
+
+                                </td>
+
+                                <td>
+                                    Website Hosting
+                                </td>
+
+                                <td>
+                                    <strong class="payment-amount">
+                                        $14.99
+                                    </strong>
+                                </td>
+
+                                <td>
+
+                                    <span class="payment-status failed">
+                                        Failed
+                                    </span>
+
+                                </td>
+
+                                <td>
+                                    Sep 11, 2026
+                                </td>
+
+                                <td>
+
+                                    <button class="payment-view-button">
+                                        View →
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <div
+                    class="payments-empty"
+                    id="paymentsEmpty"
+                    hidden
+                >
+
+                    <span>⌕</span>
+
+                    <h3>
+                        No payments found
+                    </h3>
+
+                    <p>
+                        Try changing your search or filter.
+                    </p>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+
+<!-- =====================================================
+     PAYMENT DETAILS PANEL
+===================================================== -->
+
+<div
+    class="client-panel-overlay"
+    id="paymentPanelOverlay"
+></div>
+
+
+<aside
+    class="payment-details-panel"
+    id="paymentDetailsPanel"
+>
+
+    <div class="payment-panel-header">
+
+        <div>
+
+            <span>
+                TRANSACTION
+            </span>
+
+            <h2 id="panelTransaction">
+                NXR-10041
+            </h2>
+
+        </div>
+
+        <button id="closePaymentPanel">
+            ×
+        </button>
+
+    </div>
+
+
+    <div class="payment-panel-status">
+
+        <span
+            class="payment-status paid"
+            id="panelPaymentStatus"
+        >
+            Paid
+        </span>
+
+        <strong id="panelPaymentAmount">
+            $14.99
+        </strong>
+
+    </div>
+
+
+    <div class="payment-detail-section">
+
+        <span class="payment-detail-title">
+            CLIENT
+        </span>
+
+        <div class="payment-detail-client">
+
+            <div id="panelPaymentAvatar">
+                JD
+            </div>
+
+            <div>
+
+                <strong id="panelPaymentClient">
+                    John Doe
+                </strong>
+
+                <span id="panelPaymentEmail">
+                    john@example.com
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="payment-detail-section">
+
+        <span class="payment-detail-title">
+            PAYMENT DETAILS
+        </span>
+
+
+        <div class="payment-detail-row">
+
+            <span>
+                Description
+            </span>
+
+            <strong id="panelPaymentDescription">
+                Website Hosting
+            </strong>
+
+        </div>
+
+
+        <div class="payment-detail-row">
+
+            <span>
+                Date
+            </span>
+
+            <strong id="panelPaymentDate">
+                Sep 18, 2026
+            </strong>
+
+        </div>
+
+
+        <div class="payment-detail-row">
+
+            <span>
+                Payment Method
+            </span>
+
+            <strong id="panelPaymentMethod">
+                Visa •••• 4242
+            </strong>
+
+        </div>
+
+
+        <div class="payment-detail-row">
+
+            <span>
+                Transaction ID
+            </span>
+
+            <strong id="panelPaymentID">
+                NXR-10041
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <div class="payment-detail-section">
+
+        <span class="payment-detail-title">
+            INVOICE
+        </span>
+
+
+        <div class="payment-invoice-card">
+
+            <div>
+
+                <span>
+                    Invoice
+                </span>
+
+                <strong id="panelInvoiceNumber">
+                    INV-10041
+                </strong>
+
+            </div>
+
+            <button id="viewInvoiceButton">
+                View
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="payment-panel-actions">
+
+        <button id="sendReceiptButton">
+            Send Receipt
+        </button>
+
+        <button id="refundButton">
+            Refund
+        </button>
+
+    </div>
+
+</aside>
+
+
+
+<!-- =====================================================
+     CREATE INVOICE MODAL
+===================================================== -->
+
+<div
+    class="admin-modal-overlay"
+    id="invoiceModal"
+>
+
+    <div class="admin-modal">
+
+        <div class="admin-modal-header">
+
+            <div>
+
+                <span>
+                    BILLING
+                </span>
+
+                <h2>
+                    Create Invoice
+                </h2>
+
+            </div>
+
+            <button id="closeInvoiceModal">
+                ×
+            </button>
+
+        </div>
+
+
+        <form id="invoiceForm">
+
+
+            <div class="admin-form-field">
+
+                <label for="invoiceClient">
+                    Client
+                </label>
+
+                <select
+                    id="invoiceClient"
+                    required
+                >
+
+                    <option value="">
+                        Select client
+                    </option>
+
+                    <option>
+                        John Doe
+                    </option>
+
+                    <option>
+                        Sarah Smith
+                    </option>
+
+                    <option>
+                        Alex Carter
+                    </option>
+
+                    <option>
+                        Emma Wilson
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="admin-form-field">
+
+                <label for="invoiceDescription">
+                    Description
+                </label>
+
+                <input
+                    type="text"
+                    id="invoiceDescription"
+                    placeholder="Website design"
+                    required
+                >
+
+            </div>
+
+
+            <div class="admin-form-row">
+
+
+                <div class="admin-form-field">
+
+                    <label for="invoiceAmount">
+                        Amount
+                    </label>
+
+                    <input
+                        type="number"
+                        id="invoiceAmount"
+                        min="0"
+                        step="0.01"
+                        placeholder="0.00"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="admin-form-field">
+
+                    <label for="invoiceDueDate">
+                        Due Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="invoiceDueDate"
+                        required
+                    >
+
+                </div>
+
+
+            </div>
+
+
+            <div class="admin-form-field">
+
+                <label for="invoiceNotes">
+                    Notes
+                </label>
+
+                <textarea
+                    id="invoiceNotes"
+                    rows="4"
+                    placeholder="Optional invoice notes..."
+                ></textarea>
+
+            </div>
+
+
+            <div class="admin-form-actions">
+
+                <button
+                    type="button"
+                    id="cancelInvoice"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="admin-primary-button"
+                >
+                    Create Invoice
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script src="../js/admin.js"></script>
+<script src="../js/payments.js"></script>
+
+</body>
+</html>
