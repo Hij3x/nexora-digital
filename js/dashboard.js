@@ -1,523 +1,176 @@
 /* =========================================================
-   NEXORA CLIENT DASHBOARD
-   dashboard.js
-
-   FRONT-END DEMO VERSION
-
-   Later:
-   - Website data -> Supabase
-   - Authentication -> Supabase Auth
-   - Live chat -> Supabase Realtime
-   - Billing -> Square
-   - Analytics -> Real analytics provider
-   - Uptime -> Monitoring API
+   NEXORA CLIENT WEBSITE DASHBOARD
+   js/dashboard.js
 ========================================================= */
 
 
 /* =========================================================
    WEBSITE DATA
+   DEMO DATA FOR NOW
+   Later this will come from Supabase.
 ========================================================= */
 
-const websites = {
+const website = {
+    name: "John's Landscaping",
+    domain: "johnslandscaping.ca",
+    url: "https://johnslandscaping.ca",
 
-    landscaping: {
+    status: "ONLINE",
 
-        name: "John's Landscaping",
-        shortName: "JL",
+    uptime: "99.99%",
+    response: "124ms",
+    views: "8,421",
+    visitors: "2,104",
 
-        domain: "johnslandscaping.ca",
+    traffic7: "1,284",
+    traffic30: "5,942",
 
-        url: "https://johnslandscaping.ca",
+    growth7: "↑ 12%",
+    growth30: "↑ 18%",
 
-        category: "PROFESSIONAL LANDSCAPING",
+    plan: "Nexora Hosting",
+    price: "$14.99",
+    nextPayment: "October 31, 2026",
 
-        heading:
-            "Beautiful Lawns. Stronger Communities.",
+    lastUpdated: "Updated 2 hours ago",
 
-        uptime: "99.99%",
+    chart7: [
+        28,
+        50,
+        38,
+        70,
+        60,
+        92,
+        73
+    ],
 
-        response: "124ms",
-
-        views: "8,421",
-
-        visitors: "2,104",
-
-        traffic7: "1,284",
-
-        traffic30: "5,942",
-
-        growth7: "+12%",
-
-        growth30: "+18%",
-
-        plan: "Nexora Business",
-
-        price: "$29.99",
-
-        nextPayment:
-            "October 20, 2026",
-
-        status: "ONLINE",
-
-        lastUpdated:
-            "2 hours ago",
-
-        chart7: [
-            28,
-            50,
-            38,
-            70,
-            60,
-            92,
-            73
-        ],
-
-        chart30: [
-            45,
-            62,
-            53,
-            77,
-            68,
-            88,
-            81
-        ]
-
-    },
-
-
-    construction: {
-
-        name: "John's Construction",
-        shortName: "JC",
-
-        domain: "johnsconstruction.ca",
-
-        url: "https://johnsconstruction.ca",
-
-        category:
-            "RESIDENTIAL & COMMERCIAL CONSTRUCTION",
-
-        heading:
-            "Building Better. Building Together.",
-
-        uptime: "99.97%",
-
-        response: "148ms",
-
-        views: "4,892",
-
-        visitors: "1,347",
-
-        traffic7: "824",
-
-        traffic30: "3,781",
-
-        growth7: "+8%",
-
-        growth30: "+14%",
-
-        plan: "Nexora Business",
-
-        price: "$29.99",
-
-        nextPayment:
-            "October 28, 2026",
-
-        status: "ONLINE",
-
-        lastUpdated:
-            "5 hours ago",
-
-        chart7: [
-            20,
-            38,
-            55,
-            43,
-            65,
-            80,
-            62
-        ],
-
-        chart30: [
-            36,
-            48,
-            61,
-            58,
-            74,
-            82,
-            69
-        ]
-
-    }
-
+    chart30: [
+        45,
+        62,
+        53,
+        77,
+        68,
+        88,
+        81
+    ]
 };
 
 
-
 /* =========================================================
-   CURRENT WEBSITE
+   ELEMENTS
 ========================================================= */
 
-let currentWebsiteID =
-    "landscaping";
-
-
-
-/* =========================================================
-   HELPER
-========================================================= */
-
-function getElement(id) {
-
-    return document.getElementById(id);
-
-}
-
-
-
-/* =========================================================
-   WEBSITE SELECTOR ELEMENTS
-========================================================= */
-
-const websiteSelector =
-    getElement("websiteSelector");
-
-const websiteDropdown =
-    getElement("websiteDropdown");
-
-const websiteOptions =
-    document.querySelectorAll(
-        ".website-option"
-    );
-
-const selectedWebsiteName =
-    getElement("selectedWebsiteName");
-
-const selectedWebsiteDomain =
-    getElement("selectedWebsiteDomain");
-
-
-
-/* =========================================================
-   DASHBOARD ELEMENTS
-========================================================= */
-
-const mainWebsiteDomain =
-    getElement("mainWebsiteDomain");
-
-const previewBusinessName =
-    getElement("previewBusinessName");
-
-const previewHeading =
-    getElement("previewHeading");
-
-const uptimeValue =
-    getElement("uptimeValue");
-
-const responseValue =
-    getElement("responseValue");
-
-const viewsValue =
-    getElement("viewsValue");
-
-const visitorsValue =
-    getElement("visitorsValue");
-
-const trafficValue =
-    getElement("trafficValue");
-
-const planName =
-    getElement("planName");
-
-const planPrice =
-    getElement("planPrice");
-
-const nextPayment =
-    getElement("nextPayment");
+const websiteName =
+    document.getElementById("websiteName");
 
 const websiteStatus =
-    getElement("websiteStatus");
+    document.getElementById("websiteStatus");
+
+const mainWebsiteDomain =
+    document.getElementById("mainWebsiteDomain");
+
+const visitWebsite =
+    document.getElementById("visitWebsite");
+
+
+/* METRICS */
+
+const uptimeValue =
+    document.getElementById("uptimeValue");
+
+const responseValue =
+    document.getElementById("responseValue");
+
+const viewsValue =
+    document.getElementById("viewsValue");
+
+const visitorsValue =
+    document.getElementById("visitorsValue");
+
+
+/* ANALYTICS */
 
 const analyticsRange =
-    getElement("analyticsRange");
+    document.getElementById("analyticsRange");
 
-const visitSiteButton =
-    document.querySelector(
-        ".visit-site"
+const trafficValue =
+    document.getElementById("trafficValue");
+
+const trafficGrowth =
+    document.getElementById("trafficGrowth");
+
+const chartBars =
+    document.querySelectorAll(
+        "#analyticsChart .chart-bar"
     );
 
 
+/* BILLING */
 
-/* =========================================================
-   WEBSITE SELECTOR
-========================================================= */
+const planName =
+    document.getElementById("planName");
 
-if (
-    websiteSelector &&
-    websiteDropdown
-) {
+const planPrice =
+    document.getElementById("planPrice");
 
-    websiteSelector.addEventListener(
-        "click",
-        (event) => {
-
-            event.stopPropagation();
-
-            websiteDropdown.classList.toggle(
-                "open"
-            );
-
-            websiteSelector.classList.toggle(
-                "active"
-            );
-
-        }
-    );
-
-}
+const nextPayment =
+    document.getElementById("nextPayment");
 
 
+/* WEBSITE HEALTH */
 
-/* =========================================================
-   WEBSITE OPTION CLICK
-========================================================= */
-
-websiteOptions.forEach(
-    option => {
-
-        option.addEventListener(
-            "click",
-            () => {
-
-                const websiteID =
-                    option.dataset.site;
+const lastUpdated =
+    document.getElementById("lastUpdated");
 
 
-                if (!websites[websiteID]) {
-                    return;
-                }
+/* QUICK ACTIONS */
 
+const requestChange =
+    document.getElementById("requestChange");
 
-                currentWebsiteID =
-                    websiteID;
+const manageBilling =
+    document.querySelector(".manage-billing");
 
-
-                updateDashboard(
-                    websiteID
-                );
-
-
-                /* ACTIVE OPTION */
-
-                websiteOptions.forEach(
-                    item => {
-
-                        item.classList.remove(
-                            "active"
-                        );
-
-
-                        const check =
-                            item.querySelector(
-                                "i"
-                            );
-
-
-                        if (check) {
-
-                            check.textContent =
-                                "";
-
-                        }
-
-                    }
-                );
-
-
-                option.classList.add(
-                    "active"
-                );
-
-
-                const selectedCheck =
-                    option.querySelector(
-                        "i"
-                    );
-
-
-                if (selectedCheck) {
-
-                    selectedCheck.textContent =
-                        "✓";
-
-                }
-
-
-                websiteDropdown.classList.remove(
-                    "open"
-                );
-
-
-                websiteSelector.classList.remove(
-                    "active"
-                );
-
-            }
-        );
-
-    }
-);
-
+const notificationButton =
+    document.getElementById("notificationButton");
 
 
 /* =========================================================
-   CLOSE WEBSITE DROPDOWN
+   LOAD WEBSITE DATA
 ========================================================= */
 
-document.addEventListener(
-    "click",
-    (event) => {
+function loadWebsite() {
 
-        if (
-            !event.target.closest(
-                ".website-selector"
-            )
-        ) {
-
-            if (websiteDropdown) {
-
-                websiteDropdown.classList.remove(
-                    "open"
-                );
-
-            }
-
-
-            if (websiteSelector) {
-
-                websiteSelector.classList.remove(
-                    "active"
-                );
-
-            }
-
-        }
-
-    }
-);
-
-
-
-/* =========================================================
-   UPDATE ENTIRE DASHBOARD
-========================================================= */
-
-function updateDashboard(
-    websiteID
-) {
-
-    const website =
-        websites[websiteID];
-
-
-    if (!website) {
-        return;
-    }
-
-
-    /* WEBSITE SELECTOR */
-
-    if (selectedWebsiteName) {
-
-        selectedWebsiteName.textContent =
+    if (websiteName) {
+        websiteName.textContent =
             website.name;
-
     }
 
-
-    if (selectedWebsiteDomain) {
-
-        selectedWebsiteDomain.textContent =
-            website.domain;
-
-    }
-
-
-
-    /* SELECTOR ICON */
-
-    const selectorIcon =
-        document.querySelector(
-            ".selector-site-icon"
-        );
-
-
-    if (selectorIcon) {
-
-        selectorIcon.textContent =
-            website.shortName;
-
-    }
-
-
-
-    /* WEBSITE PREVIEW */
-
-    if (previewBusinessName) {
-
-        previewBusinessName.textContent =
-            website.name;
-
-    }
-
-
-    if (previewHeading) {
-
-        previewHeading.textContent =
-            website.heading;
-
-    }
-
-
-
-    const previewCategory =
-        document.querySelector(
-            ".preview-content small"
-        );
-
-
-    if (previewCategory) {
-
-        previewCategory.textContent =
-            website.category;
-
-    }
-
-
-
-    /* DOMAIN */
-
-    if (mainWebsiteDomain) {
-
-        mainWebsiteDomain.innerHTML =
-            `${website.domain} <span>↗</span>`;
-
-    }
-
-
-
-    /* WEBSITE STATUS */
 
     if (websiteStatus) {
 
         websiteStatus.innerHTML =
-            `<i></i>${website.status}`;
+            `<i></i> ${website.status}`;
 
     }
 
 
+    if (mainWebsiteDomain) {
 
-    /* METRICS */
+        mainWebsiteDomain.textContent =
+            `${website.domain} ↗`;
+
+        mainWebsiteDomain.href =
+            website.url;
+
+        mainWebsiteDomain.target =
+            "_blank";
+
+        mainWebsiteDomain.rel =
+            "noopener noreferrer";
+
+    }
+
 
     if (uptimeValue) {
 
@@ -551,9 +204,6 @@ function updateDashboard(
     }
 
 
-
-    /* BILLING */
-
     if (planName) {
 
         planName.textContent =
@@ -578,27 +228,39 @@ function updateDashboard(
     }
 
 
+    if (lastUpdated) {
 
-    /* ANALYTICS */
+        lastUpdated.textContent =
+            website.lastUpdated;
+
+    }
+
 
     updateAnalytics();
 
-
-
-    /* WEBSITE HEALTH */
-
-    updateWebsiteHealth(
-        website
-    );
-
-
-
-    /* VISUAL EFFECT */
-
-    animateDashboardUpdate();
-
 }
 
+
+/* =========================================================
+   VISIT WEBSITE
+========================================================= */
+
+if (visitWebsite) {
+
+    visitWebsite.addEventListener(
+        "click",
+        () => {
+
+            window.open(
+                website.url,
+                "_blank",
+                "noopener,noreferrer"
+            );
+
+        }
+    );
+
+}
 
 
 /* =========================================================
@@ -607,30 +269,21 @@ function updateDashboard(
 
 function updateAnalytics() {
 
-    const website =
-        websites[currentWebsiteID];
-
-
-    if (!website) {
+    if (!analyticsRange) {
         return;
     }
 
 
-    let chartData;
+    const range =
+        analyticsRange.value;
+
 
     let traffic;
-
     let growth;
+    let chart;
 
 
-    if (
-        analyticsRange &&
-        analyticsRange.value ===
-        "Last 30 Days"
-    ) {
-
-        chartData =
-            website.chart30;
+    if (range === "30") {
 
         traffic =
             website.traffic30;
@@ -638,12 +291,10 @@ function updateAnalytics() {
         growth =
             website.growth30;
 
-    }
+        chart =
+            website.chart30;
 
-    else {
-
-        chartData =
-            website.chart7;
+    } else {
 
         traffic =
             website.traffic7;
@@ -651,11 +302,11 @@ function updateAnalytics() {
         growth =
             website.growth7;
 
+        chart =
+            website.chart7;
+
     }
 
-
-
-    /* TOTAL */
 
     if (trafficValue) {
 
@@ -665,42 +316,23 @@ function updateAnalytics() {
     }
 
 
+    if (trafficGrowth) {
 
-    /* GROWTH */
-
-    const growthElement =
-        document.querySelector(
-            ".analytics-total small"
-        );
-
-
-    if (growthElement) {
-
-        growthElement.textContent =
-            `↑ ${growth.replace("+", "")}`;
+        trafficGrowth.textContent =
+            growth;
 
     }
 
 
-
-    /* CHART */
-
-    const bars =
-        document.querySelectorAll(
-            ".analytics-chart i"
-        );
-
-
-    bars.forEach(
+    chartBars.forEach(
         (bar, index) => {
 
             if (
-                chartData[index] !==
-                undefined
+                chart[index] !== undefined
             ) {
 
                 bar.style.height =
-                    chartData[index] + "%";
+                    `${chart[index]}%`;
 
             }
 
@@ -709,11 +341,6 @@ function updateAnalytics() {
 
 }
 
-
-
-/* =========================================================
-   ANALYTICS RANGE
-========================================================= */
 
 if (analyticsRange) {
 
@@ -725,55 +352,36 @@ if (analyticsRange) {
 }
 
 
-
 /* =========================================================
-   WEBSITE HEALTH
+   REQUEST WEBSITE CHANGE
 ========================================================= */
 
-function updateWebsiteHealth(
-    website
-) {
+if (requestChange) {
 
-    const healthRows =
-        document.querySelectorAll(
-            ".health-row"
-        );
+    requestChange.addEventListener(
+        "click",
+        () => {
 
-
-    healthRows.forEach(
-        row => {
-
-            const label =
-                row.querySelector(
-                    "span"
-                );
-
-            const value =
-                row.querySelector(
-                    "strong"
-                );
+            openChat();
 
 
-            if (
-                !label ||
-                !value
-            ) {
+            setTimeout(() => {
 
-                return;
-
-            }
+                if (!chatInput) {
+                    return;
+                }
 
 
-            if (
-                label.textContent
-                    .trim() ===
-                "Last Updated"
-            ) {
+                chatInput.value =
+                    "Hi Nexora, I'd like to request a change to my website: ";
 
-                value.textContent =
-                    website.lastUpdated;
 
-            }
+                resizeChatInput();
+
+
+                chatInput.focus();
+
+            }, 200);
 
         }
     );
@@ -781,67 +389,23 @@ function updateWebsiteHealth(
 }
 
 
-
 /* =========================================================
-   WEBSITE VISIT BUTTON
+   BILLING BUTTON
 ========================================================= */
 
-if (visitSiteButton) {
+if (manageBilling) {
 
-    visitSiteButton.addEventListener(
-        "click",
-        () => {
-
-            const website =
-                websites[
-                    currentWebsiteID
-                ];
-
-
-            /*
-             * Demo domains are placeholders.
-             * Later this opens the real
-             * client's website.
-             */
-
-            console.log(
-                "Visit:",
-                website.url
-            );
-
-        }
-    );
-
-}
-
-
-
-/* =========================================================
-   ADD WEBSITE BUTTON
-========================================================= */
-
-const addWebsiteButton =
-    document.querySelector(
-        ".add-website"
-    );
-
-
-if (addWebsiteButton) {
-
-    addWebsiteButton.addEventListener(
+    manageBilling.addEventListener(
         "click",
         () => {
 
             /*
-             * Later this can open:
-             *
-             * - New website order
-             * - Contact Nexora
-             * - Upgrade page
-             */
+             Later this will open the
+             client's real billing portal.
+            */
 
             alert(
-                "Want another website? Contact Nexora and we'll get you started."
+                "Billing management will be connected to your payment system."
             );
 
         }
@@ -850,32 +414,18 @@ if (addWebsiteButton) {
 }
 
 
-
 /* =========================================================
-   DASHBOARD UPDATE ANIMATION
+   NOTIFICATIONS
 ========================================================= */
 
-function animateDashboardUpdate() {
+if (notificationButton) {
 
-    const cards =
-        document.querySelectorAll(
-            ".main-website-card, .dash-card"
-        );
+    notificationButton.addEventListener(
+        "click",
+        () => {
 
-
-    cards.forEach(
-        card => {
-
-            card.classList.remove(
-                "dashboard-refresh"
-            );
-
-
-            void card.offsetWidth;
-
-
-            card.classList.add(
-                "dashboard-refresh"
+            alert(
+                "You have no new notifications."
             );
 
         }
@@ -884,41 +434,41 @@ function animateDashboardUpdate() {
 }
 
 
-
 /* =========================================================
-   LIVE CHAT ELEMENTS
+   SUPPORT CHAT
 ========================================================= */
 
 const chatLauncher =
-    getElement("chatLauncher");
+    document.getElementById("chatLauncher");
 
 const chatWindow =
-    getElement("chatWindow");
+    document.getElementById("chatWindow");
 
 const closeChat =
-    getElement("closeChat");
+    document.getElementById("closeChat");
 
 const sidebarChat =
-    getElement("sidebarChat");
-
-const quickChat =
-    getElement("quickChat");
+    document.getElementById("sidebarChat");
 
 const supportNav =
-    getElement("supportNav");
+    document.getElementById("supportNav");
+
+const quickChat =
+    document.getElementById("quickChat");
 
 const sendMessage =
-    getElement("sendMessage");
+    document.getElementById("sendMessage");
 
 const chatInput =
-    getElement("chatInput");
+    document.getElementById("chatInput");
 
 const chatMessages =
-    getElement("chatMessages");
+    document.getElementById("chatMessages");
 
 const attachmentButton =
-    getElement("attachmentButton");
-
+    document.getElementById(
+        "attachmentButton"
+    );
 
 
 /* =========================================================
@@ -932,9 +482,7 @@ function openChat() {
     }
 
 
-    chatWindow.classList.add(
-        "open"
-    );
+    chatWindow.classList.add("open");
 
 
     if (chatLauncher) {
@@ -960,24 +508,20 @@ function openChat() {
     }
 
 
-    setTimeout(
-        () => {
+    setTimeout(() => {
 
-            if (chatInput) {
+        if (chatInput) {
 
-                chatInput.focus();
+            chatInput.focus();
 
-            }
+        }
 
-        },
-        200
-    );
+    }, 150);
 
 
-    scrollChatToBottom();
+    scrollChat();
 
 }
-
 
 
 /* =========================================================
@@ -1007,26 +551,13 @@ function closeChatWindow() {
 }
 
 
-
-/* =========================================================
-   CHAT BUTTON EVENTS
-========================================================= */
+/* CHAT OPEN BUTTONS */
 
 if (chatLauncher) {
 
     chatLauncher.addEventListener(
         "click",
         openChat
-    );
-
-}
-
-
-if (closeChat) {
-
-    closeChat.addEventListener(
-        "click",
-        closeChatWindow
     );
 
 }
@@ -1068,9 +599,18 @@ if (supportNav) {
 }
 
 
+if (closeChat) {
+
+    closeChat.addEventListener(
+        "click",
+        closeChatWindow
+    );
+
+}
+
 
 /* =========================================================
-   SEND CLIENT MESSAGE
+   SEND CHAT MESSAGE
 ========================================================= */
 
 function sendChatMessage() {
@@ -1090,140 +630,90 @@ function sendChatMessage() {
 
 
     if (!message) {
+
         return;
+
     }
 
 
-
-    /* MESSAGE WRAPPER */
+    /* CLIENT MESSAGE */
 
     const wrapper =
-        document.createElement(
-            "div"
-        );
-
+        document.createElement("div");
 
     wrapper.className =
         "message client-message";
 
 
-
-    /* CONTENT */
-
     const content =
-        document.createElement(
-            "div"
-        );
+        document.createElement("div");
 
-
-
-    /* BUBBLE */
 
     const bubble =
-        document.createElement(
-            "div"
-        );
-
+        document.createElement("div");
 
     bubble.className =
         "message-bubble";
 
-
     /*
-     * textContent is intentional.
-     *
-     * It prevents a chat message
-     * from injecting HTML.
-     */
+       textContent prevents the user
+       from injecting HTML into chat.
+    */
 
     bubble.textContent =
         message;
 
 
+    const time =
+        document.createElement("small");
 
-    /* TIME */
-
-    const timestamp =
-        document.createElement(
-            "small"
-        );
-
-
-    timestamp.textContent =
+    time.textContent =
         `${getCurrentTime()} ✓`;
 
 
+    content.appendChild(bubble);
+    content.appendChild(time);
 
-    content.appendChild(
-        bubble
-    );
+    wrapper.appendChild(content);
 
-
-    content.appendChild(
-        timestamp
-    );
+    chatMessages.appendChild(wrapper);
 
 
-    wrapper.appendChild(
-        content
-    );
+    /* CLEAR */
 
-
-    chatMessages.appendChild(
-        wrapper
-    );
-
-
-
-    /* CLEAR INPUT */
-
-    chatInput.value =
-        "";
-
+    chatInput.value = "";
 
     chatInput.style.height =
         "auto";
 
 
-    scrollChatToBottom();
+    scrollChat();
 
 
-
-    /*
-     * DEMO RESPONSE
-     *
-     * REMOVE THIS when we connect
-     * Supabase Realtime.
-     */
+    /* DEMO SUPPORT RESPONSE */
 
     showTypingIndicator();
 
 
-    setTimeout(
-        () => {
+    setTimeout(() => {
 
-            removeTypingIndicator();
+        removeTypingIndicator();
 
 
-            addSupportMessage(
-                "Thanks! We received your message. A Nexora team member will get back to you shortly."
-            );
+        addSupportMessage(
+            "Thanks! We received your message. A Nexora team member will get back to you shortly."
+        );
 
-        },
-        1200
-    );
+    }, 1200);
 
 }
-
 
 
 /* =========================================================
    SUPPORT MESSAGE
 ========================================================= */
 
-function addSupportMessage(
-    message
-) {
+function addSupportMessage(message) {
 
     if (!chatMessages) {
         return;
@@ -1231,101 +721,131 @@ function addSupportMessage(
 
 
     const wrapper =
-        document.createElement(
-            "div"
-        );
-
+        document.createElement("div");
 
     wrapper.className =
         "message support-message";
 
 
-
-    /* AVATAR */
-
     const avatar =
-        document.createElement(
-            "div"
-        );
-
+        document.createElement("div");
 
     avatar.className =
         "message-avatar";
-
 
     avatar.textContent =
         "N";
 
 
-
-    /* CONTENT */
-
     const content =
-        document.createElement(
-            "div"
-        );
+        document.createElement("div");
 
-
-
-    /* BUBBLE */
 
     const bubble =
-        document.createElement(
-            "div"
-        );
-
+        document.createElement("div");
 
     bubble.className =
         "message-bubble";
-
 
     bubble.textContent =
         message;
 
 
+    const time =
+        document.createElement("small");
 
-    /* TIME */
-
-    const timestamp =
-        document.createElement(
-            "small"
-        );
-
-
-    timestamp.textContent =
+    time.textContent =
         getCurrentTime();
 
 
+    content.appendChild(bubble);
+    content.appendChild(time);
 
-    content.appendChild(
-        bubble
-    );
+    wrapper.appendChild(avatar);
+    wrapper.appendChild(content);
 
-
-    content.appendChild(
-        timestamp
-    );
+    chatMessages.appendChild(wrapper);
 
 
-    wrapper.appendChild(
-        avatar
-    );
-
-
-    wrapper.appendChild(
-        content
-    );
-
-
-    chatMessages.appendChild(
-        wrapper
-    );
-
-
-    scrollChatToBottom();
+    scrollChat();
 
 }
 
+
+/* =========================================================
+   TYPING INDICATOR
+========================================================= */
+
+function showTypingIndicator() {
+
+    if (!chatMessages) {
+        return;
+    }
+
+
+    removeTypingIndicator();
+
+
+    const typing =
+        document.createElement("div");
+
+    typing.className =
+        "message support-message typing-message";
+
+    typing.id =
+        "typingIndicator";
+
+
+    const avatar =
+        document.createElement("div");
+
+    avatar.className =
+        "message-avatar";
+
+    avatar.textContent =
+        "N";
+
+
+    const bubble =
+        document.createElement("div");
+
+    bubble.className =
+        "message-bubble typing-bubble";
+
+
+    bubble.innerHTML = `
+        <span></span>
+        <span></span>
+        <span></span>
+    `;
+
+
+    typing.appendChild(avatar);
+    typing.appendChild(bubble);
+
+    chatMessages.appendChild(typing);
+
+
+    scrollChat();
+
+}
+
+
+function removeTypingIndicator() {
+
+    const typing =
+        document.getElementById(
+            "typingIndicator"
+        );
+
+
+    if (typing) {
+
+        typing.remove();
+
+    }
+
+}
 
 
 /* =========================================================
@@ -1342,7 +862,6 @@ if (sendMessage) {
 }
 
 
-
 /* =========================================================
    ENTER TO SEND
 ========================================================= */
@@ -1354,9 +873,7 @@ if (chatInput) {
         event => {
 
             if (
-                event.key ===
-                    "Enter" &&
-
+                event.key === "Enter" &&
                 !event.shiftKey
             ) {
 
@@ -1369,35 +886,57 @@ if (chatInput) {
         }
     );
 
-}
-
-
-
-/* =========================================================
-   CHAT TEXTAREA AUTO RESIZE
-========================================================= */
-
-if (chatInput) {
 
     chatInput.addEventListener(
         "input",
+        resizeChatInput
+    );
+
+}
+
+
+/* =========================================================
+   CHAT INPUT RESIZE
+========================================================= */
+
+function resizeChatInput() {
+
+    if (!chatInput) {
+        return;
+    }
+
+
+    chatInput.style.height =
+        "auto";
+
+
+    chatInput.style.height =
+        Math.min(
+            chatInput.scrollHeight,
+            110
+        ) + "px";
+
+}
+
+
+/* =========================================================
+   ATTACHMENT
+========================================================= */
+
+if (attachmentButton) {
+
+    attachmentButton.addEventListener(
+        "click",
         () => {
 
-            chatInput.style.height =
-                "auto";
-
-
-            chatInput.style.height =
-                Math.min(
-                    chatInput.scrollHeight,
-                    110
-                ) + "px";
+            alert(
+                "File attachments will be available when Nexora Support is connected."
+            );
 
         }
     );
 
 }
-
 
 
 /* =========================================================
@@ -1410,25 +949,19 @@ function getCurrentTime() {
         .toLocaleTimeString(
             [],
             {
-
-                hour:
-                    "numeric",
-
-                minute:
-                    "2-digit"
-
+                hour: "numeric",
+                minute: "2-digit"
             }
         );
 
 }
 
 
-
 /* =========================================================
-   CHAT SCROLL
+   SCROLL CHAT
 ========================================================= */
 
-function scrollChatToBottom() {
+function scrollChat() {
 
     if (!chatMessages) {
         return;
@@ -1441,329 +974,17 @@ function scrollChatToBottom() {
 }
 
 
-
 /* =========================================================
-   TYPING INDICATOR
-========================================================= */
-
-function showTypingIndicator() {
-
-    if (
-        !chatMessages ||
-        document.getElementById(
-            "typingIndicator"
-        )
-    ) {
-
-        return;
-
-    }
-
-
-    const wrapper =
-        document.createElement(
-            "div"
-        );
-
-
-    wrapper.className =
-        "message support-message";
-
-
-    wrapper.id =
-        "typingIndicator";
-
-
-
-    const avatar =
-        document.createElement(
-            "div"
-        );
-
-
-    avatar.className =
-        "message-avatar";
-
-
-    avatar.textContent =
-        "N";
-
-
-
-    const bubble =
-        document.createElement(
-            "div"
-        );
-
-
-    bubble.className =
-        "message-bubble typing-bubble";
-
-
-    bubble.innerHTML =
-        `
-        <span></span>
-        <span></span>
-        <span></span>
-        `;
-
-
-
-    wrapper.appendChild(
-        avatar
-    );
-
-
-    wrapper.appendChild(
-        bubble
-    );
-
-
-    chatMessages.appendChild(
-        wrapper
-    );
-
-
-    scrollChatToBottom();
-
-}
-
-
-
-/* =========================================================
-   REMOVE TYPING
-========================================================= */
-
-function removeTypingIndicator() {
-
-    const typing =
-        getElement(
-            "typingIndicator"
-        );
-
-
-    if (typing) {
-
-        typing.remove();
-
-    }
-
-}
-
-
-
-/* =========================================================
-   ATTACHMENT BUTTON
-========================================================= */
-
-if (attachmentButton) {
-
-    attachmentButton.addEventListener(
-        "click",
-        () => {
-
-            /*
-             * File uploads will be connected
-             * to Supabase Storage later.
-             */
-
-            alert(
-                "File attachments are coming soon."
-            );
-
-        }
-    );
-
-}
-
-
-
-/* =========================================================
-   QUICK ACTION BUTTONS
-========================================================= */
-
-const quickActionButtons =
-    document.querySelectorAll(
-        ".quick-action-grid button"
-    );
-
-
-quickActionButtons.forEach(
-    button => {
-
-        button.addEventListener(
-            "click",
-            () => {
-
-                /*
-                 * Don't interfere with
-                 * Contact Support because
-                 * that already opens chat.
-                 */
-
-                if (
-                    button.id ===
-                    "quickChat"
-                ) {
-
-                    return;
-
-                }
-
-
-                const text =
-                    button.innerText
-                        .replace(
-                            /\s+/g,
-                            " "
-                        )
-                        .trim();
-
-
-                console.log(
-                    "Quick Action:",
-                    text
-                );
-
-            }
-        );
-
-    }
-);
-
-
-
-/* =========================================================
-   SIDEBAR NAVIGATION
-========================================================= */
-
-const sidebarLinks =
-    document.querySelectorAll(
-        ".sidebar-nav a"
-    );
-
-
-sidebarLinks.forEach(
-    link => {
-
-        link.addEventListener(
-            "click",
-            event => {
-
-                /*
-                 * Support opens the chat,
-                 * so don't change the active
-                 * page for that.
-                 */
-
-                if (
-                    link.id ===
-                    "supportNav"
-                ) {
-
-                    return;
-
-                }
-
-
-                event.preventDefault();
-
-
-                sidebarLinks.forEach(
-                    item => {
-
-                        item.classList.remove(
-                            "active"
-                        );
-
-                    }
-                );
-
-
-                link.classList.add(
-                    "active"
-                );
-
-            }
-        );
-
-    }
-);
-
-
-
-/* =========================================================
-   NOTIFICATION BUTTON
-========================================================= */
-
-const notificationButton =
-    document.querySelector(
-        ".notification-button"
-    );
-
-
-if (notificationButton) {
-
-    notificationButton.addEventListener(
-        "click",
-        () => {
-
-            alert(
-                "You have no new notifications."
-            );
-
-        }
-    );
-
-}
-
-
-
-/* =========================================================
-   KEYBOARD ESCAPE
+   ESCAPE KEY
 ========================================================= */
 
 document.addEventListener(
     "keydown",
     event => {
 
-        if (
-            event.key ===
-            "Escape"
-        ) {
+        if (event.key === "Escape") {
 
-            /* CLOSE CHAT */
-
-            if (
-                chatWindow &&
-                chatWindow.classList.contains(
-                    "open"
-                )
-            ) {
-
-                closeChatWindow();
-
-            }
-
-
-            /* CLOSE WEBSITE SELECTOR */
-
-            if (websiteDropdown) {
-
-                websiteDropdown.classList.remove(
-                    "open"
-                );
-
-            }
-
-
-            if (websiteSelector) {
-
-                websiteSelector.classList.remove(
-                    "active"
-                );
-
-            }
+            closeChatWindow();
 
         }
 
@@ -1771,66 +992,8 @@ document.addEventListener(
 );
 
 
-
 /* =========================================================
-   MOBILE CHAT HEIGHT
+   START DASHBOARD
 ========================================================= */
 
-function updateMobileChatHeight() {
-
-    if (!chatWindow) {
-        return;
-    }
-
-
-    if (
-        window.innerWidth <=
-        600
-    ) {
-
-        chatWindow.style.setProperty(
-            "--mobile-height",
-            window.innerHeight +
-            "px"
-        );
-
-    }
-
-}
-
-
-window.addEventListener(
-    "resize",
-    updateMobileChatHeight
-);
-
-
-updateMobileChatHeight();
-
-
-
-/* =========================================================
-   INITIALIZE DASHBOARD
-========================================================= */
-
-function initializeDashboard() {
-
-    updateDashboard(
-        currentWebsiteID
-    );
-
-
-    updateAnalytics();
-
-
-    scrollChatToBottom();
-
-
-    console.log(
-        "Nexora Client Dashboard loaded."
-    );
-
-}
-
-
-initializeDashboard();
+loadWebsite();

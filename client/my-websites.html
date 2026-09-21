@@ -3,12 +3,18 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>My Websites | Nexora</title>
 
-    <link rel="stylesheet" href="style.css">
+    <!-- CSS is one folder ABOVE /client -->
+    <link rel="stylesheet" href="../style.css">
 </head>
+
 
 <body class="dashboard-body">
 
@@ -20,23 +26,34 @@
 
     <aside class="sidebar">
 
-        <a href="index.html" class="dashboard-logo">
-            <span class="logo-icon">N</span>
-            <span>NEXORA</span>
+        <!-- Logo -->
+        <a href="../index.html" class="dashboard-logo">
+
+            <img
+                src="../images/nexora-logo.png"
+                alt="Nexora"
+                class="dashboard-logo-image"
+            >
+
         </a>
 
 
         <nav class="sidebar-nav">
 
-            <a href="my-websites.html" class="active">
+            <a
+                href="my-websites.html"
+                class="active"
+            >
                 <span>◎</span>
                 My Websites
             </a>
+
 
             <a href="#" id="billingNav">
                 <span>▣</span>
                 Billing
             </a>
+
 
             <a href="#" id="supportNav">
                 <span>◯</span>
@@ -52,9 +69,11 @@
                 ⚙ Settings
             </a>
 
-            <a href="login.html">
+
+            <a href="../login.html">
                 ↪ Sign Out
             </a>
+
 
             <div class="support-mini">
 
@@ -62,10 +81,19 @@
                     ◉
                 </div>
 
+
                 <div class="support-mini-text">
-                    <strong>Need Help?</strong>
-                    <p>We're here when you need us.</p>
+
+                    <strong>
+                        Need Help?
+                    </strong>
+
+                    <p>
+                        We're here when you need us.
+                    </p>
+
                 </div>
+
 
                 <button id="sidebarChat">
                     Contact Support →
@@ -78,8 +106,9 @@
     </aside>
 
 
+
     <!-- ==========================================
-         MAIN
+         MAIN CONTENT
     =========================================== -->
 
     <main class="dashboard-main">
@@ -104,18 +133,31 @@
 
             <div class="dashboard-account">
 
-                <button class="notification-button">
+                <button
+                    class="notification-button"
+                    type="button"
+                    aria-label="Notifications"
+                >
                     ♢
                     <span></span>
                 </button>
+
 
                 <div class="avatar">
                     JD
                 </div>
 
+
                 <div class="account-name">
-                    <strong>John Doe</strong>
-                    <span>Client</span>
+
+                    <strong>
+                        John Doe
+                    </strong>
+
+                    <span>
+                        Client
+                    </span>
+
                 </div>
 
             </div>
@@ -123,8 +165,9 @@
         </header>
 
 
+
         <!-- ==========================================
-             PAGE CONTENT
+             PAGE
         =========================================== -->
 
         <div class="dashboard-content">
@@ -140,18 +183,21 @@
                         CLIENT PORTAL
                     </span>
 
+
                     <h1>
                         My Websites
                     </h1>
 
+
                     <p>
-                        Manage your websites, hosting,
-                        payments and support.
+                        Manage your websites,
+                        hosting, payments and support.
                     </p>
 
                 </div>
 
             </section>
+
 
 
             <!-- ======================================
@@ -165,7 +211,7 @@
 
 
                 <!-- ==================================
-                     WEBSITE CARD
+                     WEBSITE #1
                 =================================== -->
 
                 <article
@@ -173,11 +219,15 @@
                     data-name="John's Landscaping"
                 >
 
+
+                    <!-- TOP -->
+
                     <div class="website-card-top">
 
                         <div class="website-card-icon">
                             JL
                         </div>
+
 
                         <span class="website-live">
 
@@ -190,11 +240,15 @@
                     </div>
 
 
+
+                    <!-- WEBSITE -->
+
                     <div class="website-card-info">
 
                         <h2>
                             John's Landscaping
                         </h2>
+
 
                         <a
                             href="#"
@@ -206,6 +260,9 @@
                     </div>
 
 
+
+                    <!-- HOSTING -->
+
                     <div class="website-card-plan">
 
                         <div>
@@ -214,9 +271,15 @@
                                 HOSTING PLAN
                             </small>
 
+
                             <strong>
+
                                 $14.99
-                                <span>/ month</span>
+
+                                <span>
+                                    / month
+                                </span>
+
                             </strong>
 
                         </div>
@@ -224,11 +287,15 @@
                     </div>
 
 
+
+                    <!-- PAYMENT -->
+
                     <div class="website-next-payment">
 
                         <span>
                             Next Payment
                         </span>
+
 
                         <strong>
                             Oct. 31
@@ -237,14 +304,22 @@
                     </div>
 
 
+
+                    <!-- BUTTON -->
+
                     <div class="website-card-footer">
 
                         <a
                             href="dashboard.html"
                             class="view-dashboard-button"
                         >
+
                             View Dashboard
-                            <span>→</span>
+
+                            <span>
+                                →
+                            </span>
+
                         </a>
 
                     </div>
@@ -258,6 +333,7 @@
                 =================================== -->
 
                 <button
+                    type="button"
                     class="create-website-card"
                     id="createWebsite"
                 >
@@ -266,13 +342,16 @@
                         +
                     </div>
 
+
                     <h2>
                         Create New Website
                     </h2>
 
+
                     <p>
                         Start a new project with Nexora.
                     </p>
+
 
                     <span class="create-link">
                         Get Started →
@@ -280,13 +359,12 @@
 
                 </button>
 
-
             </section>
 
 
 
             <!-- ======================================
-                 EMPTY SEARCH MESSAGE
+                 SEARCH - NOTHING FOUND
             ======================================= -->
 
             <div
@@ -310,6 +388,7 @@
                     © 2026 Nexora
                 </span>
 
+
                 <span class="system-operational">
 
                     <i></i>
@@ -317,6 +396,7 @@
                     All systems operational
 
                 </span>
+
 
                 <span>
                     Websites built around your goals.
@@ -333,27 +413,39 @@
 
 
 <!-- ==============================================
-     LIVE CHAT
+     SUPPORT CHAT BUTTON
 =============================================== -->
 
 <button
+    type="button"
     class="chat-launcher"
     id="chatLauncher"
     aria-label="Open support chat"
 >
-    <span>💬</span>
+
+    <span>
+        💬
+    </span>
 
     <i class="chat-notification">
         1
     </i>
+
 </button>
 
 
+
+<!-- ==============================================
+     SUPPORT CHAT
+=============================================== -->
 
 <section
     class="chat-window"
     id="chatWindow"
 >
+
+
+    <!-- CHAT HEADER -->
 
     <header class="chat-header">
 
@@ -363,22 +455,29 @@
                 N
             </div>
 
+
             <div>
 
                 <strong>
                     Nexora Support
                 </strong>
 
+
                 <span>
+
                     <i></i>
+
                     Online
+
                 </span>
 
             </div>
 
         </div>
 
+
         <button
+            type="button"
             id="closeChat"
             aria-label="Close chat"
         >
@@ -387,6 +486,9 @@
 
     </header>
 
+
+
+    <!-- MESSAGES -->
 
     <div
         class="chat-messages"
@@ -404,11 +506,16 @@
                 N
             </div>
 
+
             <div>
 
                 <div class="message-bubble">
-                    Hey John! 👋 How can we help you today?
+
+                    Hey John! 👋
+                    How can we help you today?
+
                 </div>
+
 
                 <small>
                     Nexora Support
@@ -421,14 +528,20 @@
     </div>
 
 
+
+    <!-- MESSAGE INPUT -->
+
     <div class="chat-input-area">
 
         <button
+            type="button"
             class="attachment-button"
             id="attachmentButton"
+            aria-label="Attach file"
         >
             +
         </button>
+
 
         <textarea
             id="chatInput"
@@ -436,9 +549,12 @@
             rows="1"
         ></textarea>
 
+
         <button
+            type="button"
             id="sendMessage"
             class="send-message"
+            aria-label="Send message"
         >
             ➤
         </button>
@@ -448,7 +564,9 @@
 </section>
 
 
-<script src="my-websites.js"></script>
+
+<!-- JS is inside /js -->
+<script src="../js/my-websites.js"></script>
 
 </body>
 
