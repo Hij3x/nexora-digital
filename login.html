@@ -3,89 +3,191 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Sign in to your Nexora client portal."
+    >
 
     <title>Client Login | Nexora</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="portal-body">
 
-    <div class="portal-glow portal-glow-one"></div>
-    <div class="portal-glow portal-glow-two"></div>
+<body class="nexora-login-page">
 
-    <main class="login-page">
 
-        <a href="index.html" class="login-logo">
-            <span class="logo-icon">N</span>
-            <span>NEXORA</span>
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="login-header">
+
+        <a
+            href="index.html"
+            class="login-logo"
+            aria-label="Nexora Home"
+        >
+            <img
+                src="images/nexora-logo.png"
+                alt="Nexora"
+            >
         </a>
 
-        <div class="login-card">
+
+        <a
+            href="index.html"
+            class="login-back"
+        >
+            ← Back to Website
+        </a>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         LOGIN AREA
+    ====================================================== -->
+
+    <main class="login-main">
+
+
+        <!-- BACKGROUND EFFECTS -->
+
+        <div class="login-glow login-glow-one"></div>
+        <div class="login-glow login-glow-two"></div>
+
+        <div class="login-grid-background"></div>
+
+
+
+        <!-- LOGIN CARD -->
+
+        <section class="login-card">
+
+
+            <!-- ICON -->
+
+            <div class="login-card-icon">
+                N
+            </div>
+
+
+
+            <!-- HEADING -->
 
             <div class="login-heading">
 
-                <span class="section-label">
-                    CLIENT PORTAL
+                <span class="login-eyebrow">
+                    NEXORA CLIENT PORTAL
                 </span>
 
-                <h1>Welcome back.</h1>
+                <h1>
+                    Welcome back.
+                </h1>
 
                 <p>
-                    Sign in to manage your website,
-                    analytics, billing and support.
+                    Sign in to manage your websites,
+                    projects, billing and support.
                 </p>
 
             </div>
 
 
-            <form id="loginForm">
 
-                <div class="form-group">
+            <!-- LOGIN FORM -->
+
+            <form
+                id="loginForm"
+                class="login-form"
+                novalidate
+            >
+
+
+                <!-- EMAIL -->
+
+                <div class="login-field">
 
                     <label for="loginEmail">
                         Email Address
                     </label>
 
-                    <input
-                        type="email"
-                        id="loginEmail"
-                        placeholder="you@company.com"
-                        required
-                    >
+                    <div class="login-input-wrapper">
+
+                        <span
+                            class="login-input-icon"
+                            aria-hidden="true"
+                        >
+                            @
+                        </span>
+
+                        <input
+                            type="email"
+                            id="loginEmail"
+                            name="email"
+                            placeholder="Enter your email"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
 
                 </div>
 
 
-                <div class="form-group">
 
-                    <div class="password-label">
+                <!-- PASSWORD -->
+
+                <div class="login-field">
+
+                    <div class="login-label-row">
 
                         <label for="loginPassword">
                             Password
                         </label>
 
-                        <a href="#" class="forgot-password">
+                        <button
+                            type="button"
+                            class="login-forgot"
+                            id="forgotPasswordButton"
+                        >
                             Forgot password?
-                        </a>
+                        </button>
 
                     </div>
 
 
-                    <div class="password-wrapper">
+                    <div class="login-input-wrapper">
+
+                        <span
+                            class="login-input-icon"
+                            aria-hidden="true"
+                        >
+                            ◇
+                        </span>
 
                         <input
                             type="password"
                             id="loginPassword"
+                            name="password"
                             placeholder="Enter your password"
+                            autocomplete="current-password"
                             required
                         >
 
+
                         <button
                             type="button"
-                            id="showPassword"
-                            class="show-password"
+                            class="password-toggle"
+                            id="passwordToggle"
+                            aria-label="Show password"
                         >
                             Show
                         </button>
@@ -95,87 +197,422 @@
                 </div>
 
 
+
+                <!-- ERROR -->
+
+                <div
+                    class="login-error"
+                    id="loginError"
+                    role="alert"
+                    hidden
+                ></div>
+
+
+
+                <!-- LOGIN BUTTON -->
+
                 <button
                     type="submit"
-                    class="button primary-button login-button"
+                    id="loginButton"
+                    class="login-submit"
                 >
-                    Sign In →
+                    <span id="loginButtonText">
+                        Sign In
+                    </span>
+
+                    <span aria-hidden="true">
+                        →
+                    </span>
                 </button>
+
 
             </form>
 
 
+
+            <!-- SECURITY MESSAGE -->
+
             <div class="login-security">
-                <span>◈</span>
+
+                <span>
+                    ◈
+                </span>
 
                 <p>
-                    Secure Nexora Client Portal
+                    Secure access to your Nexora portal.
                 </p>
+
             </div>
 
-        </div>
 
 
-        <a href="index.html" class="back-home">
-            ← Back to Nexora
-        </a>
+            <!-- HELP -->
+
+            <div class="login-help">
+
+                <span>
+                    Need help accessing your account?
+                </span>
+
+                <a href="index.html#contact">
+                    Contact Nexora
+                </a>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- SIDE INFO -->
+
+        <section class="login-side-info">
+
+            <span class="login-side-label">
+                YOUR NEXORA PORTAL
+            </span>
+
+            <h2>
+                Everything in one place.
+            </h2>
+
+            <p>
+                Keep track of your websites, submit new
+                projects and manage your Nexora services
+                from one secure dashboard.
+            </p>
+
+
+            <div class="login-feature-list">
+
+
+                <div class="login-feature">
+
+                    <span>
+                        ✓
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Your Websites
+                        </strong>
+
+                        <p>
+                            View your Nexora websites and
+                            project information.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="login-feature">
+
+                    <span>
+                        ✓
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Project Requests
+                        </strong>
+
+                        <p>
+                            Request a new website directly
+                            through your portal.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="login-feature">
+
+                    <span>
+                        ✓
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Billing
+                        </strong>
+
+                        <p>
+                            View your invoices and payment
+                            information.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="login-feature">
+
+                    <span>
+                        ✓
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Support
+                        </strong>
+
+                        <p>
+                            Contact Nexora about your
+                            website whenever you need help.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
 
     </main>
 
 
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="login-footer">
+
+        <span>
+            © <span id="loginYear"></span> Nexora.
+            All rights reserved.
+        </span>
+
+
+        <div>
+
+            <a href="privacy.html">
+                Privacy
+            </a>
+
+            <a href="terms.html">
+                Terms
+            </a>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         SUPABASE
+
+         IMPORTANT:
+         Load in this exact order:
+
+         1. Supabase library
+         2. Nexora Supabase configuration
+         3. Login code
+    ====================================================== -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+    ></script>
+
+    <script src="js/supabase.js"></script>
+
+    <script src="js/login.js"></script>
+
+
+
+    <!-- LOGIN PAGE UI -->
+
     <script>
 
-        const form =
-            document.getElementById("loginForm");
-
-        const password =
-            document.getElementById("loginPassword");
-
-        const showPassword =
-            document.getElementById("showPassword");
-
-
-        showPassword.addEventListener(
-            "click",
+        document.addEventListener(
+            "DOMContentLoaded",
             () => {
 
-                if (password.type === "password") {
+                /* YEAR */
 
-                    password.type = "text";
-                    showPassword.textContent = "Hide";
+                const year =
+                    document.getElementById(
+                        "loginYear"
+                    );
 
-                } else {
+                if (year) {
 
-                    password.type = "password";
-                    showPassword.textContent = "Show";
+                    year.textContent =
+                        new Date().getFullYear();
 
                 }
 
-            }
-        );
 
 
-        form.addEventListener(
-            "submit",
-            (event) => {
+                /* SHOW / HIDE PASSWORD */
 
-                event.preventDefault();
+                const password =
+                    document.getElementById(
+                        "loginPassword"
+                    );
 
-                /*
-                DEMO ONLY.
+                const toggle =
+                    document.getElementById(
+                        "passwordToggle"
+                    );
 
-                Later this will be replaced with
-                real authentication.
-                */
 
-                window.location.href =
-                    "dashboard.html";
+                toggle?.addEventListener(
+                    "click",
+                    () => {
+
+                        const hidden =
+                            password.type ===
+                            "password";
+
+
+                        password.type =
+                            hidden
+                                ? "text"
+                                : "password";
+
+
+                        toggle.textContent =
+                            hidden
+                                ? "Hide"
+                                : "Show";
+
+
+                        toggle.setAttribute(
+                            "aria-label",
+                            hidden
+                                ? "Hide password"
+                                : "Show password"
+                        );
+
+                    }
+                );
+
+
+
+                /* FORGOT PASSWORD */
+
+                const forgot =
+                    document.getElementById(
+                        "forgotPasswordButton"
+                    );
+
+
+                forgot?.addEventListener(
+                    "click",
+                    async () => {
+
+                        const email =
+                            document
+                                .getElementById(
+                                    "loginEmail"
+                                )
+                                .value
+                                .trim();
+
+
+                        const errorBox =
+                            document.getElementById(
+                                "loginError"
+                            );
+
+
+                        if (!email) {
+
+                            errorBox.textContent =
+                                "Enter your email address first.";
+
+                            errorBox.hidden =
+                                false;
+
+                            return;
+
+                        }
+
+
+                        try {
+
+                            const {
+                                error
+                            } =
+                                await nexoraSupabase
+                                    .auth
+                                    .resetPasswordForEmail(
+                                        email,
+                                        {
+                                            redirectTo:
+                                                window.location.origin +
+                                                "/reset-password.html"
+                                        }
+                                    );
+
+
+                            if (error) {
+
+                                console.error(
+                                    error
+                                );
+
+                                errorBox.textContent =
+                                    "Unable to send the password reset email.";
+
+                                errorBox.hidden =
+                                    false;
+
+                                return;
+
+                            }
+
+
+                            errorBox.textContent =
+                                "If an account exists for that email, check your inbox for password reset instructions.";
+
+                            errorBox.classList.add(
+                                "success"
+                            );
+
+                            errorBox.hidden =
+                                false;
+
+
+                        } catch (error) {
+
+                            console.error(
+                                error
+                            );
+
+                            errorBox.textContent =
+                                "Something went wrong. Please try again.";
+
+                            errorBox.hidden =
+                                false;
+
+                        }
+
+                    }
+                );
 
             }
         );
 
     </script>
 
-</body>
 
+</body>
 </html>
